@@ -936,6 +936,11 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.deepEqual(module.parseStartProductionArgs(['--help']), {
     help: true,
     dryRun: false,
+    initConfigOnly: false,
+    deploymentMode: null,
+    configFile: null,
+    databaseUrl: null,
+    databaseMaxConnections: null,
     serverBind: null,
     gatewayForwardUrl: null,
     backendApiForwardUrl: null,
@@ -946,6 +951,11 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.deepEqual(module.parseStartProductionArgs(['--dry-run']), {
     help: false,
     dryRun: true,
+    initConfigOnly: false,
+    deploymentMode: null,
+    configFile: null,
+    databaseUrl: null,
+    databaseMaxConnections: null,
     serverBind: null,
     gatewayForwardUrl: null,
     backendApiForwardUrl: null,
@@ -956,6 +966,14 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.deepEqual(
     module.parseStartProductionArgs([
       '--dry-run',
+      '--deployment-mode',
+      'server',
+      '--config-file',
+      '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
+      '--database-url',
+      'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
+      '--database-max-connections',
+      '24',
       '--server-bind',
       '0.0.0.0:12900',
       '--gateway-forward-url',
@@ -971,6 +989,11 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     {
       help: false,
       dryRun: true,
+      initConfigOnly: false,
+      deploymentMode: 'server',
+      configFile: '/etc/sdkwork-claw-router/sdkwork-claw-router.toml',
+      databaseUrl: 'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
+      databaseMaxConnections: '24',
       serverBind: '0.0.0.0:12900',
       gatewayForwardUrl: 'http://gateway.internal:18080',
       backendApiForwardUrl: 'https://admin.internal',
@@ -986,6 +1009,14 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.throws(
     () => module.parseStartProductionArgs(['--external-scheme', 'ftp']),
     /must be http or https/,
+  );
+  assert.throws(
+    () => module.parseStartProductionArgs(['--deployment-mode', 'browser']),
+    /must be server or desktop/,
+  );
+  assert.throws(
+    () => module.parseStartProductionArgs(['--database-max-connections', '0']),
+    /must be a positive integer/,
   );
   assert.doesNotThrow(() => module.main(['--dry-run']));
   assert.doesNotThrow(() => module.assertPortalDistReadyForStart(true, path.join(workspaceRoot, 'missing-dist')));
@@ -1080,6 +1111,159 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   )));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=https'));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=1'));
+});
+
+test('production starter resolves OS-standard runtime config locations', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+
+  const linuxDesktop = module.runtimeConfigLocationForPlatform('linux', 'desktop', {
+    HOME: '/home/ada',
+    XDG_CONFIG_HOME: '/home/ada/.config-xdg',
+    XDG_DATA_HOME: '/home/ada/.data-xdg',
+  });
+  assert.equal(
+    slashPath(linuxDesktop.configFile),
+    '/home/ada/.config-xdg/sdkwork-claw-router/sdkwork-claw-router.toml',
+  );
+  assert.equal(
+    slashPath(linuxDesktop.dataDirectory),
+    '/home/ada/.data-xdg/sdkwork-claw-router',
+  );
+
+  const windowsServer = module.runtimeConfigLocationForPlatform('win32', 'server', {
+    ProgramData: 'C:/ProgramData',
+  });
+  assert.equal(
+    slashPath(windowsServer.configFile),
+    'C:/ProgramData/SdkWork/Claw Router/sdkwork-claw-router.toml',
+  );
+  assert.equal(
+    slashPath(windowsServer.dataDirectory),
+    'C:/ProgramData/SdkWork/Claw Router/Data',
+  );
+
+  const macosDesktop = module.runtimeConfigLocationForPlatform('darwin', 'desktop', {
+    HOME: '/Users/ada',
+  });
+  assert.equal(
+    slashPath(macosDesktop.configFile),
+    '/Users/ada/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml',
+  );
+  assert.equal(
+    slashPath(macosDesktop.dataDirectory),
+    '/Users/ada/Library/Application Support/SdkWork/Claw Router',
+  );
+});
+
+test('production starter auto-initializes desktop SQLite runtime config', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+  const fixtureRoot = path.join(workspaceRoot, 'target', 'start-production-config-tests', `desktop-${Date.now()}`);
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(fixtureRoot, { recursive: true });
+
+  const env = {
+    HOME: path.join(fixtureRoot, 'home'),
+    XDG_CONFIG_HOME: path.join(fixtureRoot, 'xdg-config'),
+    XDG_DATA_HOME: path.join(fixtureRoot, 'xdg-data'),
+  };
+  const result = module.prepareStartProductionRuntimeConfig({
+    baseEnv: env,
+    settings: module.parseStartProductionArgs(['--deployment-mode', 'desktop']),
+    platform: 'linux',
+    write: true,
+  });
+
+  assert.equal(result.action, 'created');
+  assert.equal(result.deploymentMode, 'desktop');
+  assert.equal(result.databaseEngine, 'sqlite');
+  assert.equal(result.databaseUrl, `sqlite://${slashPath(path.join(env.XDG_DATA_HOME, 'sdkwork-claw-router', 'sdkwork-claw-router.sqlite'))}`);
+  assert.equal(result.blockingIssue, null);
+  assert.equal(
+    slashPath(result.configFile),
+    slashPath(path.join(env.XDG_CONFIG_HOME, 'sdkwork-claw-router', 'sdkwork-claw-router.toml')),
+  );
+  assert.equal(result.env.SDKWORK_CLAW_CONFIG_FILE, result.configFile);
+  assert.equal(result.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
+  assert.equal(existsSync(result.configFile), true);
+
+  const content = readFileSync(result.configFile, 'utf8');
+  assert.ok(content.includes('[database]'));
+  assert.ok(content.includes('engine = "sqlite"'));
+  assert.ok(content.includes(`url = "${result.databaseUrl}"`));
+  assert.ok(content.includes('max_connections = 1'));
+  assert.ok(content.includes('[paths]'));
+  assert.ok(content.includes(`[runtime]`));
+  rmSync(fixtureRoot, { recursive: true, force: true });
+});
+
+test('production starter initializes server PostgreSQL config with actionable blocking help', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+  const fixtureRoot = path.join(workspaceRoot, 'target', 'start-production-config-tests', `server-${Date.now()}`);
+  const configFile = path.join(fixtureRoot, 'etc', 'sdkwork-claw-router.toml');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(fixtureRoot, { recursive: true });
+
+  const result = module.prepareStartProductionRuntimeConfig({
+    baseEnv: { HOME: path.join(fixtureRoot, 'home') },
+    settings: module.parseStartProductionArgs([
+      '--deployment-mode',
+      'server',
+      '--config-file',
+      configFile,
+    ]),
+    platform: 'linux',
+    write: true,
+  });
+
+  assert.equal(result.action, 'created');
+  assert.equal(result.deploymentMode, 'server');
+  assert.equal(result.databaseEngine, 'postgresql');
+  assert.equal(
+    result.databaseUrl,
+    'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router',
+  );
+  assert.equal(result.env.SDKWORK_CLAW_CONFIG_FILE, configFile);
+  assert.equal(result.env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
+  assert.equal(result.blockingIssue.code, 'postgresql_configuration_required');
+  assert.ok(result.blockingIssue.message.includes('PostgreSQL'));
+  assert.ok(result.helpLines.some((line) => line.includes('SDKWORK_CLAW_DATABASE_URL')));
+  assert.ok(result.helpLines.some((line) => line.includes('pnpm start -- --init-config-only --deployment-mode server')));
+  assert.equal(existsSync(configFile), true);
+
+  const content = readFileSync(configFile, 'utf8');
+  assert.ok(content.includes('engine = "postgresql"'));
+  assert.ok(content.includes('change-me@localhost'));
+  assert.ok(content.includes('max_connections = 16'));
+  rmSync(fixtureRoot, { recursive: true, force: true });
+});
+
+test('production starter help documents automatic runtime config initialization', async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs'),
+    '--help',
+  ], {
+    cwd: workspaceRoot,
+    maxBuffer: 1024 * 1024,
+  });
+
+  assert.ok(stdout.includes('Runtime config initialization:'));
+  assert.ok(stdout.includes('Missing runtime TOML files are created automatically before startup.'));
+  assert.ok(stdout.includes('Server deployments require PostgreSQL before the process can start.'));
+  assert.ok(stdout.includes('Desktop deployments default to SQLite and can start from the generated config.'));
+  assert.ok(stdout.includes('pnpm start -- --init-config-only --deployment-mode server'));
+  assert.ok(stdout.includes('SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"'));
+  assert.ok(stdout.includes('Linux server: /etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('Linux desktop: ${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('Windows server: %ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('Windows desktop: %APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('macOS server: /Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+  assert.ok(stdout.includes('macOS desktop: ~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
 });
 
 test('production build creates portal assets and Rust edge release artifact', async () => {
@@ -1227,6 +1411,9 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.ok(windowsService.artifacts.some((artifact) =>
     artifact.kind === 'runtime-config-template' && artifact.path === 'config/sdkwork-claw-router.toml.example'
   ));
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'install-guide' && artifact.path === 'INSTALL.md'
+  ));
   assert.equal(windowsService.security.noSecretsInPackage, true);
   assert.equal(windowsService.security.trustForwardedHeadersDefault, false);
 
@@ -1372,6 +1559,7 @@ test('install package archive builder creates manifest-backed archives without l
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'portal/dist/index.html'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === '.env.release.example'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'config/sdkwork-claw-router.toml.example'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'INSTALL.md'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'install-manifest.json'));
     assert.ok(!buildPlan.entries.some((entry) => entry.archivePath === '.env.release.local'));
     assert.deepEqual(module.validateInstallPackageBuildPlan(buildPlan), []);
@@ -1383,6 +1571,9 @@ test('install package archive builder creates manifest-backed archives without l
     assert.equal(result.manifest.databasePolicy.defaultEngine, 'postgresql');
     assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
       artifact.path === 'config/sdkwork-claw-router.toml.example'
+    ), true);
+    assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
+      artifact.path === 'INSTALL.md'
     ), true);
     assert.equal(result.manifest.security.noSecretsInPackage, true);
     assert.equal(result.manifest.artifacts.some((artifact) => artifact.path === '.env.release.local'), false);
@@ -1441,12 +1632,22 @@ test('install package builder emits service and container deployment packages fr
     const serviceTar = readTarEntries(gunzipSync(readFileSync(serviceResult.archivePath)));
     assert.ok(serviceTar.has('service/linux/sdkwork-claw-router.service'));
     assert.ok(serviceTar.has('config/sdkwork-claw-router.toml.example'));
+    assert.ok(serviceTar.has('INSTALL.md'));
     const serviceConfigTemplate = readTarEntryText(
       gunzipSync(readFileSync(serviceResult.archivePath)),
       'config/sdkwork-claw-router.toml.example',
     );
     assert.ok(serviceConfigTemplate.includes('engine = "postgresql"'));
     assert.ok(serviceConfigTemplate.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    const serviceInstallGuide = readTarEntryText(
+      gunzipSync(readFileSync(serviceResult.archivePath)),
+      'INSTALL.md',
+    );
+    assert.ok(serviceInstallGuide.includes('PostgreSQL is required for server deployments.'));
+    assert.ok(serviceInstallGuide.includes('SDKWORK_CLAW_DATABASE_URL'));
+    assert.ok(serviceInstallGuide.includes('sdkwork-claw-installer ensure'));
+    assert.ok(serviceInstallGuide.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(!serviceInstallGuide.includes('.env.release.local must be packaged'));
     assert.equal(
       serviceResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'service/linux/sdkwork-claw-router.service'
@@ -1542,6 +1743,10 @@ test('install package builder emits service and container deployment packages fr
     assert.ok(desktopConfigTemplate.includes('${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
     assert.equal(desktopMetadata.database.defaultEngine, 'sqlite');
     assert.equal(desktopMetadata.database.requiresExternalDatabase, false);
+    const desktopInstallGuide = readTarEntryText(desktopTarBytes, 'INSTALL.md');
+    assert.ok(desktopInstallGuide.includes('Desktop deployments default to SQLite.'));
+    assert.ok(desktopInstallGuide.includes('${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(desktopInstallGuide.includes('${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -3358,6 +3563,28 @@ test('release environment documentation stays aligned with the executable contra
     assert.ok(rootReadme.includes(name), `README.md must document ${name}`);
     assert.ok(exampleEnv.includes(`${name}=`), `.env.release.example must declare ${name}`);
   }
+});
+
+test('environment and deployment specs document Claw Router runtime config standards', () => {
+  const specsRoot = path.resolve(workspaceRoot, '..', '..', 'specs');
+  const environmentSpec = readFileSync(path.join(specsRoot, 'ENVIRONMENT_SPEC.md'), 'utf8');
+  const deploymentSpec = readFileSync(path.join(specsRoot, 'DEPLOYMENT_SPEC.md'), 'utf8');
+
+  for (const content of [environmentSpec, deploymentSpec]) {
+    assert.ok(content.includes('SdkWork Claw Router'));
+    assert.ok(content.includes('SDKWORK_CLAW_CONFIG_FILE'));
+    assert.ok(content.includes('SDKWORK_CLAW_DEPLOYMENT_MODE'));
+    assert.ok(content.includes('SDKWORK_CLAW_DATABASE_URL'));
+    assert.ok(content.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
+    assert.ok(content.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
+    assert.ok(content.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(content.includes('%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+    assert.ok(content.includes('~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml'));
+  }
+  assert.ok(environmentSpec.includes('Server deployments require PostgreSQL.'));
+  assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
+  assert.ok(deploymentSpec.includes('sdkwork-claw-installer ensure'));
+  assert.ok(deploymentSpec.includes('sdkwork-claw-installer refresh-catalog --force'));
 });
 
 test('release preflight parses main origin counts as local ahead then remote ahead', async () => {
@@ -5475,6 +5702,10 @@ function readTarString(buffer, offset, length) {
     .toString('utf8')
     .replace(/\0.*$/u, '')
     .trim();
+}
+
+function slashPath(value) {
+  return String(value).replaceAll('\\', '/');
 }
 
 let failed = 0;

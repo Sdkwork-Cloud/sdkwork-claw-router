@@ -162,6 +162,10 @@ function createArchiveEntriesForPackage(packageItem, stagingRoot, { requireStage
       entries.push(createGeneratedRuntimeConfigTemplateEntry());
       continue;
     }
+    if (artifact.kind === 'install-guide') {
+      entries.push(createGeneratedInstallGuideEntry());
+      continue;
+    }
     if (artifact.kind === 'service-manifest') {
       entries.push(createGeneratedServiceManifestEntry(packageItem));
       continue;
@@ -198,6 +202,17 @@ function createGeneratedRuntimeConfigTemplateEntry() {
     sourcePath: null,
     generated: true,
     generatedKind: 'runtime-config-template',
+    mode: 0o644,
+    required: true,
+  };
+}
+
+function createGeneratedInstallGuideEntry() {
+  return {
+    archivePath: 'INSTALL.md',
+    sourcePath: null,
+    generated: true,
+    generatedKind: 'install-guide',
     mode: 0o644,
     required: true,
   };
@@ -356,6 +371,13 @@ function validateInstallPackageBuildPlan(buildPlan) {
   )) {
     issues.push(`${buildPlan.package.id} must generate ${RUNTIME_CONFIG_TEMPLATE_PATH}`);
   }
+  if (!buildPlan.entries.some((entry) =>
+    entry.archivePath === 'INSTALL.md'
+    && entry.generated
+    && entry.generatedKind === 'install-guide'
+  )) {
+    issues.push(`${buildPlan.package.id} must generate INSTALL.md`);
+  }
   if (buildPlan.package.deploymentMode === 'service') {
     const expectedManifest = buildPlan.package.serviceIntegration?.manifest;
     if (!expectedManifest || !buildPlan.entries.some((entry) =>
@@ -503,6 +525,8 @@ function createGeneratedArtifactBytes(buildPlan, entry) {
   switch (entry.generatedKind) {
     case 'service-manifest':
       return Buffer.from(createServiceManifest(buildPlan.package), 'utf8');
+    case 'install-guide':
+      return Buffer.from(createInstallGuide(buildPlan.package), 'utf8');
     case 'runtime-config-template':
       return Buffer.from(createRuntimeConfigTemplate(buildPlan.package), 'utf8');
     case 'containerfile':
@@ -516,6 +540,93 @@ function createGeneratedArtifactBytes(buildPlan, entry) {
     default:
       throw new Error(`Unsupported generated install package artifact: ${entry.generatedKind}`);
   }
+}
+
+function createInstallGuide(packageItem) {
+  const policy = packageItem.databasePolicy;
+  const lines = [
+    '# SdkWork Claw Router Install Guide',
+    '',
+    `Package: ${packageItem.id}`,
+    `Deployment mode: ${packageItem.deploymentMode}`,
+    `Runtime profile: ${packageItem.runtimeProfile}`,
+    `Config file: ${policy.configFile.path}`,
+    `Data directory: ${policy.dataDirectory.path}`,
+    '',
+    '## Runtime Configuration',
+    '',
+    `The runtime TOML template is packaged at ${RUNTIME_CONFIG_TEMPLATE_PATH}.`,
+    `Set SDKWORK_CLAW_CONFIG_FILE to use a custom config file path; otherwise use ${policy.configFile.path}.`,
+    'Set SDKWORK_CLAW_DEPLOYMENT_MODE to server for archive, service, and container deployments, or desktop for desktop deployments.',
+    '',
+  ];
+
+  if (packageItem.runtimeProfile === 'desktop') {
+    lines.push(
+      'Desktop deployments default to SQLite.',
+      `Default SQLite file: ${policy.defaultSqlitePath}`,
+      'Override SDKWORK_CLAW_DATABASE_URL only for diagnostics or managed private deployments.',
+      '',
+    );
+  } else {
+    lines.push(
+      'PostgreSQL is required for server deployments.',
+      'Set SDKWORK_CLAW_DATABASE_URL to the managed PostgreSQL DSN before first start.',
+      'Example: SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router',
+      `Set SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS to ${policy.maxConnections} or another capacity-planned value.`,
+      '',
+    );
+  }
+
+  lines.push(
+    '## Fast Initialization',
+    '',
+    'Run these commands after unpacking and before enabling traffic:',
+    '',
+    '```sh',
+    ...packageItem.initCommands,
+    '```',
+    '',
+    'The installer writes missing runtime config files, validates database readiness, refreshes the SDK catalog, and then leaves startup to the package mode.',
+    '',
+    '## Security',
+    '',
+    'Do not package .env.release.local.',
+    'Generate host-local env files on the target machine and keep secret values outside browser-visible PORTAL_PUBLIC_* variables.',
+    'Keep database URLs in protected process env or protected TOML files only.',
+    '',
+  );
+
+  if (packageItem.deploymentMode === 'service' && packageItem.serviceIntegration?.manifest) {
+    lines.push(
+      '## Service Integration',
+      '',
+      `Service manifest: ${packageItem.serviceIntegration.manifest}`,
+      `Start command: ${packageItem.startCommand}`,
+      '',
+    );
+  }
+  if (packageItem.deploymentMode === 'container' && packageItem.containerIntegration) {
+    lines.push(
+      '## Container Integration',
+      '',
+      `Entrypoint: ${packageItem.containerIntegration.entrypoint}`,
+      `Working directory: ${packageItem.containerIntegration.workingDirectory}`,
+      'Mount runtime config and mutable data instead of baking secrets or database state into the image.',
+      '',
+    );
+  }
+  if (packageItem.deploymentMode === 'desktop') {
+    lines.push(
+      '## Desktop First Run',
+      '',
+      'The desktop package can initialize its config file and SQLite database automatically for the current OS user.',
+      'Use SDKWORK_CLAW_CONFIG_FILE only when an administrator needs to manage a non-default config location.',
+      '',
+    );
+  }
+
+  return `${lines.join('\n')}\n`;
 }
 
 function createRuntimeConfigTemplate(packageItem) {
@@ -1041,6 +1152,7 @@ export {
   createInstallArchiveBytes,
   createInstallPackageBuildPlan,
   createPackageManifest,
+  createRuntimeConfigTemplate,
   createTar,
   currentHostArchivePackageId,
   defaultInstallPackageOutputDir,

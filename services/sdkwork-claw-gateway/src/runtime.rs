@@ -2,8 +2,8 @@ use std::sync::Arc;
 
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderRelayConfig,
-    ProviderSecretMapConfig, StartupInstallMode,
+    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, DeploymentMode, ProviderRelayConfig,
+    ProviderSecretMapConfig, RuntimeConfigProfile, StartupInstallMode,
 };
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
@@ -495,7 +495,7 @@ pub async fn router_with_optional_database_api_key_and_provider_configs(
 }
 
 pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
-    let config = DatabaseConfig::from_env().map_err(GatewayRouterError::Config)?;
+    let config = database_config_from_env_for_startup()?;
     let api_key_config = ApiKeySecurityConfig::from_env().map_err(GatewayRouterError::Config)?;
     let provider_relay_config =
         ProviderRelayConfig::from_env().map_err(GatewayRouterError::Config)?;
@@ -518,6 +518,32 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
             .await
         }
         None => Ok(router()),
+    }
+}
+
+fn database_config_from_env_for_startup() -> Result<Option<DatabaseConfig>, GatewayRouterError> {
+    let profile = runtime_config_profile_from_deployment_mode();
+    if profile == RuntimeConfigProfile::Server {
+        return DatabaseConfig::from_env_or_initialize().map_err(GatewayRouterError::Config);
+    }
+
+    let config = DatabaseConfig::from_env().map_err(GatewayRouterError::Config)?;
+    let location = DatabaseConfig::runtime_config_location_from_env(profile);
+    if let Some(config) = &config {
+        config
+            .validate_for_runtime_profile_at(profile, &location)
+            .map_err(GatewayRouterError::Config)?;
+        return Ok(Some(config.clone()));
+    }
+    Ok(None)
+}
+
+fn runtime_config_profile_from_deployment_mode() -> RuntimeConfigProfile {
+    match DeploymentMode::from_env() {
+        DeploymentMode::Desktop => RuntimeConfigProfile::Desktop,
+        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
+            RuntimeConfigProfile::Server
+        }
     }
 }
 

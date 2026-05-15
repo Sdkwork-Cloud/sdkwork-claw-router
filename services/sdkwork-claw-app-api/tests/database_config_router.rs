@@ -443,12 +443,220 @@ async fn database_config_auth_identity_routes_register_verify_and_reset_password
 }
 
 #[tokio::test]
+async fn database_config_auth_registration_allows_email_without_verification_code_by_default() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+
+    let (register_status, register_payload, register_body_text) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/registrations")
+            .header("content-type", "application/json")
+            .header("X-Request-Id", "register-without-code-request-1")
+            .body(Body::from(
+                json!({
+                    "channel": "EMAIL",
+                    "email": "no-code-user@example.com",
+                    "username": "no-code-user",
+                    "password": "no-code-user-password",
+                    "confirmPassword": "no-code-user-password"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::OK, register_status);
+    assert_eq!("2000", register_payload["code"]);
+    assert_eq!("no-code-user", register_payload["data"]["user"]["username"]);
+    assert_eq!(
+        "no-code-user@example.com",
+        register_payload["data"]["user"]["email"]
+    );
+    assert_eq!("password", register_payload["data"]["context"]["authLevel"]);
+    assert!(!register_body_text.contains("no-code-user-password"));
+    assert!(!register_body_text.contains("pbkdf2-sha256"));
+
+    let verification_pool = create_sqlite_pool(&database_url).await;
+    let user_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '10' AND username = 'no-code-user'",
+    )
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let identity_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '10' AND provider = 'email' AND subject = 'no-code-user@example.com'",
+    )
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    verification_pool.close().await;
+
+    assert_eq!(1, user_count);
+    assert_eq!(1, identity_count);
+}
+
+#[tokio::test]
+async fn database_config_auth_registration_requires_email_code_when_policy_enables_it() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "qr-only",
+                "loginMethods": ["password", "emailCode", "phoneCode", "sessionBridge"],
+                "oauthLoginEnabled": true,
+                "oauthProviders": ["wechat", "alipay", "douyin"],
+                "oauthRegion": "mainland",
+                "qrLoginEnabled": true,
+                "recoveryMethods": ["email", "phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": true,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+
+    let (register_status, register_payload, register_body_text) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/registrations")
+            .header("content-type", "application/json")
+            .header("X-Request-Id", "register-email-code-policy-request-1")
+            .body(Body::from(
+                json!({
+                    "channel": "EMAIL",
+                    "email": "policy-user@example.com",
+                    "username": "policy-user",
+                    "password": "policy-user-password",
+                    "confirmPassword": "policy-user-password"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::BAD_REQUEST, register_status);
+    assert_eq!("4001", register_payload["code"]);
+    assert!(register_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("verificationCode must not be empty"));
+    assert!(!register_body_text.contains("policy-user-password"));
+}
+
+#[tokio::test]
+async fn database_config_auth_runtime_settings_are_public_and_match_persisted_policy() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password", "emailCode"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": ["github"],
+                "oauthRegion": "overseas",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email"],
+                "registerMethods": ["email"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": true,
+                    "emailRegistrationVerificationRequired": true,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
+
+    let (status, payload, _body_text) = request_json(
+        configured_router(&database_url).await,
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/auth/runtime_settings")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::OK, status);
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("highlights-only", payload["data"]["leftRailMode"]);
+    assert_eq!(
+        json!(["password", "emailCode"]),
+        payload["data"]["loginMethods"]
+    );
+    assert_eq!(false, payload["data"]["oauthLoginEnabled"]);
+    assert_eq!(json!(["github"]), payload["data"]["oauthProviders"]);
+    assert_eq!("overseas", payload["data"]["oauthRegion"]);
+    assert_eq!(false, payload["data"]["qrLoginEnabled"]);
+    assert_eq!(
+        true,
+        payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
+    );
+}
+
+#[tokio::test]
 async fn database_config_auth_identity_routes_support_email_and_phone_code_login() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
     create_schema(&pool).await;
     seed_catalog_with_two_user_api_keys(&pool).await;
     seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password", "emailCode", "phoneCode"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "mainland",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email", "phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": true,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneCodeLoginEnabled": true,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
     pool.close().await;
 
     let router = configured_router(&database_url).await;
@@ -551,6 +759,225 @@ async fn database_config_auth_identity_routes_support_email_and_phone_code_login
 }
 
 #[tokio::test]
+async fn database_config_auth_settings_disable_login_methods_server_side() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["emailCode"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "mainland",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email"],
+                "registerMethods": ["email"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": true,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+
+    let (password_status, password_payload, password_body_text) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/sessions")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "grantType": "password",
+                    "username": "owner",
+                    "password": "correct-password"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::BAD_REQUEST, password_status);
+    assert_eq!("4001", password_payload["code"]);
+    assert!(password_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("password login is not enabled"));
+    assert!(!password_body_text.contains("correct-password"));
+
+    let (phone_code_status, phone_code_payload, _) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/verification_codes")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "target": "+15550000030",
+                    "scene": "LOGIN",
+                    "verifyType": "PHONE"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::BAD_REQUEST, phone_code_status);
+    assert_eq!("4001", phone_code_payload["code"]);
+    assert!(phone_code_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("phone code login is not enabled"));
+}
+
+#[tokio::test]
+async fn database_config_auth_settings_disable_registration_methods_server_side() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "mainland",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email"],
+                "registerMethods": ["email"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
+
+    let (status, payload, body_text) = request_json(
+        configured_router(&database_url).await,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/registrations")
+            .header("content-type", "application/json")
+            .header("X-Request-Id", "disabled-phone-register-request-1")
+            .body(Body::from(
+                json!({
+                    "channel": "PHONE",
+                    "phone": "+15550000999",
+                    "username": "disabled-phone-user",
+                    "password": "disabled-phone-password",
+                    "confirmPassword": "disabled-phone-password"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::BAD_REQUEST, status);
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("phone registration is not enabled"));
+    assert!(!body_text.contains("disabled-phone-password"));
+}
+
+#[tokio::test]
+async fn database_config_auth_settings_disable_recovery_and_qr_server_side() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password"],
+                "oauthLoginEnabled": false,
+                "oauthProviders": [],
+                "oauthRegion": "mainland",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+    let (reset_status, reset_payload, _) = request_json(
+        router.clone(),
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/password_reset_requests")
+            .header("content-type", "application/json")
+            .body(Body::from(
+                json!({
+                    "account": "owner@example.com",
+                    "channel": "EMAIL"
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::BAD_REQUEST, reset_status);
+    assert_eq!("4001", reset_payload["code"]);
+    assert!(reset_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("email password recovery is not enabled"));
+
+    let (qr_status, qr_payload, _) = request_json(
+        router,
+        Request::builder()
+            .method("POST")
+            .uri("/app/v3/api/auth/qr_login_codes")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!(StatusCode::BAD_REQUEST, qr_status);
+    assert_eq!("4001", qr_payload["code"]);
+    assert!(qr_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("QR login is not enabled"));
+}
+
+#[tokio::test]
 async fn database_config_auth_verification_codes_fail_closed_without_debug_code_in_server_mode() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -595,6 +1022,48 @@ async fn database_config_oauth_routes_are_explicit_when_provider_is_not_configur
     seed_app_user_data(&pool).await;
     pool.close().await;
 
+    let (url_status, url_payload, _) = request_json(
+        configured_router(&database_url).await,
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/auth/oauth_authorization_urls?provider=github&redirectUri=https%3A%2F%2Fapp.example%2Fcallback&state=state-1")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::BAD_REQUEST, url_status);
+    assert_eq!("4001", url_payload["code"]);
+    assert!(url_payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("OAuth login is not enabled"));
+
+    let pool = create_sqlite_pool(&database_url).await;
+    seed_auth_settings_snapshot(
+        &pool,
+        json!({
+            "action": "update_auth_settings",
+            "settings": {
+                "leftRailMode": "highlights-only",
+                "loginMethods": ["password"],
+                "oauthLoginEnabled": true,
+                "oauthProviders": ["github"],
+                "oauthRegion": "overseas",
+                "qrLoginEnabled": false,
+                "recoveryMethods": ["email", "phone"],
+                "registerMethods": ["email", "phone"],
+                "verificationPolicy": {
+                    "emailCodeLoginEnabled": false,
+                    "emailRegistrationVerificationRequired": false,
+                    "phoneCodeLoginEnabled": false,
+                    "phoneRegistrationVerificationRequired": false
+                }
+            }
+        }),
+    )
+    .await;
+    pool.close().await;
     let router = configured_router(&database_url).await;
 
     let (url_status, url_payload, _) = request_json(
@@ -3578,6 +4047,21 @@ async fn seed_app_user_data(pool: &SqlitePool) {
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
+}
+
+async fn seed_auth_settings_snapshot(pool: &SqlitePool, payload: Value) {
+    sqlx::query(
+        r#"
+        INSERT INTO ops_config_snapshot
+            (uuid, tenant_id, organization_id, user_id, request_id, status, created_at, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+        VALUES
+            ('auth-settings-policy-snapshot', 10, 20, 30, 'auth-settings-policy-seed', 1, '2026-04-29 09:00:00', 'auth-settings-policy-seed', 30, 65, 'iam_auth_runtime_settings', '["auth-settings"]', ?, 'hash:auth-settings-policy-seed', '2026-04-29 09:00:00', 30)
+        "#,
+    )
+    .bind(payload.to_string())
+    .execute(pool)
+    .await
+    .unwrap();
 }
 
 async fn seed_dashboard_data(pool: &SqlitePool) {

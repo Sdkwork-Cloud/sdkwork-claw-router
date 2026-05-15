@@ -1,5 +1,6 @@
 use sdkwork_claw_config::{
-    DatabaseConfig, DatabaseEngine, RuntimeConfigLocation, RuntimeConfigProfile, StartupInstallMode,
+    DatabaseConfig, DatabaseEngine, RuntimeConfigInitializationAction, RuntimeConfigLocation,
+    RuntimeConfigProfile, StartupInstallMode,
 };
 use std::env;
 use std::fs;
@@ -255,6 +256,117 @@ fn runtime_config_locations_follow_platform_conventions() {
 }
 
 #[test]
+fn runtime_config_locations_expose_desktop_sqlite_database_paths() {
+    let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
+    assert_eq!(
+        PathBuf::from(
+            "${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+        ),
+        linux_desktop.sqlite_database_path()
+    );
+
+    let windows_desktop =
+        RuntimeConfigLocation::for_platform("windows", RuntimeConfigProfile::Desktop);
+    assert_eq!(
+        PathBuf::from("%LOCALAPPDATA%/SdkWork/Claw Router/sdkwork-claw-router.sqlite"),
+        windows_desktop.sqlite_database_path()
+    );
+}
+
+#[test]
+fn initializes_default_desktop_runtime_config_at_explicit_location() {
+    let root = temp_root("desktop-runtime-init");
+    let location = RuntimeConfigLocation {
+        config_file: root.join("config").join("sdkwork-claw-router.toml"),
+        data_directory: root.join("data"),
+    };
+
+    let report = DatabaseConfig::initialize_default_runtime_config_at(
+        RuntimeConfigProfile::Desktop,
+        &location,
+    )
+    .unwrap();
+
+    assert_eq!(RuntimeConfigInitializationAction::Created, report.action);
+    assert_eq!(DatabaseEngine::Sqlite, report.database.engine);
+    assert_eq!(1, report.database.max_connections);
+    assert_eq!(
+        format!("sqlite://{}", slash_path(&location.sqlite_database_path())),
+        report.database.url
+    );
+    assert!(location.config_file.exists());
+    assert!(location.data_directory.exists());
+
+    let content = fs::read_to_string(&location.config_file).unwrap();
+    assert!(content.contains("engine = \"sqlite\""));
+    assert!(content.contains("max_connections = 1"));
+    assert!(content.contains("[runtime]"));
+}
+
+#[test]
+fn from_env_or_initialize_creates_server_template_and_blocks_placeholder_postgres() {
+    let _env_lock = ENV_LOCK.lock().unwrap();
+    let root = temp_root("server-runtime-init");
+    let config_path = root.join("config").join("sdkwork-claw-router.toml");
+    let program_data = root.join("program-data");
+    let _guard = EnvGuard::set(&[
+        (
+            "SDKWORK_CLAW_CONFIG_FILE",
+            Some(config_path.to_string_lossy().to_string()),
+        ),
+        ("SDKWORK_CLAW_DATABASE_URL", None),
+        ("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS", None),
+        ("SDKWORK_CLAW_DEPLOYMENT_MODE", Some("server".to_owned())),
+        (
+            "ProgramData",
+            Some(program_data.to_string_lossy().to_string()),
+        ),
+        (
+            "PROGRAMDATA",
+            Some(program_data.to_string_lossy().to_string()),
+        ),
+    ]);
+
+    let error = DatabaseConfig::from_env_or_initialize().unwrap_err();
+
+    assert!(config_path.exists());
+    let content = fs::read_to_string(config_path).unwrap();
+    assert!(content.contains("engine = \"postgresql\""));
+    assert!(content.contains(DatabaseConfig::SERVER_DEFAULT_POSTGRES_URL));
+    assert!(error.contains("PostgreSQL"));
+    assert!(error.contains("SDKWORK_CLAW_DATABASE_URL"));
+    assert!(error.contains("runtime TOML"));
+}
+
+#[test]
+fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
+    let linux_server = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
+    let server_help = DatabaseConfig::startup_help_lines_for_location(
+        RuntimeConfigProfile::Server,
+        &linux_server,
+    )
+    .join("\n");
+    assert!(server_help.contains("/etc/sdkwork-claw-router/sdkwork-claw-router.toml"));
+    assert!(server_help.contains("SDKWORK_CLAW_DATABASE_URL"));
+    assert!(server_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
+    assert!(server_help.contains("PostgreSQL"));
+
+    let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
+    let desktop_help = DatabaseConfig::startup_help_lines_for_location(
+        RuntimeConfigProfile::Desktop,
+        &linux_desktop,
+    )
+    .join("\n");
+    assert!(desktop_help
+        .contains("${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml"));
+    assert!(desktop_help.contains(
+        "${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite"
+    ));
+    assert!(desktop_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
+    assert!(desktop_help.contains("SQLite"));
+}
+
+#[test]
 fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
     let windows_server = RuntimeConfigLocation::for_platform_resolved(
         "windows",
@@ -359,6 +471,14 @@ fn parses_startup_install_mode_from_optional_environment_part() {
 }
 
 fn write_temp_config(label: &str, content: &str) -> PathBuf {
+    let root = temp_root(label);
+    fs::create_dir_all(&root).unwrap();
+    let path = root.join("sdkwork-claw-router.toml");
+    fs::write(&path, content.trim()).unwrap();
+    path
+}
+
+fn temp_root(label: &str) -> PathBuf {
     let mut root = env::temp_dir();
     root.push("sdkwork-claw-config-tests");
     root.push(format!(
@@ -369,10 +489,7 @@ fn write_temp_config(label: &str, content: &str) -> PathBuf {
             .unwrap()
             .as_nanos()
     ));
-    fs::create_dir_all(&root).unwrap();
-    let path = root.join("sdkwork-claw-router.toml");
-    fs::write(&path, content.trim()).unwrap();
-    path
+    root
 }
 
 fn slash_path(path: &PathBuf) -> String {

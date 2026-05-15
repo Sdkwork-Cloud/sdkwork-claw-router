@@ -295,6 +295,215 @@ async fn database_config_router_rejects_missing_trusted_subject_secret_for_runti
 }
 
 #[tokio::test]
+async fn database_config_router_serves_backend_auth_settings() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let default_payload = request_json(
+        router.clone(),
+        app_session_request("GET", "/backend/v3/api/system/auth/settings", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", default_payload["code"]);
+    assert_eq!("highlights-only", default_payload["data"]["leftRailMode"]);
+    assert_eq!(json!(["password"]), default_payload["data"]["loginMethods"]);
+    assert_eq!(false, default_payload["data"]["oauthLoginEnabled"]);
+    assert_eq!(json!([]), default_payload["data"]["oauthProviders"]);
+    assert_eq!(false, default_payload["data"]["qrLoginEnabled"]);
+    assert_eq!(
+        false,
+        default_payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
+    );
+    assert_eq!(
+        false,
+        default_payload["data"]["verificationPolicy"]["phoneRegistrationVerificationRequired"]
+    );
+
+    let update_payload = request_json(
+        router.clone(),
+        app_session_request_builder("PATCH", "/backend/v3/api/system/auth/settings")
+            .header("X-Request-Id", "auth-settings-test-1")
+            .body(Body::from(
+                r#"{"leftRailMode":"auto","loginMethods":["password","emailCode"],"oauthLoginEnabled":false,"oauthProviders":["github"],"oauthRegion":"overseas","qrLoginEnabled":false,"recoveryMethods":["email"],"registerMethods":["email"],"verificationPolicy":{"emailCodeLoginEnabled":true,"emailRegistrationVerificationRequired":true,"phoneCodeLoginEnabled":false,"phoneRegistrationVerificationRequired":false}}"#,
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", update_payload["code"]);
+    assert_eq!("auto", update_payload["data"]["leftRailMode"]);
+    assert_eq!(false, update_payload["data"]["oauthLoginEnabled"]);
+    assert_eq!(false, update_payload["data"]["qrLoginEnabled"]);
+    assert_eq!("overseas", update_payload["data"]["oauthRegion"]);
+    assert_eq!(
+        true,
+        update_payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
+    );
+    assert_eq!(
+        false,
+        update_payload["data"]["verificationPolicy"]["phoneRegistrationVerificationRequired"]
+    );
+
+    let persisted_payload = request_json(
+        router,
+        app_session_request("GET", "/backend/v3/api/system/auth/settings", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", persisted_payload["code"]);
+    assert_eq!("auto", persisted_payload["data"]["leftRailMode"]);
+    assert_eq!(
+        true,
+        persisted_payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
+    );
+
+    let pool = create_sqlite_pool(&database_url).await;
+    let snapshot_payload: String = sqlx::query_scalar(
+        "SELECT config_payload FROM ops_config_snapshot WHERE request_id = 'auth-settings-test-1'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let snapshot_payload: Value = serde_json::from_str(&snapshot_payload).unwrap();
+    assert_eq!("update_auth_settings", snapshot_payload["action"]);
+    assert_eq!("github", snapshot_payload["settings"]["oauthProviders"][0]);
+    assert_eq!(
+        true,
+        snapshot_payload["settings"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
+    );
+    let audit_action: String = sqlx::query_scalar(
+        "SELECT action FROM ops_audit_log WHERE request_id = 'auth-settings-test-1'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("update_auth_settings", audit_action);
+}
+
+#[tokio::test]
+async fn database_config_router_rejects_empty_backend_auth_setting_method_lists() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let response = router
+        .oneshot(
+            app_session_request_builder("PATCH", "/backend/v3/api/system/auth/settings")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"loginMethods":[]}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload: Value = serde_json::from_slice(
+        &axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap(),
+    )
+    .unwrap();
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("loginMethods must include at least one item"));
+}
+
+#[tokio::test]
+async fn database_config_router_normalizes_backend_auth_setting_cross_field_policy() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    pool.close().await;
+
+    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let update_payload = request_json(
+        router.clone(),
+        app_session_request_builder("PATCH", "/backend/v3/api/system/auth/settings")
+            .header("X-Request-Id", "auth-settings-normalize-1")
+            .body(Body::from(
+                r#"{"leftRailMode":"qr-only","qrLoginEnabled":false,"loginMethods":["password","emailCode"],"verificationPolicy":{"emailCodeLoginEnabled":false,"phoneCodeLoginEnabled":true}}"#,
+            ))
+            .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", update_payload["code"]);
+    assert_eq!("highlights-only", update_payload["data"]["leftRailMode"]);
+    assert_eq!(
+        json!(["password", "phoneCode"]),
+        update_payload["data"]["loginMethods"]
+    );
+    assert_eq!(
+        false,
+        update_payload["data"]["verificationPolicy"]["emailCodeLoginEnabled"]
+    );
+    assert_eq!(
+        true,
+        update_payload["data"]["verificationPolicy"]["phoneCodeLoginEnabled"]
+    );
+
+    let persisted_payload = request_json(
+        router,
+        app_session_request("GET", "/backend/v3/api/system/auth/settings", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", persisted_payload["code"]);
+    assert_eq!("highlights-only", persisted_payload["data"]["leftRailMode"]);
+    assert_eq!(
+        json!(["password", "phoneCode"]),
+        persisted_payload["data"]["loginMethods"]
+    );
+
+    let pool = create_sqlite_pool(&database_url).await;
+    let snapshot_payload: String = sqlx::query_scalar(
+        "SELECT config_payload FROM ops_config_snapshot WHERE request_id = 'auth-settings-normalize-1'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let snapshot_payload: Value = serde_json::from_str(&snapshot_payload).unwrap();
+    assert_eq!("update_auth_settings", snapshot_payload["action"]);
+    assert_eq!(
+        "highlights-only",
+        snapshot_payload["settings"]["leftRailMode"]
+    );
+    assert_eq!(
+        json!(["password", "phoneCode"]),
+        snapshot_payload["settings"]["loginMethods"]
+    );
+}
+
+#[tokio::test]
 async fn database_config_router_serves_signed_subject_announcement_crud() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;

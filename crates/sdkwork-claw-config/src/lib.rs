@@ -11,7 +11,10 @@ pub mod trusted_subject;
 
 pub use api_key::ApiKeySecurityConfig;
 pub use app_session::AppSessionConfig;
-pub use database::{DatabaseConfig, DatabaseEngine, RuntimeConfigLocation, RuntimeConfigProfile};
+pub use database::{
+    DatabaseConfig, DatabaseEngine, RuntimeConfigInitializationAction,
+    RuntimeConfigInitializationReport, RuntimeConfigLocation, RuntimeConfigProfile,
+};
 pub use deployment::DeploymentMode;
 pub use payment_webhook::PaymentWebhookConfig;
 pub use provider_relay::{

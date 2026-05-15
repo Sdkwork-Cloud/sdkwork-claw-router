@@ -1,4 +1,4 @@
-use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine};
+use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine, DeploymentMode, RuntimeConfigProfile};
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, CatalogRefreshReport, DatabaseInstallError, DatabaseInstaller,
     InstallationReport, InstallationStatus,
@@ -29,7 +29,7 @@ async fn main() -> ExitCode {
 
 async fn run() -> anyhow::Result<()> {
     let command = parse_cli_command(std::env::args().skip(1))?;
-    let config = DatabaseConfig::from_env()
+    let config = DatabaseConfig::from_env_or_initialize()
         .map_err(anyhow::Error::msg)?
         .ok_or(InstallerCliError::MissingDatabaseUrl)?;
 
@@ -332,13 +332,26 @@ enum InstallerCliError {
 impl Display for InstallerCliError {
     fn fmt(&self, formatter: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::MissingDatabaseUrl => write!(formatter, "SDKWORK_CLAW_DATABASE_URL is required"),
+            Self::MissingDatabaseUrl => write!(
+                formatter,
+                "SDKWORK_CLAW_DATABASE_URL is required.\n{}",
+                DatabaseConfig::startup_help_text(runtime_config_profile_from_deployment_mode())
+            ),
             Self::InvalidArgument(message) => write!(formatter, "{message}"),
         }
     }
 }
 
 impl Error for InstallerCliError {}
+
+fn runtime_config_profile_from_deployment_mode() -> RuntimeConfigProfile {
+    match DeploymentMode::from_env() {
+        DeploymentMode::Desktop => RuntimeConfigProfile::Desktop,
+        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
+            RuntimeConfigProfile::Server
+        }
+    }
+}
 
 impl CatalogRefreshOutput {
     fn from_reports(refresh: CatalogRefreshReport, status_report: InstallationReport) -> Self {

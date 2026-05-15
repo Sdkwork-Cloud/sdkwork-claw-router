@@ -459,9 +459,12 @@ async fn installer_cli_status_remains_machine_readable_when_persisted_external_c
 #[test]
 fn installer_cli_reports_missing_database_url_as_machine_readable_error() {
     let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let config_path = unique_runtime_config_path("server-missing-db");
 
     let output = Command::new(binary)
         .arg("status")
+        .env("SDKWORK_CLAW_DEPLOYMENT_MODE", "server")
+        .env("SDKWORK_CLAW_CONFIG_FILE", &config_path)
         .env_remove("SDKWORK_CLAW_DATABASE_URL")
         .output()
         .unwrap();
@@ -478,7 +481,46 @@ fn installer_cli_reports_missing_database_url_as_machine_readable_error() {
     assert!(payload["message"]
         .as_str()
         .unwrap()
-        .contains("SDKWORK_CLAW_DATABASE_URL is required"));
+        .contains("PostgreSQL configuration is required before the server can start"));
+    assert!(payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("Runtime config file:"));
+    assert!(payload["message"]
+        .as_str()
+        .unwrap()
+        .contains("PostgreSQL is required for server deployments."));
+    assert!(
+        config_path.exists(),
+        "missing server runtime TOML must be initialized before the PostgreSQL guidance is reported"
+    );
+    let generated_config = fs::read_to_string(config_path).unwrap();
+    assert!(generated_config.contains("engine = \"postgresql\""));
+    assert!(generated_config.contains("change-me@localhost"));
+}
+
+#[test]
+fn installer_cli_auto_initializes_desktop_sqlite_runtime_config() {
+    let binary = env!("CARGO_BIN_EXE_sdkwork-claw-installer");
+    let config_path = unique_runtime_config_path("desktop-sqlite");
+    let output = Command::new(binary)
+        .arg("status")
+        .env("SDKWORK_CLAW_DEPLOYMENT_MODE", "desktop")
+        .env("SDKWORK_CLAW_CONFIG_FILE", &config_path)
+        .env_remove("SDKWORK_CLAW_DATABASE_URL")
+        .output()
+        .unwrap();
+
+    assert!(
+        output.status.success(),
+        "desktop installer startup should initialize SQLite config and continue: {}",
+        stderr_trim(&output)
+    );
+    assert_eq!("not_installed", stdout_json(&output)["status"]);
+    assert!(config_path.exists());
+    let generated_config = fs::read_to_string(config_path).unwrap();
+    assert!(generated_config.contains("engine = \"sqlite\""));
+    assert!(generated_config.contains("max_connections = 1"));
 }
 
 #[test]
@@ -687,6 +729,18 @@ fn unique_sqlite_url() -> String {
     let mut path = std::env::temp_dir();
     path.push(format!("sdkwork-claw-installer-{millis}-{counter}.sqlite"));
     format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn unique_runtime_config_path(label: &str) -> PathBuf {
+    let millis = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_millis();
+    let counter = DB_COUNTER.fetch_add(1, Ordering::Relaxed);
+    let mut path = std::env::temp_dir();
+    path.push(format!("sdkwork-claw-installer-{label}-{millis}-{counter}"));
+    path.push("sdkwork-claw-router.toml");
+    path
 }
 
 fn single_vendor_catalog_root(vendor_code: &str) -> PathBuf {

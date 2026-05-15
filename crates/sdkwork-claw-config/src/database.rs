@@ -27,6 +27,20 @@ pub struct RuntimeConfigLocation {
     pub data_directory: PathBuf,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum RuntimeConfigInitializationAction {
+    Existing,
+    Created,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct RuntimeConfigInitializationReport {
+    pub profile: RuntimeConfigProfile,
+    pub location: RuntimeConfigLocation,
+    pub action: RuntimeConfigInitializationAction,
+    pub database: DatabaseConfig,
+}
+
 #[derive(Debug, Deserialize)]
 struct RuntimeConfigFile {
     database: RuntimeDatabaseConfig,
@@ -42,6 +56,8 @@ struct RuntimeDatabaseConfig {
 impl DatabaseConfig {
     pub const DEFAULT_MAX_CONNECTIONS: u32 = 16;
     pub const ENV_CONFIG_FILE: &'static str = "SDKWORK_CLAW_CONFIG_FILE";
+    pub const SERVER_DEFAULT_POSTGRES_URL: &'static str =
+        "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router";
 
     pub fn from_url(url: impl Into<String>) -> Result<Self, String> {
         Self::from_url_with_max_connections(url, Self::DEFAULT_MAX_CONNECTIONS)
@@ -104,6 +120,200 @@ impl DatabaseConfig {
         Ok(None)
     }
 
+    pub fn from_env_or_initialize() -> Result<Option<Self>, String> {
+        let profile = runtime_config_profile_from_env();
+        let location = Self::runtime_config_location_from_env(profile);
+        let env_config = Self::from_optional_parts(
+            std::env::var("SDKWORK_CLAW_DATABASE_URL").ok(),
+            std::env::var("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS").ok(),
+        )?;
+        if let Some(config) = env_config {
+            config.validate_for_runtime_profile_at(profile, &location)?;
+            return Ok(Some(config));
+        }
+
+        let report = Self::initialize_default_runtime_config_at(profile, &location)?;
+        report
+            .database
+            .validate_for_runtime_profile_at(profile, &report.location)?;
+        Ok(Some(report.database))
+    }
+
+    pub fn runtime_config_location_from_env(
+        profile: RuntimeConfigProfile,
+    ) -> RuntimeConfigLocation {
+        let default_location = RuntimeConfigLocation::for_current_platform(profile);
+        if let Some(config_file) = explicit_runtime_config_file() {
+            RuntimeConfigLocation {
+                config_file,
+                data_directory: default_location.data_directory,
+            }
+        } else {
+            default_location
+        }
+    }
+
+    pub fn initialize_default_runtime_config(
+        profile: RuntimeConfigProfile,
+    ) -> Result<RuntimeConfigInitializationReport, String> {
+        let location = Self::runtime_config_location_from_env(profile);
+        Self::initialize_default_runtime_config_at(profile, &location)
+    }
+
+    pub fn initialize_default_runtime_config_at(
+        profile: RuntimeConfigProfile,
+        location: &RuntimeConfigLocation,
+    ) -> Result<RuntimeConfigInitializationReport, String> {
+        if location.config_file.exists() {
+            let database = Self::from_config_file(&location.config_file)?.ok_or_else(|| {
+                format!(
+                    "runtime TOML {} did not contain a database configuration",
+                    location.config_file.display()
+                )
+            })?;
+            return Ok(RuntimeConfigInitializationReport {
+                profile,
+                location: location.clone(),
+                action: RuntimeConfigInitializationAction::Existing,
+                database,
+            });
+        }
+
+        if let Some(parent) = location
+            .config_file
+            .parent()
+            .filter(|path| !path.as_os_str().is_empty())
+        {
+            std::fs::create_dir_all(parent).map_err(|error| {
+                format!(
+                    "failed to create runtime config directory {}: {error}\n{}",
+                    parent.display(),
+                    Self::startup_help_text(profile)
+                )
+            })?;
+        }
+        std::fs::create_dir_all(&location.data_directory).map_err(|error| {
+            format!(
+                "failed to create runtime data directory {}: {error}\n{}",
+                location.data_directory.display(),
+                Self::startup_help_text(profile)
+            )
+        })?;
+
+        let database = Self::default_runtime_database_config(profile, location)?;
+        let content = Self::default_runtime_config_toml(profile, location)?;
+        std::fs::write(&location.config_file, content).map_err(|error| {
+            format!(
+                "failed to write runtime TOML {}: {error}\n{}",
+                location.config_file.display(),
+                Self::startup_help_text(profile)
+            )
+        })?;
+
+        Ok(RuntimeConfigInitializationReport {
+            profile,
+            location: location.clone(),
+            action: RuntimeConfigInitializationAction::Created,
+            database,
+        })
+    }
+
+    pub fn default_runtime_config_toml(
+        profile: RuntimeConfigProfile,
+        location: &RuntimeConfigLocation,
+    ) -> Result<String, String> {
+        let database = Self::default_runtime_database_config(profile, location)?;
+        let engine = match database.engine {
+            DatabaseEngine::Sqlite => "sqlite",
+            DatabaseEngine::Postgres => "postgresql",
+        };
+        let deployment_mode = match profile {
+            RuntimeConfigProfile::Server => "server",
+            RuntimeConfigProfile::Desktop => "desktop",
+        };
+        let mut lines = vec![
+            "# SdkWork Claw Router runtime configuration.".to_owned(),
+            "# This file was initialized automatically; edit [database].url for the target environment.".to_owned(),
+            format!(
+                "# Runtime config file: {}",
+                location.config_file.display()
+            ),
+            String::new(),
+        ];
+        if profile == RuntimeConfigProfile::Server {
+            lines.push("# Server deployments require PostgreSQL.".to_owned());
+            lines.push(
+                "# Replace the placeholder password/host before starting the server.".to_owned(),
+            );
+            lines.push(String::new());
+        } else {
+            lines.push("# Desktop deployments default to a local SQLite database.".to_owned());
+            lines.push(format!(
+                "# Default SQLite file: {}",
+                location.sqlite_database_path().display()
+            ));
+            lines.push(String::new());
+        }
+        lines.extend([
+            "[database]".to_owned(),
+            format!("engine = \"{engine}\""),
+            format!("url = \"{}\"", toml_string(&database.url)),
+            format!("max_connections = {}", database.max_connections),
+            String::new(),
+            "[paths]".to_owned(),
+            format!(
+                "data_directory = \"{}\"",
+                toml_string(&portable_path(&location.data_directory))
+            ),
+            String::new(),
+            "[runtime]".to_owned(),
+            format!("deployment_mode = \"{deployment_mode}\""),
+            String::new(),
+        ]);
+        Ok(lines.join("\n"))
+    }
+
+    pub fn default_runtime_database_config(
+        profile: RuntimeConfigProfile,
+        location: &RuntimeConfigLocation,
+    ) -> Result<Self, String> {
+        match profile {
+            RuntimeConfigProfile::Server => Self::from_url(Self::SERVER_DEFAULT_POSTGRES_URL),
+            RuntimeConfigProfile::Desktop => Self::from_url_with_max_connections(
+                format!(
+                    "sqlite://{}",
+                    portable_path(&location.sqlite_database_path())
+                ),
+                1,
+            ),
+        }
+    }
+
+    pub fn validate_for_runtime_profile_at(
+        &self,
+        profile: RuntimeConfigProfile,
+        location: &RuntimeConfigLocation,
+    ) -> Result<(), String> {
+        if profile != RuntimeConfigProfile::Server {
+            return Ok(());
+        }
+        if self.engine != DatabaseEngine::Postgres {
+            return Err(runtime_profile_error(
+                "PostgreSQL is required for server deployments, but the configured database URL is not PostgreSQL.",
+                profile,
+                location,
+            ));
+        }
+        if self.url.trim() == Self::SERVER_DEFAULT_POSTGRES_URL {
+            return Err(runtime_profile_error(
+                "PostgreSQL configuration is required before the server can start; the runtime TOML still contains the default placeholder URL.",
+                profile,
+                location,
+            ));
+        }
+        Ok(())
+    }
+
     pub fn from_config_file(path: impl AsRef<Path>) -> Result<Option<Self>, String> {
         let path = path.as_ref();
         let content = std::fs::read_to_string(path)
@@ -133,6 +343,47 @@ impl DatabaseConfig {
             }
         }
         Ok(config)
+    }
+
+    pub fn startup_help_lines(profile: RuntimeConfigProfile) -> Vec<String> {
+        let location = RuntimeConfigLocation::for_current_platform(profile);
+        Self::startup_help_lines_for_location(profile, &location)
+    }
+
+    pub fn startup_help_lines_for_location(
+        profile: RuntimeConfigProfile,
+        location: &RuntimeConfigLocation,
+    ) -> Vec<String> {
+        match profile {
+            RuntimeConfigProfile::Server => vec![
+                format!("Runtime config file: {}", location.config_file.display()),
+                format!("Data directory: {}", location.data_directory.display()),
+                "Set SDKWORK_CLAW_CONFIG_FILE to override the runtime TOML location.".to_owned(),
+                "PostgreSQL is required for server deployments.".to_owned(),
+                format!(
+                    "Set SDKWORK_CLAW_DATABASE_URL or edit [database].url in {}",
+                    location.config_file.display()
+                ),
+                format!(
+                    "Default PostgreSQL URL placeholder: {}",
+                    Self::SERVER_DEFAULT_POSTGRES_URL
+                ),
+            ],
+            RuntimeConfigProfile::Desktop => vec![
+                format!("Runtime config file: {}", location.config_file.display()),
+                format!("Data directory: {}", location.data_directory.display()),
+                "Set SDKWORK_CLAW_CONFIG_FILE to override the runtime TOML location.".to_owned(),
+                "Desktop deployments default to SQLite.".to_owned(),
+                format!(
+                    "Default SQLite file: {}",
+                    location.sqlite_database_path().display()
+                ),
+            ],
+        }
+    }
+
+    pub fn startup_help_text(profile: RuntimeConfigProfile) -> String {
+        Self::startup_help_lines(profile).join("\n")
     }
 }
 
@@ -271,6 +522,13 @@ impl RuntimeConfigLocation {
             }
         }
     }
+
+    pub fn sqlite_database_path(&self) -> PathBuf {
+        PathBuf::from(join_runtime_path(
+            self.data_directory.to_string_lossy().as_ref(),
+            "sdkwork-claw-router.sqlite",
+        ))
+    }
 }
 
 fn explicit_runtime_config_file() -> Option<PathBuf> {
@@ -311,4 +569,28 @@ fn join_runtime_path(base: &str, child: &str) -> String {
         return base.to_owned();
     }
     format!("{base}/{child}")
+}
+
+fn portable_path(path: &Path) -> String {
+    path.to_string_lossy().replace('\\', "/")
+}
+
+fn toml_string(value: &str) -> String {
+    value
+        .replace('\\', "\\\\")
+        .replace('"', "\\\"")
+        .replace('\n', "\\n")
+        .replace('\r', "\\r")
+}
+
+fn runtime_profile_error(
+    message: &str,
+    profile: RuntimeConfigProfile,
+    location: &RuntimeConfigLocation,
+) -> String {
+    format!(
+        "{message}\nRuntime TOML: {}\n{}",
+        location.config_file.display(),
+        DatabaseConfig::startup_help_lines_for_location(profile, location).join("\n")
+    )
 }

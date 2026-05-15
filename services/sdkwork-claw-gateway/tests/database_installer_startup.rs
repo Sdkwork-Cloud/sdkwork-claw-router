@@ -146,6 +146,41 @@ async fn gateway_env_startup_can_skip_installer_when_workspace_already_ensured_d
     assert_eq!("2000-01-01 00:00:00", upgraded_at);
 }
 
+#[tokio::test]
+async fn gateway_env_startup_requires_database_url_in_server_mode() {
+    let _guard = env_guard().lock().unwrap();
+    let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
+    let saved_deployment_mode = std::env::var("SDKWORK_CLAW_DEPLOYMENT_MODE").ok();
+    let saved_config_file = std::env::var("SDKWORK_CLAW_CONFIG_FILE").ok();
+    let config_path = unique_runtime_config_path();
+    std::env::remove_var("SDKWORK_CLAW_DATABASE_URL");
+    std::env::set_var("SDKWORK_CLAW_DEPLOYMENT_MODE", "server");
+    std::env::set_var("SDKWORK_CLAW_CONFIG_FILE", &config_path);
+
+    let error = sdkwork_claw_gateway::runtime::router_from_env()
+        .await
+        .expect_err("gateway startup must not silently skip a missing server database");
+
+    restore_env_var("SDKWORK_CLAW_DATABASE_URL", saved_database_url);
+    restore_env_var("SDKWORK_CLAW_DEPLOYMENT_MODE", saved_deployment_mode);
+    restore_env_var("SDKWORK_CLAW_CONFIG_FILE", saved_config_file);
+
+    assert!(
+        error
+            .to_string()
+            .contains("PostgreSQL configuration is required"),
+        "unexpected startup error: {error}"
+    );
+    assert!(error.to_string().contains("Runtime config file:"));
+    assert!(error
+        .to_string()
+        .contains("PostgreSQL is required for server deployments."));
+    assert!(config_path.exists());
+    let generated_config = std::fs::read_to_string(config_path).unwrap();
+    assert!(generated_config.contains("engine = \"postgresql\""));
+    assert!(generated_config.contains("change-me@localhost"));
+}
+
 fn unique_sqlite_url() -> String {
     let millis = SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -157,6 +192,18 @@ fn unique_sqlite_url() -> String {
         "sdkwork-claw-gateway-startup-{millis}-{counter}.sqlite"
     ));
     format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn unique_runtime_config_path() -> std::path::PathBuf {
+    let millis = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_millis();
+    let counter = DB_COUNTER.fetch_add(1, Ordering::Relaxed);
+    let mut path = std::env::temp_dir();
+    path.push(format!("sdkwork-claw-gateway-runtime-{millis}-{counter}"));
+    path.push("sdkwork-claw-router.toml");
+    path
 }
 
 fn env_guard() -> &'static std::sync::Mutex<()> {
