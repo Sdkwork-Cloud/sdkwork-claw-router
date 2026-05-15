@@ -3125,6 +3125,7 @@ pnpm.cmd test:postgres:docker
 The full gate includes these commercial contract checks:
 
 ```powershell
+python -B -m tools.repository_delivery_guardian
 python -B -m tools.clawrouter_sdk_guardian
 python -B -m tools.clawrouter_skill_guardian
 python -B -m tools.architecture_standard_guardian

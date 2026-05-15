@@ -313,6 +313,7 @@ without starting the live `pnpm dev` workspace by default:
 - `cargo fmt --check`
 - `cargo check --all-targets` with `RUSTFLAGS=-D warnings`
 - `node scripts/run-claw-router-product.test.mjs`
+- `python -B -m tools.repository_delivery_guardian`
 - `python -B -m tools.clawrouter_sdk_guardian`
 - `python -B -m tools.clawrouter_skill_guardian`
 - `python -B -m tools.architecture_standard_guardian`
@@ -382,6 +383,7 @@ pnpm.cmd verify:fast
 `pnpm.cmd verify:fast` runs only the low-cost checks that catch common tooling
 and source-standard regressions:
 
+- `python -B -m tools.repository_delivery_guardian`
 - `node scripts/run-claw-router-product.test.mjs`
 - `pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`

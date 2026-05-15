@@ -1967,6 +1967,7 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
     'sdkwork-models catalog check',
     'app store seed check',
     'skills seed check',
+    'repository delivery guard',
     'tooling contract tests',
     'portal auth runtime tests',
     'frontend source hygiene tests',
@@ -1975,6 +1976,7 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
     'pnpm.cmd models:check',
     'pnpm.cmd app-store:seed:check',
     'pnpm.cmd skills:seed:check',
+    'python -B -m tools.repository_delivery_guardian',
     'node scripts/run-claw-router-product.test.mjs',
     'pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts',
     'python -B -m unittest tests.test_frontend_source_hygiene_standard',
@@ -2685,6 +2687,7 @@ test('verification plan includes all commercial contract guardians before tests'
 
   assert.deepEqual(commandLines.slice(3, 18), [
     'node scripts/run-claw-router-product.test.mjs',
+    'python -B -m tools.repository_delivery_guardian',
     'python -B -m tools.clawrouter_sdk_guardian',
     'python -B -m tools.clawrouter_skill_guardian',
     'python -B -m tools.architecture_standard_guardian',
@@ -2698,8 +2701,8 @@ test('verification plan includes all commercial contract guardians before tests'
     'python -B -m tools.flyway_schema_contract_audit',
     'python -B -m tools.frontend_operation_audit',
     'python -B -m tools.frontend_field_audit',
-    'python -B -m tools.java_legacy_contract_audit',
   ]);
+  assert.equal(commandLines[18], 'python -B -m tools.java_legacy_contract_audit');
 });
 
 test('verification plan verifies production portal through Rust edge server without Node server tests', async () => {

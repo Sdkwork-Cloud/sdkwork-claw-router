@@ -186,6 +186,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL",
             "Docker Desktop",
             "--skip-contract-guardians",
+            "tools.repository_delivery_guardian",
             "tools.clawrouter_sdk_guardian",
             "tools.clawrouter_gateway_openapi_generator",
             "tools.frontend_contract_guardian",

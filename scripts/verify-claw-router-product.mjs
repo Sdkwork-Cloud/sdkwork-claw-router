@@ -117,6 +117,7 @@ function cargoVerifyEnv(env = process.env) {
 }
 
 const COMMERCIAL_CONTRACT_GUARDIANS = [
+  ['repository delivery guard', 'tools.repository_delivery_guardian'],
   ['clawrouter generated SDK guard', 'tools.clawrouter_sdk_guardian'],
   ['clawrouter project skill guard', 'tools.clawrouter_skill_guardian'],
   ['architecture standard guard', 'tools.architecture_standard_guardian'],
@@ -160,6 +161,12 @@ function buildFastVerificationPlan(env = process.env) {
       label: 'skills seed check',
       command: pnpmCommand(),
       args: ['skills:seed:check'],
+      env,
+    },
+    {
+      label: 'repository delivery guard',
+      command: 'python',
+      args: ['-B', '-m', 'tools.repository_delivery_guardian'],
       env,
     },
     {
