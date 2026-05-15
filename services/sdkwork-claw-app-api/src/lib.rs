@@ -204,6 +204,34 @@ pub fn router_with_app_session_event_store_and_config(
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
 ) -> Router {
+    router_with_app_session_event_store_auth_settings_store_and_config_inner(
+        app_session_event_store,
+        None,
+        trusted_subject_config,
+        app_session_config,
+    )
+}
+
+pub fn router_with_app_session_event_store_auth_settings_store_and_config(
+    app_session_event_store: AppSessionAuditStore,
+    app_auth_settings_store: Arc<dyn AdminAuthSettingsStore + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+) -> Router {
+    router_with_app_session_event_store_auth_settings_store_and_config_inner(
+        app_session_event_store,
+        Some(app_auth_settings_store),
+        trusted_subject_config,
+        app_session_config,
+    )
+}
+
+fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
+    app_session_event_store: AppSessionAuditStore,
+    app_auth_settings_store: Option<AppAuthSettingsRuntimeStore>,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+) -> Router {
     merge_commerce_foundation_router(router_with_database_status(None))
         .merge(sdkwork_claw_product::api::app_account_summary_router())
         .merge(sdkwork_claw_product::api::app_user_profile_router())
@@ -229,7 +257,7 @@ pub fn router_with_app_session_event_store_and_config(
         .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
         .merge(app_sessions_router(
             None,
-            None,
+            app_auth_settings_store,
             app_session_event_store,
             Arc::new(OsApiKeySecretGenerator),
             trusted_subject_config,

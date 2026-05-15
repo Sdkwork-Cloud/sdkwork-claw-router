@@ -48,6 +48,8 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   const controllerSource = readPortalFile("./src/auth/clawRouterAuthController.ts");
   const coreCompatSource = readPortalFile("./src/auth/corePcReactCompat.ts");
   const routeSource = readPortalFile("./src/auth/ClawRouterAuthRoutes.tsx");
+  const configSource = readPortalFile("./src/auth/clawRouterAuthConfig.ts");
+  const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
 
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
@@ -94,22 +96,41 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(routeSource, /SdkworkIamAuthRoutes/);
   assert.match(routeSource, /getClawRouterIamRuntime/);
   assert.doesNotMatch(routeSource, /clawRouterAuthController/);
-  assert.match(routeSource, /leftRailMode:\s*'qr-only'/);
-  assert.match(routeSource, /loginMethods:\s*\['password', 'emailCode', 'phoneCode', 'sessionBridge'\]/);
-  assert.match(routeSource, /oauthLoginEnabled:\s*true/);
-  assert.match(routeSource, /oauthProviders:\s*\['wechat', 'alipay', 'douyin'\]/);
-  assert.doesNotMatch(routeSource, /oauthProviders:\s*\[[^\]]*'tiktok'/);
-  assert.doesNotMatch(routeSource, /oauthProviders:\s*\[[^\]]*'google'/);
-  assert.doesNotMatch(routeSource, /oauthProviders:\s*\[[^\]]*'github'/);
-  assert.match(routeSource, /qrLoginEnabled:\s*true/);
-  assert.match(routeSource, /registerMethods:\s*\['email', 'phone'\]/);
-  assert.match(routeSource, /recoveryMethods:\s*\['email', 'phone'\]/);
+  assert.match(routeSource, /useClawRouterAuthRuntimeConfig/);
+  assert.match(routeSource, /runtimeConfig=\{runtimeConfig\}/);
+  assert.doesNotMatch(routeSource, /const clawRouterAuthRuntimeConfig/);
+  assert.match(configSource, /DEFAULT_CLAW_ROUTER_AUTH_RUNTIME_CONFIG/);
+  assert.match(configSource, /leftRailMode:\s*'highlights-only'/);
+  assert.match(configSource, /loginMethods:\s*\['password'\]/);
+  assert.match(configSource, /oauthLoginEnabled:\s*false/);
+  assert.match(configSource, /oauthProviders:\s*\[\]/);
+  assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'tiktok'/);
+  assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'google'/);
+  assert.doesNotMatch(configSource, /oauthProviders:\s*\[[^\]]*'github'/);
+  assert.match(configSource, /qrLoginEnabled:\s*false/);
+  assert.match(configSource, /registerMethods:\s*\['email', 'phone'\]/);
+  assert.match(configSource, /recoveryMethods:\s*\['email', 'phone'\]/);
+  assert.match(configSource, /fetchClawRouterAuthRuntimeSettings/);
+  assert.doesNotMatch(configSource, /fetchClawRouterAuthSettings/);
+  assert.match(settingsServiceSource, /getClawRouterAppSdkClient/);
+  assert.match(settingsServiceSource, /\.auth\.runtimeSettings\.retrieve\(\)/);
+  assert.match(settingsServiceSource, /getClawRouterBackendSdkClient/);
+  assert.match(settingsServiceSource, /\.system\.auth\.settings\.retrieve\(\)/);
+  assert.match(settingsServiceSource, /\.system\.auth\.settings\.update\(input/);
+  assert.match(configSource, /emailRegistrationVerificationRequired:\s*false/);
+  assert.match(configSource, /phoneRegistrationVerificationRequired:\s*false/);
+  assert.doesNotMatch(configSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(configSource, /\baxios\b/);
+  assert.doesNotMatch(configSource, /\/backend\/v3\/api\/system\/auth\/settings/);
+  assert.doesNotMatch(settingsServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(settingsServiceSource, /\baxios\b/);
+  assert.doesNotMatch(settingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
   assert.match(routeSource, /AUTH_METHOD_UNAVAILABLE_MESSAGE/);
   assert.match(routeSource, /methodUnavailableMessage=\{AUTH_METHOD_UNAVAILABLE_MESSAGE\}/);
   assert.doesNotMatch(routeSource, /appearance=/);
   assert.doesNotMatch(routeSource, /surfaceAppearance/);
-  assert.doesNotMatch(routeSource, /leftRailMode:\s*'highlights-only'/);
-  assert.doesNotMatch(routeSource, /qrLoginEnabled:\s*false/);
+  assert.doesNotMatch(configSource, /leftRailMode:\s*'qr-only'/);
+  assert.doesNotMatch(configSource, /qrLoginEnabled:\s*true/);
 });
 
 test("claw router app auth is declared through appbase IAM standard contract and generated SDK", () => {
@@ -118,9 +139,13 @@ test("claw router app auth is declared through appbase IAM standard contract and
   const backendOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
   const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
   const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
+  const appSdkSessionRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-session-create-request.ts");
   const appSdkRegistrationRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-registration-create-request.ts");
+  const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/system.ts");
   const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/sdk.ts");
+  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/runtime-settings-retrieve-result.ts");
   const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/index.ts");
+  const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/index.ts");
 
   for (const operationId of [
     "loginQrCodes.create",
@@ -137,6 +162,7 @@ test("claw router app auth is declared through appbase IAM standard contract and
     "oauthAuthorizationUrls.retrieve",
     "oauthSessions.create",
     "registrations.create",
+    "runtimeSettings.retrieve",
     "users.current.retrieve",
   ]) {
     assert.match(contractSource, new RegExp(`operation_id:\\s*${operationId.replaceAll(".", "\\.")}`));
@@ -144,6 +170,13 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/qr_login_codes/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/sessions/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/registrations/);
+  assert.match(contractSource, /operation_id:\s*auth\.settings\.retrieve/);
+  assert.match(contractSource, /operation_id:\s*auth\.settings\.update/);
+  assert.match(contractSource, /api_path:\s*\/backend\/v3\/api\/system\/auth\/settings/);
+  assert.match(contractSource, /operation_id:\s*runtimeSettings\.retrieve/);
+  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/runtime_settings/);
+  assert.match(contractSource, /emailRegistrationVerificationRequired:\s*\{ type: boolean \}/);
+  assert.match(contractSource, /phoneRegistrationVerificationRequired:\s*\{ type: boolean \}/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/password_reset_requests/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/verification_codes\/verify/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/iam\/users\/current/);
@@ -152,10 +185,11 @@ test("claw router app auth is declared through appbase IAM standard contract and
 
   const appOpenApi = JSON.parse(appOpenApiSource) as {
     paths?: Record<string, Record<string, { operationId?: string }>>;
-    components?: { securitySchemes?: Record<string, unknown> };
+    components?: { schemas?: Record<string, { properties?: Record<string, { minItems?: number }>; required?: string[] }>; securitySchemes?: Record<string, unknown> };
   };
   const backendOpenApi = JSON.parse(backendOpenApiSource) as {
     paths?: Record<string, Record<string, { operationId?: string }>>;
+    components?: { schemas?: Record<string, { properties?: Record<string, unknown> }> };
   };
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions"]?.post?.operationId, "sessions.create");
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes"]?.post?.operationId, "loginQrCodes.create");
@@ -171,13 +205,37 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_authorization_urls"]?.get?.operationId, "oauthAuthorizationUrls.retrieve");
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_sessions"]?.post?.operationId, "oauthSessions.create");
   assert.equal(appOpenApi.paths?.["/app/v3/api/auth/registrations"]?.post?.operationId, "registrations.create");
+  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/runtime_settings"]?.get?.operationId, "runtimeSettings.retrieve");
   assert.equal(appOpenApi.paths?.["/app/v3/api/iam/users/current"]?.get?.operationId, "users.current.retrieve");
+  assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse, "app runtime settings must use public auth schema");
+  assert.ok(appOpenApi.components?.schemas?.AuthVerificationPolicy, "app runtime settings must use public verification policy schema");
+  assert.ok(!appOpenApi.components?.schemas?.AdminAuthSettingsResponse, "app SDK must not expose admin settings schema");
+  assert.ok(!appOpenApi.components?.schemas?.AdminAuthVerificationPolicy, "app SDK must not expose admin verification policy schema");
+  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.loginMethods?.minItems, 1);
+  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.registerMethods?.minItems, 1);
+  assert.equal(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse?.properties?.recoveryMethods?.minItems, 1);
+  assert.deepEqual(
+    [...appOpenApi.components?.schemas?.IamRegistrationCreateRequest?.required ?? []].sort(),
+    ["password", "username"],
+  );
+  const sessionCreateRequired = new Set(appOpenApi.components?.schemas?.IamSessionCreateRequest?.required ?? []);
+  assert.equal(sessionCreateRequired.has("tenantCode"), false);
+  assert.equal(sessionCreateRequired.has("organizationCode"), false);
+  const registrationCreateRequired = new Set(appOpenApi.components?.schemas?.IamRegistrationCreateRequest?.required ?? []);
+  assert.equal(registrationCreateRequired.has("tenantCode"), false);
+  assert.equal(registrationCreateRequired.has("organizationCode"), false);
   assert.ok(appOpenApi.components?.securitySchemes?.AuthToken, "app OpenAPI must declare AuthToken bearer security");
   assert.ok(appOpenApi.components?.securitySchemes?.SdkworkAccessToken, "app OpenAPI must declare Access-Token security");
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/login/);
   assert.doesNotMatch(appOpenApiSource, /\/app\/v3\/api\/auth\/session"/);
   assert.doesNotMatch(backendOpenApiSource, /\/backend\/v3\/api\/auth\//);
   assert.ok(!Object.keys(backendOpenApi.paths ?? {}).some((path) => path.startsWith("/backend/v3/api/auth/")));
+  assert.equal(backendOpenApi.paths?.["/backend/v3/api/system/auth/settings"]?.get?.operationId, "auth.settings.retrieve");
+  assert.equal(backendOpenApi.paths?.["/backend/v3/api/system/auth/settings"]?.patch?.operationId, "auth.settings.update");
+  assert.ok(backendOpenApi.components?.schemas?.AdminAuthSettingsResponse?.properties?.verificationPolicy);
+  assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.loginMethods?.minItems, 1);
+  assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.registerMethods?.minItems, 1);
+  assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.recoveryMethods?.minItems, 1);
 
   assert.match(appSdkAuthSource, /public readonly loginQrCodes: AuthLoginQrCodesApi/);
   assert.match(appSdkAuthSource, /public readonly sessions: AuthSessionsApi/);
@@ -187,14 +245,22 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(appSdkAuthSource, /public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi/);
   assert.match(appSdkAuthSource, /public readonly oauthSessions: AuthOauthSessionsApi/);
   assert.match(appSdkAuthSource, /public readonly registrations: AuthRegistrationsApi/);
+  assert.match(appSdkAuthSource, /public readonly runtimeSettings: AuthRuntimeSettingsApi/);
   assert.match(appSdkAuthSource, /async create\(\): Promise<LoginQrCodesCreateResult>/);
   assert.match(appSdkAuthSource, /async retrieve\(qrKey: string\): Promise<LoginQrCodesRetrieveResult>/);
   assert.match(appSdkAuthSource, /async create\(body: IamSessionCreateRequest/);
-  assert.match(appSdkRegistrationRequestSource, /verificationCode: string/);
+  assert.match(appSdkSessionRequestSource, /tenantCode\?: string/);
+  assert.match(appSdkSessionRequestSource, /organizationCode\?: string/);
+  assert.match(appSdkRegistrationRequestSource, /verificationCode\?: string/);
+  assert.match(appSdkRegistrationRequestSource, /tenantCode\?: string/);
+  assert.match(appSdkRegistrationRequestSource, /organizationCode\?: string/);
   assert.match(appSdkAuthSource, /async retrieve\(\): Promise<SessionsCurrentRetrieveResult>/);
   assert.match(appSdkAuthSource, /async delete\(\): Promise<SessionsCurrentDeleteResult>/);
   assert.match(appSdkAuthSource, /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/);
   assert.match(appSdkAuthSource, /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/);
+  assert.match(appSdkAuthSource, /async retrieve\(params\?: AuthRuntimeSettingsRetrieveParams\): Promise<RuntimeSettingsRetrieveResult>/);
+  assert.match(appSdkRuntimeSettingsResultSource, /AuthRuntimeSettingsResponse/);
+  assert.doesNotMatch(appSdkRuntimeSettingsResultSource, /AdminAuthSettingsResponse/);
   assert.doesNotMatch(appSdkAuthSource, /AuthSessionsRefreshApi/);
   assert.doesNotMatch(appSdkAuthSource, /AuthVerificationCodesVerifyApi/);
   assert.doesNotMatch(appSdkAuthSource, /async login\(/);
@@ -203,70 +269,108 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(appSdkIamSource, /public readonly current: IamUsersCurrentApi/);
   assert.match(appSdkIamSource, /async retrieve\(\): Promise<UsersCurrentRetrieveResult>/);
   assert.doesNotMatch(backendSdkIndexSource, /public readonly auth:/);
+  assert.match(backendSdkSystemSource, /public readonly auth: SystemAuthApi/);
+  assert.match(backendSdkSystemSource, /public readonly settings: SystemAuthSettingsApi/);
+  assert.match(backendSdkSystemSource, /async retrieve\(\): Promise<AuthSettingsRetrieveResult>/);
+  assert.match(backendSdkSystemSource, /async update\(body: AdminAuthSettingsUpdateRequest/);
   assert.match(appSdkTypesSource, /from '\.\/iam-session-create-request'/);
   assert.match(appSdkTypesSource, /from '\.\/iam-session-response'/);
+  assert.doesNotMatch(appSdkTypesSource, /admin-auth-settings-response/);
+  assert.doesNotMatch(appSdkTypesSource, /admin-auth-verification-policy/);
+  assert.match(backendSdkTypesSource, /from '\.\/admin-auth-settings-response'/);
+  assert.match(backendSdkTypesSource, /from '\.\/admin-auth-settings-update-request'/);
 });
 
-test("generated claw router app SDK instance satisfies appbase IAM SDK port contract", async () => {
-  const [{ SdkworkAppClient }, { assertIamAppSdkClient, getIamSdkSurface }, { createSdkworkIamService }] = await Promise.all([
-    import("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/index.ts"),
-    import("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts"),
-    import("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service/src/index.ts"),
-  ]);
-  const client = new SdkworkAppClient({ baseUrl: "/app/v3/api" });
+test("portal exposes backend-backed admin auth settings configuration", () => {
+  const appSource = readPortalFile("./src/App.tsx");
+  const adminLayoutSource = readPortalFile("./src/AdminLayout.tsx");
+  const settingsPageSource = readPortalFile("./src/auth/ClawRouterAuthSettingsPage.tsx");
+  const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
+  const routeClassificationSource = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
 
-  assert.doesNotThrow(() => assertIamAppSdkClient(client));
-  const surface = getIamSdkSurface(client);
-  for (const method of [
-    "auth.loginQrCodes.create",
-    "auth.loginQrCodes.retrieve",
-    "auth.oauthAuthorizationUrls.retrieve",
-    "auth.oauthSessions.create",
-    "auth.passwordResetRequests.create",
-    "auth.passwordResets.create",
-    "auth.registrations.create",
-    "auth.sessions.create",
-    "auth.sessions.current.delete",
-    "auth.sessions.current.retrieve",
-    "auth.sessions.current.update",
-    "auth.sessions.refresh",
-    "auth.verificationCodes.create",
-    "auth.verificationCodes.verify",
-    "iam.users.current.retrieve",
+  assert.match(appSource, /lazyRoute\(\(\) => import\('\.\/auth\/ClawRouterAuthSettingsPage'\), 'ClawRouterAuthSettingsPage'\)/);
+  assert.match(appSource, /<Route path="settings" element=\{<ClawRouterAuthSettingsPage \/>} \/>/);
+  assert.match(adminLayoutSource, /path:\s*'\/admin\/settings'/);
+  assert.match(adminLayoutSource, /ShieldCheck/);
+  assert.match(settingsPageSource, /fetchClawRouterAuthSettings/);
+  assert.match(settingsPageSource, /updateClawRouterAuthSettings/);
+  assert.match(settingsPageSource, /emailRegistrationVerificationRequired/);
+  assert.match(settingsPageSource, /phoneRegistrationVerificationRequired/);
+  assert.match(settingsPageSource, /qrLoginEnabled/);
+  assert.match(settingsServiceSource, /getClawRouterBackendSdkClient\(\)\.system\.auth\.settings\.retrieve\(\)/);
+  assert.match(settingsServiceSource, /getClawRouterBackendSdkClient\(\)\.system\.auth\.settings\.update\(input/);
+  assert.doesNotMatch(settingsServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(settingsServiceSource, /\baxios\b/);
+  assert.doesNotMatch(settingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
+  assert.match(routeClassificationSource, /route:\s*\/admin\/settings/);
+  assert.match(routeClassificationSource, /api_surface:\s*backend/);
+  assert.match(routeClassificationSource, /apps\/sdkwork-claw-router-portal\/src\/auth\/ClawRouterAuthSettingsPage\.tsx/);
+});
+
+test("generated claw router app SDK surface satisfies appbase IAM SDK port contract", () => {
+  const sdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
+  const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
+  const iamServiceSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service/src/index.ts");
+
+  for (const portContractFragment of [
+    "loginQrCodes?:",
+    "oauthAuthorizationUrls?:",
+    "oauthSessions?:",
+    "passwordResetRequests?:",
+    "passwordResets?:",
+    "registrations?:",
+    "sessions?:",
+    "verificationCodes?:",
+    "users?:",
+    "current?:",
   ]) {
-    assert.ok(surface.includes(method), `${method} must be visible to appbase IAM runtime`);
+    assert.match(iamSdkPortsSource, new RegExp(portContractFragment.replaceAll("?", "\\?")));
   }
 
-  const originalFetch = globalThis.fetch;
-  const fetchCalls: string[] = [];
-  globalThis.fetch = (async (input: RequestInfo | URL) => {
-    fetchCalls.push(input instanceof Request ? input.url : String(input));
-    return new Response(JSON.stringify({
-      code: 0,
-      data: {
-        accessToken: "access-token",
-        authToken: "auth-token",
-      },
-    }), {
-      headers: {
-        "content-type": "application/json",
-      },
-      status: 200,
-    });
-  }) as typeof fetch;
-
-  try {
-    const service = createSdkworkIamService({ appClient: client });
-    await service.auth.sessions.create({
-      password: "secret",
-      username: "alice",
-    });
-  } finally {
-    globalThis.fetch = originalFetch;
+  for (const sdkSurfaceFragment of [
+    "public readonly auth: AuthApi",
+    "public readonly iam: IamApi",
+    "public readonly loginQrCodes: AuthLoginQrCodesApi",
+    "public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi",
+    "public readonly oauthSessions: AuthOauthSessionsApi",
+    "public readonly passwordResetRequests: AuthPasswordResetRequestsApi",
+    "public readonly passwordResets: AuthPasswordResetsApi",
+    "public readonly registrations: AuthRegistrationsApi",
+    "public readonly sessions: AuthSessionsApi",
+    "public readonly verificationCodes: AuthVerificationCodesApi",
+    "public readonly current: AuthSessionsCurrentApi",
+    "public readonly users: IamUsersApi",
+    "public readonly current: IamUsersCurrentApi",
+  ]) {
+    assert.match(`${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}`, new RegExp(sdkSurfaceFragment));
   }
 
-  assert.equal(fetchCalls.length, 1);
-  assert.match(fetchCalls[0] ?? "", /\/app\/v3\/api\/auth\/sessions$/);
+  for (const methodSignature of [
+    /async create\(\): Promise<LoginQrCodesCreateResult>/,
+    /async retrieve\(qrKey: string\): Promise<LoginQrCodesRetrieveResult>/,
+    /async retrieve\(params: AuthOauthAuthorizationUrlsRetrieveParams\): Promise<OauthAuthorizationUrlsRetrieveResult>/,
+    /async create\(body: IamOauthSessionCreateRequest\): Promise<OauthSessionsCreateResult>/,
+    /async create\(body: IamPasswordResetRequestCreateRequest\): Promise<PasswordResetRequestsCreateResult>/,
+    /async create\(body: IamPasswordResetCreateRequest\): Promise<PasswordResetsCreateResult>/,
+    /async create\(body: IamRegistrationCreateRequest, params\?: AuthRegistrationsCreateParams\): Promise<RegistrationsCreateResult>/,
+    /async create\(body: IamSessionCreateRequest, params\?: AuthSessionsCreateParams\): Promise<SessionsCreateResult>/,
+    /async delete\(\): Promise<SessionsCurrentDeleteResult>/,
+    /async retrieve\(\): Promise<SessionsCurrentRetrieveResult>/,
+    /async update\(body: IamCurrentSessionUpdateRequest\): Promise<SessionsCurrentUpdateResult>/,
+    /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/,
+    /async create\(body: IamVerificationCodeCreateRequest\): Promise<VerificationCodesCreateResult>/,
+    /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/,
+    /async retrieve\(\): Promise<UsersCurrentRetrieveResult>/,
+  ]) {
+    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}`, methodSignature);
+  }
+
+  assert.match(iamServiceSource, /verificationCode\?: string/);
+  assert.match(iamServiceSource, /appClient\.auth\.registrations\.create/);
+  assert.doesNotMatch(iamServiceSource, /assertRegistrationInput/);
+  assert.doesNotMatch(iamServiceSource, /SDKWork IAM registration requires verificationCode/);
 });
 
 test("navbar routes sign in through the auth module instead of bootstrapping sessions directly", () => {
@@ -375,6 +479,8 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(appSource, /<Route path="\*" element=\{<Navigate to="\/admin\/dashboard" replace \/>} \/>/);
   assert.match(guardSource, /hasStoredPortalSession/);
   assert.match(guardSource, /buildPortalAuthLoginRedirect/);
+  assert.match(guardSource, /\.\.\/\.\.\/packages\/sdkwork-claw-router-commons\/src\/portal-auth\.ts/);
+  assert.doesNotMatch(guardSource, /sdkwork-claw-router-commons\/runtime/);
   assert.match(sharedAuthSource, /getStoredAppSessionAuthToken/);
   assert.match(sharedAuthSource, /getStoredAppSessionAccessToken/);
   assert.doesNotMatch(guardSource, /\bfetch\s*\(/);

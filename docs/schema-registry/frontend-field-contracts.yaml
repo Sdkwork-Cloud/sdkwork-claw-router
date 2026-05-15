@@ -612,6 +612,127 @@ x_response_entities:
         additionalProperties: true
         properties:
           marketStatus: { type: string, enum: [DRAFT, PUBLISHED, OFFLINE] }
+  admin_auth_verification_policy: &admin_auth_verification_policy
+    name: AdminAuthVerificationPolicy
+    type: object
+    additionalProperties: false
+    required: [emailCodeLoginEnabled, emailRegistrationVerificationRequired, phoneCodeLoginEnabled, phoneRegistrationVerificationRequired]
+    properties:
+      emailCodeLoginEnabled: { type: boolean }
+      emailRegistrationVerificationRequired: { type: boolean }
+      phoneCodeLoginEnabled: { type: boolean }
+      phoneRegistrationVerificationRequired: { type: boolean }
+  auth_verification_policy: &auth_verification_policy
+    name: AuthVerificationPolicy
+    type: object
+    additionalProperties: false
+    required: [emailCodeLoginEnabled, emailRegistrationVerificationRequired, phoneCodeLoginEnabled, phoneRegistrationVerificationRequired]
+    properties:
+      emailCodeLoginEnabled: { type: boolean }
+      emailRegistrationVerificationRequired: { type: boolean }
+      phoneCodeLoginEnabled: { type: boolean }
+      phoneRegistrationVerificationRequired: { type: boolean }
+  admin_auth_settings: &admin_auth_settings
+    name: AdminAuthSettingsResponse
+    type: object
+    additionalProperties: false
+    required: [leftRailMode, loginMethods, oauthLoginEnabled, oauthProviders, qrLoginEnabled, recoveryMethods, registerMethods, verificationPolicy]
+    properties:
+      leftRailMode: { type: string, enum: [auto, highlights-only, qr-only] }
+      loginMethods:
+        type: array
+        minItems: 1
+        maxItems: 8
+        uniqueItems: true
+        items: { type: string, enum: [password, emailCode, phoneCode, sessionBridge] }
+      oauthLoginEnabled: { type: boolean }
+      oauthProviders:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items: { type: string, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      oauthRegion: { type: string, enum: [mainland, overseas] }
+      qrLoginEnabled: { type: boolean }
+      recoveryMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      registerMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      verificationPolicy: *admin_auth_verification_policy
+  auth_runtime_settings: &auth_runtime_settings
+    name: AuthRuntimeSettingsResponse
+    type: object
+    additionalProperties: false
+    required: [leftRailMode, loginMethods, oauthLoginEnabled, oauthProviders, qrLoginEnabled, recoveryMethods, registerMethods, verificationPolicy]
+    properties:
+      leftRailMode: { type: string, enum: [auto, highlights-only, qr-only] }
+      loginMethods:
+        type: array
+        minItems: 1
+        maxItems: 8
+        uniqueItems: true
+        items: { type: string, enum: [password, emailCode, phoneCode, sessionBridge] }
+      oauthLoginEnabled: { type: boolean }
+      oauthProviders:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items: { type: string, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      oauthRegion: { type: string, enum: [mainland, overseas] }
+      qrLoginEnabled: { type: boolean }
+      recoveryMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      registerMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      verificationPolicy: *auth_verification_policy
+  admin_auth_settings_update: &admin_auth_settings_update
+    name: AdminAuthSettingsUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      leftRailMode: { type: string, enum: [auto, highlights-only, qr-only] }
+      loginMethods:
+        type: array
+        minItems: 1
+        maxItems: 8
+        uniqueItems: true
+        items: { type: string, enum: [password, emailCode, phoneCode, sessionBridge] }
+      oauthLoginEnabled: { type: boolean }
+      oauthProviders:
+        type: array
+        maxItems: 16
+        uniqueItems: true
+        items: { type: string, maxLength: 64, pattern: '^[A-Za-z0-9_-]+$' }
+      oauthRegion: { type: string, enum: [mainland, overseas] }
+      qrLoginEnabled: { type: boolean }
+      recoveryMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      registerMethods:
+        type: array
+        minItems: 1
+        maxItems: 4
+        uniqueItems: true
+        items: { type: string, enum: [email, phone] }
+      verificationPolicy: *admin_auth_verification_policy
   admin_app_item: &admin_app_item
     name: AdminAppItemResponse
     type: object
@@ -2080,6 +2201,54 @@ frontend_models:
     data_sources: [plus_agent_skill, plus_agent_skill_package, plus_category, studio_catalog_action, studio_catalog_asset, studio_catalog_artifact]
 
 frontend_operations:
+  - route: /admin/settings
+    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+    operation: fetchClawRouterAuthSettings
+    operation_id: auth.settings.retrieve
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/system/auth/settings
+    sdk_domain: system
+    summary: Retrieve IAM auth runtime settings
+    description: Returns configurable login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime.
+    read_sources: [ops_config_snapshot]
+    query_parameters: []
+    response_schema: *admin_auth_settings
+  - route: /admin/settings
+    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+    operation: updateClawRouterAuthSettings
+    operation_id: auth.settings.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/system/auth/settings
+    sdk_domain: system
+    summary: Update IAM auth runtime settings
+    description: Updates configurable login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime.
+    request_id_header: true
+    read_sources: [ops_config_snapshot]
+    write_tables: [ops_config_snapshot, ops_audit_log]
+    request_schema: *admin_auth_settings_update
+    response_schema: *admin_auth_settings
+  - route: /auth/login
+    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+    operation: fetchClawRouterAuthRuntimeSettings
+    operation_id: runtimeSettings.retrieve
+    kind: read
+    api_surface: app
+    api_method: GET
+    api_path: /app/v3/api/auth/runtime_settings
+    sdk_domain: auth
+    summary: Retrieve public IAM auth runtime settings
+    description: Returns public login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime without requiring an app session.
+    read_sources: [ops_config_snapshot]
+    query_parameters:
+      - name: tenant_code
+        schema: { type: string, maxLength: 64 }
+      - name: organization_code
+        schema: { type: string, maxLength: 64 }
+    response_schema: *auth_runtime_settings
   - route: /courses
     source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
     operation: fetchCourses
@@ -8624,7 +8793,7 @@ frontend_operations:
     write_tables: [iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event]
     request_schema:
       name: IamRegistrationCreateRequest
-      required: [username, password, verificationCode]
+      required: [username, password]
       properties:
         username: { type: string, minLength: 1, maxLength: 128 }
         password: { type: string, minLength: 1, maxLength: 128 }
@@ -9710,7 +9879,7 @@ routes:
       studio_catalog_artifact: [target_type, target_id, version, artifact_size_bytes, artifact_url, published_at]
 
   - route: /auth/login
-    required_tables: [iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event]
+    required_tables: [iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event, ops_config_snapshot]
     required_columns:
       iam_user: [tenant_id, username, display_name, email, phone, avatar_url, status]
       iam_user_identity: [tenant_id, user_id, provider, subject, email]
@@ -9718,6 +9887,7 @@ routes:
       iam_session: [tenant_id, organization_id, user_id, app_id, environment, deployment_mode, auth_level, auth_token_hash, access_token_hash, refresh_token_hash, sharding_key, sharding_strategy, data_scope_json, permission_scope_json, expires_at, revoked_at]
       iam_security_event: [tenant_id, user_id, session_id, event_type, severity, detail_json]
       iam_audit_event: [tenant_id, organization_id, actor_user_id, action, resource_type, resource_id, request_id, app_id, environment, sharding_key, detail_json]
+      ops_config_snapshot: [tenant_id, organization_id, status, source_table, config_payload, published_at, created_at]
 
   - route: /auth/register
     required_tables: [iam_user, iam_user_identity, iam_credential, iam_session, iam_security_event, iam_audit_event]
@@ -9892,6 +10062,9 @@ routes:
 
   - route: /admin/user
     required_tables: [plus_user, plus_account, plus_account_history, plus_vip_point_change, plus_refund, plus_role, plus_user_role, iam_gateway_api_key, plus_api_key, iam_user_login_event, ops_audit_log]
+
+  - route: /admin/settings
+    required_tables: [ops_config_snapshot, ops_audit_log]
 
   - route: /admin/group
     required_tables: [iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, ai_pricing_plan, ai_pricing_plan_binding, ai_pricing_rule, ai_pricing_tier, ai_billing_meter, ops_audit_log]

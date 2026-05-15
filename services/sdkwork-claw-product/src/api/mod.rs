@@ -2,6 +2,7 @@ mod admin_access_group;
 mod admin_announcement;
 mod admin_api_key_rate_limit;
 mod admin_app;
+mod admin_auth_settings;
 mod admin_channel;
 mod admin_finance;
 mod admin_firewall_rule;
@@ -56,6 +57,7 @@ pub use admin_access_group::admin_access_group_router_with_store;
 pub use admin_announcement::admin_announcement_router_with_store;
 pub use admin_api_key_rate_limit::admin_api_key_rate_limit_router_with_store;
 pub use admin_app::admin_app_router_with_store;
+pub use admin_auth_settings::admin_auth_settings_router_with_store;
 pub use admin_channel::admin_channel_router_with_store;
 pub use admin_finance::admin_finance_router_with_store;
 pub use admin_firewall_rule::admin_firewall_rule_router_with_store;
@@ -77,6 +79,7 @@ pub use app_api_keys::app_api_key_router;
 pub use app_api_keys::app_api_key_router_with_read_store_and_command_store;
 pub use app_auth::{
     app_auth_router_with_store, app_auth_router_with_store_and_verification_sender,
+    app_auth_router_with_store_auth_settings_store_and_verification_sender,
     app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
 };
 pub use app_billing::app_billing_router;

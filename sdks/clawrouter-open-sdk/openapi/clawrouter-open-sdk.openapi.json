@@ -63,7 +63,10 @@
               {
                 "description": "Array variant containing anthropic content block param module items accepted by the content field.",
                 "items": {
-                  "$ref": "#/components/schemas/AnthropicContentBlockParam"
+                  "description": "Recursive reference to AnthropicContentBlockParam represented as an unrestricted JSON value for SDK generation.",
+                  "nullable": true,
+                  "x-sdkwork-authority-ref": "#/components/schemas/AnthropicContentBlockParam",
+                  "x-sdkwork-derived-recursive-boundary": true
                 },
                 "type": "array"
               }
@@ -2851,7 +2854,10 @@
           "items": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/GoogleSchema"
+                "description": "Recursive reference to GoogleSchema represented as an unrestricted JSON value for SDK generation.",
+                "nullable": true,
+                "x-sdkwork-authority-ref": "#/components/schemas/GoogleSchema",
+                "x-sdkwork-derived-recursive-boundary": true
               }
             ],
             "description": "Items field on the google schema, using the google schema module."
@@ -2864,7 +2870,10 @@
             "additionalProperties": {
               "allOf": [
                 {
-                  "$ref": "#/components/schemas/GoogleSchema"
+                  "description": "Recursive reference to GoogleSchema represented as an unrestricted JSON value for SDK generation.",
+                  "nullable": true,
+                  "x-sdkwork-authority-ref": "#/components/schemas/GoogleSchema",
+                  "x-sdkwork-derived-recursive-boundary": true
                 }
               ],
               "description": "Additional properties values using the google schema module."
@@ -11170,7 +11179,10 @@
           "items": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/OpenAiJsonSchema"
+                "description": "Recursive reference to OpenAiJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                "nullable": true,
+                "x-sdkwork-authority-ref": "#/components/schemas/OpenAiJsonSchema",
+                "x-sdkwork-derived-recursive-boundary": true
               }
             ],
             "description": "Items field on the open ai json schema, using the open ai json schema module."
@@ -11179,7 +11191,10 @@
             "additionalProperties": {
               "allOf": [
                 {
-                  "$ref": "#/components/schemas/OpenAiJsonSchema"
+                  "description": "Recursive reference to OpenAiJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                  "nullable": true,
+                  "x-sdkwork-authority-ref": "#/components/schemas/OpenAiJsonSchema",
+                  "x-sdkwork-derived-recursive-boundary": true
                 }
               ],
               "description": "Additional properties values using the open ai json schema module."
@@ -11212,7 +11227,10 @@
           {
             "allOf": [
               {
-                "$ref": "#/components/schemas/OpenAiJsonSchema"
+                "description": "Recursive reference to OpenAiJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                "nullable": true,
+                "x-sdkwork-authority-ref": "#/components/schemas/OpenAiJsonSchema",
+                "x-sdkwork-derived-recursive-boundary": true
               }
             ],
             "description": "Union variant using the open ai json schema module."
@@ -18240,7 +18258,10 @@
         "additionalProperties": {
           "allOf": [
             {
-              "$ref": "#/components/schemas/ProviderJsonValue"
+              "description": "Recursive reference to ProviderJsonValue represented as an unrestricted JSON value for SDK generation.",
+              "nullable": true,
+              "x-sdkwork-authority-ref": "#/components/schemas/ProviderJsonValue",
+              "x-sdkwork-derived-recursive-boundary": true
             }
           ],
           "description": "Additional provider json object values using the provider json value module."
@@ -18269,7 +18290,10 @@
               {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/ProviderJsonSchema"
+                    "description": "Recursive reference to ProviderJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                    "nullable": true,
+                    "x-sdkwork-authority-ref": "#/components/schemas/ProviderJsonSchema",
+                    "x-sdkwork-derived-recursive-boundary": true
                   }
                 ],
                 "description": "Additional properties variant using the provider json schema module."
@@ -18290,7 +18314,10 @@
           "items": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/ProviderJsonSchema"
+                "description": "Recursive reference to ProviderJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                "nullable": true,
+                "x-sdkwork-authority-ref": "#/components/schemas/ProviderJsonSchema",
+                "x-sdkwork-derived-recursive-boundary": true
               }
             ],
             "description": "Items field on the provider json schema, using the provider json schema module."
@@ -18299,7 +18326,10 @@
             "additionalProperties": {
               "allOf": [
                 {
-                  "$ref": "#/components/schemas/ProviderJsonSchema"
+                  "description": "Recursive reference to ProviderJsonSchema represented as an unrestricted JSON value for SDK generation.",
+                  "nullable": true,
+                  "x-sdkwork-authority-ref": "#/components/schemas/ProviderJsonSchema",
+                  "x-sdkwork-derived-recursive-boundary": true
                 }
               ],
               "description": "Additional properties values using the provider json schema module."
@@ -18352,7 +18382,10 @@
           {
             "description": "Array variant containing provider json value module items accepted by the union field.",
             "items": {
-              "$ref": "#/components/schemas/ProviderJsonValue"
+              "description": "Recursive reference to ProviderJsonValue represented as an unrestricted JSON value for SDK generation.",
+              "nullable": true,
+              "x-sdkwork-authority-ref": "#/components/schemas/ProviderJsonValue",
+              "x-sdkwork-derived-recursive-boundary": true
             },
             "type": "array"
           },
@@ -48007,5 +48040,10 @@
     }
   ],
   "x-api-prefix": "/v1",
-  "x-router-product": "sdkwork-claw-router"
+  "x-router-product": "sdkwork-claw-router",
+  "x-sdkwork-derived-contract": {
+    "source": "authority-openapi",
+    "purpose": "sdk-generator-input",
+    "recursiveSchemaRefs": "dynamic-json-boundary"
+  }
 }

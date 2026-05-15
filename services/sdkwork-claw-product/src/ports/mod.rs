@@ -3,6 +3,7 @@ mod admin_access_group_store;
 mod admin_announcement_store;
 mod admin_api_key_rate_limit_store;
 mod admin_app_store;
+mod admin_auth_settings_store;
 mod admin_channel_store;
 mod admin_finance_store;
 mod admin_firewall_rule_store;
@@ -76,6 +77,11 @@ pub use admin_app_store::{
     AdminAppCommandFuture, AdminAppItem, AdminAppStore, AdminAppSubject, CreateAdminAppCommand,
     DeleteAdminAppCommand, GetAdminAppQuery, ListAdminAppsQuery, SetAdminAppStatusCommand,
     UpdateAdminAppCommand,
+};
+pub use admin_auth_settings_store::{
+    AdminAuthSettings, AdminAuthSettingsFuture, AdminAuthSettingsStore, AdminAuthSettingsSubject,
+    AdminAuthVerificationPolicy, GetAdminAuthSettingsQuery, GetAdminAuthSettingsScopeQuery,
+    UpdateAdminAuthSettingsCommand,
 };
 pub use admin_channel_store::{
     AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelSubject,

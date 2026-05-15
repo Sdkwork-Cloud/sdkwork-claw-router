@@ -40519,8 +40519,7 @@
           },
           "required": [
             "username",
-            "password",
-            "verificationCode"
+            "password"
           ],
           "type": "object"
         }
@@ -41513,6 +41512,582 @@
       "write_tables": [
         "iam_security_event"
       ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/runtime_settings",
+      "api_surface": "app",
+      "description": "Returns public login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime without requiring an app session.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts#fetchClawRouterAuthRuntimeSettings",
+      "kind": "read",
+      "module": "login",
+      "openapi_exposed": true,
+      "operation": "fetchClawRouterAuthRuntimeSettings",
+      "operation_id": "runtimeSettings.retrieve",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "tenant_code",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "organization_code",
+          "required": false,
+          "schema": {
+            "maxLength": 64,
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AuthRuntimeSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AuthRuntimeSettingsResponse",
+          "properties": {
+            "leftRailMode": {
+              "enum": [
+                "auto",
+                "highlights-only",
+                "qr-only"
+              ],
+              "type": "string"
+            },
+            "loginMethods": {
+              "items": {
+                "enum": [
+                  "password",
+                  "emailCode",
+                  "phoneCode",
+                  "sessionBridge"
+                ],
+                "type": "string"
+              },
+              "maxItems": 8,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthLoginEnabled": {
+              "type": "boolean"
+            },
+            "oauthProviders": {
+              "items": {
+                "maxLength": 64,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              "maxItems": 16,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthRegion": {
+              "enum": [
+                "mainland",
+                "overseas"
+              ],
+              "type": "string"
+            },
+            "qrLoginEnabled": {
+              "type": "boolean"
+            },
+            "recoveryMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "registerMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "verificationPolicy": {
+              "additionalProperties": false,
+              "name": "AuthVerificationPolicy",
+              "properties": {
+                "emailCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "emailRegistrationVerificationRequired": {
+                  "type": "boolean"
+                },
+                "phoneCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "phoneRegistrationVerificationRequired": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "emailCodeLoginEnabled",
+                "emailRegistrationVerificationRequired",
+                "phoneCodeLoginEnabled",
+                "phoneRegistrationVerificationRequired"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "leftRailMode",
+            "loginMethods",
+            "oauthLoginEnabled",
+            "oauthProviders",
+            "qrLoginEnabled",
+            "recoveryMethods",
+            "registerMethods",
+            "verificationPolicy"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/auth/login",
+      "route_scope": "public",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "iam",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "summary": "Retrieve public IAM auth runtime settings",
+      "tag": "auth",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "description": "Returns configurable login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts#fetchClawRouterAuthSettings",
+      "kind": "read",
+      "module": "settings",
+      "openapi_exposed": true,
+      "operation": "fetchClawRouterAuthSettings",
+      "operation_id": "auth.settings.retrieve",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAuthSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAuthSettingsResponse",
+          "properties": {
+            "leftRailMode": {
+              "enum": [
+                "auto",
+                "highlights-only",
+                "qr-only"
+              ],
+              "type": "string"
+            },
+            "loginMethods": {
+              "items": {
+                "enum": [
+                  "password",
+                  "emailCode",
+                  "phoneCode",
+                  "sessionBridge"
+                ],
+                "type": "string"
+              },
+              "maxItems": 8,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthLoginEnabled": {
+              "type": "boolean"
+            },
+            "oauthProviders": {
+              "items": {
+                "maxLength": 64,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              "maxItems": 16,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthRegion": {
+              "enum": [
+                "mainland",
+                "overseas"
+              ],
+              "type": "string"
+            },
+            "qrLoginEnabled": {
+              "type": "boolean"
+            },
+            "recoveryMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "registerMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "verificationPolicy": {
+              "additionalProperties": false,
+              "name": "AdminAuthVerificationPolicy",
+              "properties": {
+                "emailCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "emailRegistrationVerificationRequired": {
+                  "type": "boolean"
+                },
+                "phoneCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "phoneRegistrationVerificationRequired": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "emailCodeLoginEnabled",
+                "emailRegistrationVerificationRequired",
+                "phoneCodeLoginEnabled",
+                "phoneRegistrationVerificationRequired"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "leftRailMode",
+            "loginMethods",
+            "oauthLoginEnabled",
+            "oauthProviders",
+            "qrLoginEnabled",
+            "recoveryMethods",
+            "registerMethods",
+            "verificationPolicy"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/settings",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "system",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "summary": "Retrieve IAM auth runtime settings",
+      "tag": "system",
+      "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "description": "Updates configurable login, registration, recovery, OAuth, QR login, and verification policy settings for the shared SDKWork auth runtime.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts#updateClawRouterAuthSettings",
+      "kind": "update",
+      "module": "settings",
+      "openapi_exposed": true,
+      "operation": "updateClawRouterAuthSettings",
+      "operation_id": "auth.settings.update",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "request_body_required": null,
+      "request_id_header": true,
+      "request_schema": {
+        "name": "AdminAuthSettingsUpdateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAuthSettingsUpdateRequest",
+          "properties": {
+            "leftRailMode": {
+              "enum": [
+                "auto",
+                "highlights-only",
+                "qr-only"
+              ],
+              "type": "string"
+            },
+            "loginMethods": {
+              "items": {
+                "enum": [
+                  "password",
+                  "emailCode",
+                  "phoneCode",
+                  "sessionBridge"
+                ],
+                "type": "string"
+              },
+              "maxItems": 8,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthLoginEnabled": {
+              "type": "boolean"
+            },
+            "oauthProviders": {
+              "items": {
+                "maxLength": 64,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              "maxItems": 16,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthRegion": {
+              "enum": [
+                "mainland",
+                "overseas"
+              ],
+              "type": "string"
+            },
+            "qrLoginEnabled": {
+              "type": "boolean"
+            },
+            "recoveryMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "registerMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "verificationPolicy": {
+              "additionalProperties": false,
+              "name": "AdminAuthVerificationPolicy",
+              "properties": {
+                "emailCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "emailRegistrationVerificationRequired": {
+                  "type": "boolean"
+                },
+                "phoneCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "phoneRegistrationVerificationRequired": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "emailCodeLoginEnabled",
+                "emailRegistrationVerificationRequired",
+                "phoneCodeLoginEnabled",
+                "phoneRegistrationVerificationRequired"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AdminAuthSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAuthSettingsResponse",
+          "properties": {
+            "leftRailMode": {
+              "enum": [
+                "auto",
+                "highlights-only",
+                "qr-only"
+              ],
+              "type": "string"
+            },
+            "loginMethods": {
+              "items": {
+                "enum": [
+                  "password",
+                  "emailCode",
+                  "phoneCode",
+                  "sessionBridge"
+                ],
+                "type": "string"
+              },
+              "maxItems": 8,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthLoginEnabled": {
+              "type": "boolean"
+            },
+            "oauthProviders": {
+              "items": {
+                "maxLength": 64,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              "maxItems": 16,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "oauthRegion": {
+              "enum": [
+                "mainland",
+                "overseas"
+              ],
+              "type": "string"
+            },
+            "qrLoginEnabled": {
+              "type": "boolean"
+            },
+            "recoveryMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "registerMethods": {
+              "items": {
+                "enum": [
+                  "email",
+                  "phone"
+                ],
+                "type": "string"
+              },
+              "maxItems": 4,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "verificationPolicy": {
+              "additionalProperties": false,
+              "name": "AdminAuthVerificationPolicy",
+              "properties": {
+                "emailCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "emailRegistrationVerificationRequired": {
+                  "type": "boolean"
+                },
+                "phoneCodeLoginEnabled": {
+                  "type": "boolean"
+                },
+                "phoneRegistrationVerificationRequired": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "emailCodeLoginEnabled",
+                "emailRegistrationVerificationRequired",
+                "phoneCodeLoginEnabled",
+                "phoneRegistrationVerificationRequired"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "leftRailMode",
+            "loginMethods",
+            "oauthLoginEnabled",
+            "oauthProviders",
+            "qrLoginEnabled",
+            "recoveryMethods",
+            "registerMethods",
+            "verificationPolicy"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/settings",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "system",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "summary": "Update IAM auth runtime settings",
+      "tag": "system",
+      "write_tables": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ]
     }
   ],
   "schema": {
@@ -41549,24 +42124,24 @@
   "summary": {
     "api_method_counts": {
       "DELETE": 22,
-      "GET": 129,
-      "PATCH": 5,
+      "GET": 131,
+      "PATCH": 6,
       "POST": 88,
       "PUT": 16
     },
     "api_surface_counts": {
-      "app": 150,
-      "backend": 110
+      "app": 151,
+      "backend": 112
     },
-    "operation_count": 260,
+    "operation_count": 263,
     "route_scope_counts": {
-      "admin": 110,
+      "admin": 112,
       "console": 81,
-      "public": 69
+      "public": 70
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 150,
-      "SdkworkBackendClient": 110
+      "SdkworkAppClient": 151,
+      "SdkworkBackendClient": 112
     }
   }
 }

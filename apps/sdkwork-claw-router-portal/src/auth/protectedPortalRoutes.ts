@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
-} from 'sdkwork-claw-router-commons/runtime';
+} from '../../packages/sdkwork-claw-router-commons/src/portal-auth.ts';
 
 export const PROTECTED_PORTAL_ROUTE_PREFIXES = ['/console', '/admin'] as const;
 

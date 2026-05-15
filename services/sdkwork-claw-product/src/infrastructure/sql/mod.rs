@@ -12,6 +12,8 @@ pub(crate) mod provider_classification;
 mod queries;
 pub mod rows;
 pub(crate) mod skills_seed;
+pub(crate) mod sql_admin_auth_settings;
+pub(crate) mod sql_hash;
 pub(crate) mod sql_model_rankings;
 pub mod sqlite;
 

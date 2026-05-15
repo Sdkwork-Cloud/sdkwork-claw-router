@@ -7,7 +7,9 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAppAuthStore, SqliteAppSessionEventStore,
 };
 use sdkwork_claw_product::ports::{
-    RequiredConfiguredVerificationCodeSender, VerificationCodeDeliveryFuture,
+    AdminAuthSettings, AdminAuthSettingsFuture, AdminAuthSettingsStore, GetAdminAuthSettingsQuery,
+    GetAdminAuthSettingsScopeQuery, RequiredConfiguredVerificationCodeSender,
+    UpdateAdminAuthSettingsCommand, VerificationCodeDeliveryFuture,
     VerificationCodeDeliveryReceipt, VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 use serde_json::json;
@@ -216,7 +218,7 @@ async fn app_auth_login_legacy_path_is_not_exposed() {
 async fn app_auth_qr_login_codes_create_and_retrieve_use_standard_iam_resource_paths() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
-    let router = app_auth_router(pool);
+    let router = app_auth_router_with_settings(pool, qr_login_settings());
 
     let create_response = router
         .clone()
@@ -264,7 +266,7 @@ async fn app_auth_verification_codes_create_allows_immediate_resend_for_same_tar
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
-    let router = app_auth_router(pool);
+    let router = app_auth_router_with_settings(pool, email_code_login_settings());
 
     let first_response = router
         .clone()
@@ -301,7 +303,12 @@ async fn app_auth_verification_codes_create_dispatches_code_without_exposing_deb
     create_minimal_auth_schema(&pool).await;
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
     let sender = Arc::new(RecordingVerificationCodeSender::default());
-    let router = app_auth_router_with_sender(pool, sender.clone(), false);
+    let router = app_auth_router_with_sender_and_settings(
+        pool,
+        sender.clone(),
+        false,
+        email_code_login_settings(),
+    );
 
     let response = router
         .oneshot(verification_code_request("alice@example.com"))
@@ -395,10 +402,11 @@ async fn app_auth_verification_codes_create_fails_closed_when_production_sender_
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
-    let router = app_auth_router_with_sender(
+    let router = app_auth_router_with_sender_and_settings(
         pool,
         Arc::new(RequiredConfiguredVerificationCodeSender),
         false,
+        email_code_login_settings(),
     );
 
     let response = router
@@ -421,7 +429,8 @@ async fn app_auth_registrations_create_requires_verification_code() {
     let pool = create_pool().await;
     create_minimal_auth_schema(&pool).await;
     seed_user(&pool, 30, "alice", "alice@example.com", "Alice Router", 1).await;
-    let router = app_auth_router(pool.clone());
+    let router =
+        app_auth_router_with_settings(pool.clone(), email_registration_verification_settings());
 
     let response = router
         .oneshot(
@@ -481,6 +490,89 @@ fn app_auth_router_with_sender(
         sender,
         expose_debug_code,
     )
+}
+
+fn app_auth_router_with_settings(pool: SqlitePool, settings: AdminAuthSettings) -> axum::Router {
+    app_auth_router_with_sender_and_settings(
+        pool,
+        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        true,
+        settings,
+    )
+}
+
+fn app_auth_router_with_sender_and_settings(
+    pool: SqlitePool,
+    sender: Arc<dyn VerificationCodeSender + Send + Sync>,
+    expose_debug_code: bool,
+    settings: AdminAuthSettings,
+) -> axum::Router {
+    sdkwork_claw_product::api::app_auth_router_with_store_auth_settings_store_and_verification_sender(
+        Arc::new(SqliteAppAuthStore::new(pool.clone())),
+        Some(Arc::new(TestAdminAuthSettingsStore::new(settings))),
+        Arc::new(SqliteAppSessionEventStore::new(pool)),
+        Arc::new(sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator),
+        app_session_config(),
+        Arc::new(Pbkdf2Sha256PasswordHasher),
+        sender,
+        expose_debug_code,
+    )
+}
+
+#[derive(Debug)]
+struct TestAdminAuthSettingsStore {
+    settings: AdminAuthSettings,
+}
+
+impl TestAdminAuthSettingsStore {
+    fn new(settings: AdminAuthSettings) -> Self {
+        Self {
+            settings: settings.normalized(),
+        }
+    }
+}
+
+impl AdminAuthSettingsStore for TestAdminAuthSettingsStore {
+    fn get_auth_settings<'a>(
+        &'a self,
+        _query: GetAdminAuthSettingsQuery,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(self.settings.clone()) })
+    }
+
+    fn get_auth_settings_for_scope<'a>(
+        &'a self,
+        _query: GetAdminAuthSettingsScopeQuery,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(self.settings.clone()) })
+    }
+
+    fn update_auth_settings<'a>(
+        &'a self,
+        command: UpdateAdminAuthSettingsCommand,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(command.settings.normalized()) })
+    }
+}
+
+fn qr_login_settings() -> AdminAuthSettings {
+    let mut settings = AdminAuthSettings::default();
+    settings.qr_login_enabled = true;
+    settings
+}
+
+fn email_code_login_settings() -> AdminAuthSettings {
+    let mut settings = AdminAuthSettings::default();
+    settings.verification_policy.email_code_login_enabled = true;
+    settings
+}
+
+fn email_registration_verification_settings() -> AdminAuthSettings {
+    let mut settings = AdminAuthSettings::default();
+    settings
+        .verification_policy
+        .email_registration_verification_required = true;
+    settings
 }
 
 #[derive(Default)]

@@ -2,7 +2,6 @@ import { createRequestParams, getClawRouterAppSdkClient } from 'sdkwork-claw-rou
 import type {
   BillingAccountPointsExchangesRulesListParams,
   BillingAccountPointsHistoryListParams,
-  BillingAccountPointsRechargesPackagesListParams,
   BillingAccountPointsRechargesRecordsListParams,
   BillingCouponsCatalogListParams,
   BillingVipPointsHistoryListParams,
@@ -80,8 +79,8 @@ export class CommerceFoundationService {
     return getClawRouterAppSdkClient().billing.account.points.exchangeRate.retrieve();
   }
 
-  static async listAccountPointsRechargePackages(params?: BillingAccountPointsRechargesPackagesListParams): Promise<unknown> {
-    return getClawRouterAppSdkClient().billing.account.points.recharges.packages.list(params);
+  static async listAccountPointsRechargePackages(): Promise<unknown> {
+    return getClawRouterAppSdkClient().billing.account.points.recharges.packages.list();
   }
 
   static async listAccountPointsRechargeRecords(params?: BillingAccountPointsRechargesRecordsListParams): Promise<unknown> {

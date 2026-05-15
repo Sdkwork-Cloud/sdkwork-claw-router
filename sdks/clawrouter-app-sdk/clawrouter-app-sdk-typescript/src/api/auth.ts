@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult } from '../types';
+import type { IamCurrentSessionUpdateRequest, IamOauthSessionCreateRequest, IamPasswordResetCreateRequest, IamPasswordResetRequestCreateRequest, IamRegistrationCreateRequest, IamSessionCreateRequest, IamSessionRefreshRequest, IamVerificationCodeCreateRequest, IamVerificationCodeVerifyRequest, LoginQrCodesCreateResult, LoginQrCodesRetrieveResult, OauthAuthorizationUrlsRetrieveResult, OauthSessionsCreateResult, PasswordResetRequestsCreateResult, PasswordResetsCreateResult, RegistrationsCreateResult, RuntimeSettingsRetrieveResult, SessionsCreateResult, SessionsCurrentDeleteResult, SessionsCurrentRetrieveResult, SessionsCurrentUpdateResult, SessionsRefreshResult, VerificationCodesCreateResult, VerificationCodesVerifyResult } from '../types';
 
 
 export class AuthVerificationCodesApi {
@@ -75,6 +75,29 @@ export class AuthSessionsApi {
 /** Refresh IAM session */
   async refresh(body: IamSessionRefreshRequest): Promise<SessionsRefreshResult> {
     return this.client.post<SessionsRefreshResult>(appApiPath(`/auth/sessions/refresh`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export interface AuthRuntimeSettingsRetrieveParams {
+  tenantCode?: string;
+  organizationCode?: string;
+}
+
+export class AuthRuntimeSettingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve public IAM auth runtime settings */
+  async retrieve(params?: AuthRuntimeSettingsRetrieveParams): Promise<RuntimeSettingsRetrieveResult> {
+    const query = buildQueryString([
+      { name: 'tenant_code', value: params?.tenantCode, style: 'form', explode: true, allowReserved: false },
+      { name: 'organization_code', value: params?.organizationCode, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<RuntimeSettingsRetrieveResult>(appendQueryString(appApiPath(`/auth/runtime_settings`), query));
   }
 }
 
@@ -198,6 +221,7 @@ export class AuthApi {
   public readonly passwordResets: AuthPasswordResetsApi;
   public readonly loginQrCodes: AuthLoginQrCodesApi;
   public readonly registrations: AuthRegistrationsApi;
+  public readonly runtimeSettings: AuthRuntimeSettingsApi;
   public readonly sessions: AuthSessionsApi;
   public readonly verificationCodes: AuthVerificationCodesApi;
 
@@ -209,6 +233,7 @@ export class AuthApi {
     this.passwordResets = new AuthPasswordResetsApi(client);
     this.loginQrCodes = new AuthLoginQrCodesApi(client);
     this.registrations = new AuthRegistrationsApi(client);
+    this.runtimeSettings = new AuthRuntimeSettingsApi(client);
     this.sessions = new AuthSessionsApi(client);
     this.verificationCodes = new AuthVerificationCodesApi(client);
   }

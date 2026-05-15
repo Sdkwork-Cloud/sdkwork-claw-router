@@ -1,10 +1,10 @@
 # Current Version
 
-- Current Version: `0.1.0`
-- Release Date: `2026-05-15`
-- Status: `Initial release baseline`
-- Previous Version: `none`
-- Previous Status: `none`
+- Current Version: `0.2.0`
+- Release Date: `2026-05-16`
+- Status: `Prepared for GitHub release; sibling SDK repositories are clean and synced`
+- Previous Version: `0.1.0`
+- Previous Status: `Released successfully on GitHub`
 
 ## Versioning Rules
 

@@ -244,22 +244,24 @@ async fn create_registration(
     } else {
         command.email.clone()
     };
-    let consumed = consume_code_in_transaction(
-        &mut tx,
-        &tenant_id,
-        VERIFICATION_CODE_TYPE,
-        AppAuthVerificationCodeLookup {
-            code_id: None,
-            target: subject.clone(),
-            scene: "REGISTER".to_owned(),
-            verify_type: provider.to_ascii_uppercase(),
-            code_hash: command.verification_code_hash.clone(),
-            now: command.now,
-        },
-    )
-    .await?;
-    if !consumed {
-        return Err(DomainError::new("verification code is invalid or expired"));
+    if let Some(verification_code_hash) = command.verification_code_hash.clone() {
+        let consumed = consume_code_in_transaction(
+            &mut tx,
+            &tenant_id,
+            VERIFICATION_CODE_TYPE,
+            AppAuthVerificationCodeLookup {
+                code_id: None,
+                target: subject.clone(),
+                scene: "REGISTER".to_owned(),
+                verify_type: provider.to_ascii_uppercase(),
+                code_hash: verification_code_hash,
+                now: command.now,
+            },
+        )
+        .await?;
+        if !consumed {
+            return Err(DomainError::new("verification code is invalid or expired"));
+        }
     }
 
     let user_id = next_numeric_id(&mut tx, "iam_user").await?;

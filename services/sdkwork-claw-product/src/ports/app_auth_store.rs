@@ -34,7 +34,7 @@ pub struct AppAuthRegistrationCommand {
     pub phone: String,
     pub channel: String,
     pub password_hash: String,
-    pub verification_code_hash: String,
+    pub verification_code_hash: Option<String>,
     pub now: i64,
 }
 

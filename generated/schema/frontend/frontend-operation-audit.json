@@ -4471,11 +4471,56 @@
       "write_tables": [
         "iam_security_event"
       ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/runtime_settings",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchClawRouterAuthRuntimeSettings",
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchClawRouterAuthSettings",
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/admin/settings",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateClawRouterAuthSettings",
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/admin/settings",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts",
+      "write_tables": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ]
     }
   ],
   "summary": {
-    "operation_count": 260,
-    "source_file_count": 37,
-    "write_operation_count": 131
+    "operation_count": 263,
+    "source_file_count": 38,
+    "write_operation_count": 132
   }
 }

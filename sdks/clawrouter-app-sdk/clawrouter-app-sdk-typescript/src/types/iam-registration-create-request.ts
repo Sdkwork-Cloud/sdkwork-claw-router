@@ -17,5 +17,5 @@ export interface IamRegistrationCreateRequest {
   /** Username field on iam registration create request. */
   username: string;
   /** Verification code field on iam registration create request. */
-  verificationCode: string;
+  verificationCode?: string;
 }

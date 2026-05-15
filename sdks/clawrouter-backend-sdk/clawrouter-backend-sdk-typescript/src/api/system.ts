@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, UsersCreateResult, UsersUpdateResult } from '../types';
+import type { AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminTokenLimitCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, UsersCreateResult, UsersUpdateResult } from '../types';
 
 
 export interface SystemUsersCreateParams {
@@ -337,8 +337,49 @@ export class SystemDashboardApi {
 
 }
 
+export interface SystemAuthSettingsUpdateParams {
+  xRequestId?: string;
+}
+
+export class SystemAuthSettingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Retrieve IAM auth runtime settings */
+  async retrieve(): Promise<AuthSettingsRetrieveResult> {
+    return this.client.get<AuthSettingsRetrieveResult>(backendApiPath(`/system/auth/settings`));
+  }
+
+/** Update IAM auth runtime settings */
+  async update(body: AdminAuthSettingsUpdateRequest, params?: SystemAuthSettingsUpdateParams): Promise<AuthSettingsUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'X-Request-Id': { value: params?.xRequestId, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.patch<AuthSettingsUpdateResult>(backendApiPath(`/system/auth/settings`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export class SystemAuthApi {
+  private client: HttpClient;
+  public readonly settings: SystemAuthSettingsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.settings = new SystemAuthSettingsApi(client);
+  }
+
+}
+
 export class SystemApi {
   private client: HttpClient;
+  public readonly auth: SystemAuthApi;
   public readonly dashboard: SystemDashboardApi;
   public readonly firewalls: SystemFirewallsApi;
   public readonly installation: SystemInstallationApi;
@@ -349,6 +390,7 @@ export class SystemApi {
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.auth = new SystemAuthApi(client);
     this.dashboard = new SystemDashboardApi(client);
     this.firewalls = new SystemFirewallsApi(client);
     this.installation = new SystemInstallationApi(client);

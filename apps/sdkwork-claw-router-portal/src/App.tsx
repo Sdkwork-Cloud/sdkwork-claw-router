@@ -27,6 +27,7 @@ const ForumPostView = lazyRoute(() => import('sdkwork-claw-router-forum'), 'Foru
 const CoursesView = lazyRoute(() => import('sdkwork-claw-router-courses'), 'CoursesView');
 const CourseDetailView = lazyRoute(() => import('sdkwork-claw-router-courses'), 'CourseDetailView');
 const ClawRouterAuthRoutes = lazyRoute(() => import('./auth/ClawRouterAuthRoutes'), 'ClawRouterAuthRoutes');
+const ClawRouterAuthSettingsPage = lazyRoute(() => import('./auth/ClawRouterAuthSettingsPage'), 'ClawRouterAuthSettingsPage');
 
 type ShellLayoutProps = {
   isDark: boolean;
@@ -199,6 +200,7 @@ export default function App() {
               <Route path="monitor" element={<MonitorAdmin />} />
               <Route path="ratelimit" element={<RateLimitAdmin />} />
               <Route path="finance" element={<FinanceAdmin />} />
+              <Route path="settings" element={<ClawRouterAuthSettingsPage />} />
               <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
             </Route>
 

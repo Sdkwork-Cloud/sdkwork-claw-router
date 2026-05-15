@@ -2,6 +2,36 @@
 
 All notable changes to `sdkwork-claw-router` release records will be documented here.
 
+## 2026-05-16 - v0.2.0
+
+### Scope
+
+- Adds a complete runtime authentication settings capability after the successful `v0.1.0` release.
+- No failed post-`v0.1.0` GitHub release existed at preparation time, so the notes are reconstructed from the current code changes since `v0.1.0`.
+
+### Delivered
+
+- Added admin-managed auth settings for login methods, QR login, OAuth visibility, recovery methods, registration methods, and verification policy.
+- Added app runtime auth settings retrieval so the portal can render login behavior from the active policy instead of a static local matrix.
+- Added SQL-backed auth settings stores for SQLite and PostgreSQL and registered them through the product infrastructure modules.
+- Enforced auth settings across password, email code, phone code, QR, session bridge, recovery, and registration flows while keeping password-only as the strict default.
+- Added portal admin routing and UI for auth settings management.
+- Regenerated OpenAPI documents, API contract manifests, schema registry outputs, frontend manifests, and app/backend/open SDK surfaces for the new contracts.
+- Updated Rust tests to explicitly opt into non-default auth methods when testing bridge, QR, code login, and registration verification behavior.
+- Updated installer CLI tests so SQLite scenarios explicitly run under the desktop deployment profile.
+
+### Verification
+
+- `cargo fmt --all`
+- `cargo test -p sdkwork-claw-app-api --test app_session_route -- --nocapture`
+- `cargo test -p sdkwork-claw-product --test app_auth_api -- --nocapture`
+- `cargo test -p sdkwork-claw-installer --test installer_cli installer_cli_reports_invalid_env_catalog_root_as_machine_readable_config_error -- --nocapture`
+
+### Release Gate Status
+
+- Sibling SDK/shared repository gate is satisfied: `sdkwork-appbase` is clean at `3280447`, `sdkwork-core` was committed and pushed at `339ab3e`, `sdkwork-ui` was committed and pushed at `a4c9094`, and the user-specified `sdkwork-im-sdk` checkout under `apps\craw-chat\sdks\sdkwork-im-sdk` was committed and pushed at `8245ff9`.
+- Full `pnpm verify` was skipped by release-operator instruction for this release attempt.
+
 ## 2026-05-15 - v0.1.0
 
 ### Scope

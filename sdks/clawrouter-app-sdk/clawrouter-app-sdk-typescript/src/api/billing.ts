@@ -443,7 +443,7 @@ export class BillingVipPacksApi {
   }
 
 
-/** List packages */
+/** List VIP packs */
   async list(): Promise<VipPacksListResult> {
     return this.client.get<VipPacksListResult>(appApiPath(`/billing/vip/packs`));
   }
@@ -1064,10 +1064,6 @@ export class BillingAccountPointsRechargesRecordsApi {
   }
 }
 
-export interface BillingAccountPointsRechargesPackagesListParams {
-  status?: string;
-}
-
 export class BillingAccountPointsRechargesPackagesApi {
   private client: HttpClient;
 
@@ -1076,12 +1072,9 @@ export class BillingAccountPointsRechargesPackagesApi {
   }
 
 
-/** List account points recharge packages */
-  async list(params?: BillingAccountPointsRechargesPackagesListParams): Promise<AccountPointsRechargesPackagesListResult> {
-    const query = buildQueryString([
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<AccountPointsRechargesPackagesListResult>(appendQueryString(appApiPath(`/billing/account/points/recharges/packages`), query));
+/** List packages */
+  async list(): Promise<AccountPointsRechargesPackagesListResult> {
+    return this.client.get<AccountPointsRechargesPackagesListResult>(appApiPath(`/billing/account/points/recharges/packages`));
   }
 }
 

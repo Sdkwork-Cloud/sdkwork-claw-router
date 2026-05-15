@@ -151,6 +151,17 @@ routes:
       - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
       - docs/schema-registry/frontend-field-contracts.yaml
 
+  - route: /admin/settings
+    package: portal-root
+    owner: admin-control-plane
+    route_scope: admin
+    delivery_kind: sdk_backed_business_runtime
+    api_surface: backend
+    evidence:
+      - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthSettingsPage.tsx
+      - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+      - docs/schema-registry/frontend-field-contracts.yaml
+
   - route: /api-reference
     package: sdkwork-claw-router-api-reference
     owner: developer-experience

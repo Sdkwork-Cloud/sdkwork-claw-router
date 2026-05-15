@@ -436,6 +436,19 @@
         "plus_usage_record"
       ]
     },
+    "/admin/settings": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ops_audit_log",
+        "ops_config_snapshot"
+      ]
+    },
     "/admin/skill": {
       "api_surfaces": [
         "app",
@@ -576,6 +589,7 @@
         "iam_user_login_event",
         "iam_user_preference",
         "iam_user_security_setting",
+        "ops_config_snapshot",
         "plus_oauth_account",
         "plus_user"
       ]
@@ -1206,7 +1220,7 @@
       "worker": 53
     },
     "external_legacy_table_count": 60,
-    "frontend_route_count": 52,
+    "frontend_route_count": 53,
     "generated_table_count": 93,
     "legacy_table_count": 69,
     "table_count": 155
@@ -21060,7 +21074,8 @@
         "/admin/group",
         "/admin/marketing",
         "/admin/ratelimit",
-        "/admin/skill"
+        "/admin/skill",
+        "/admin/settings"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -21339,10 +21354,12 @@
       "domain": "ops",
       "foreign_keys": [],
       "frontend_routes": [
+        "/auth/login",
         "/console/routing",
         "/console/providers",
         "/admin/channel",
-        "/admin/model"
+        "/admin/model",
+        "/admin/settings"
       ],
       "generated_by_this_project": true,
       "indexes": [

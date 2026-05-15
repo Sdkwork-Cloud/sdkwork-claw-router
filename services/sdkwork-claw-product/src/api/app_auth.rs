@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::middleware::from_fn_with_state;
 use axum::response::{IntoResponse, Response};
@@ -15,9 +15,10 @@ use sha2::{Digest, Sha256};
 use crate::api::response::PlusApiResult;
 use crate::application::{EntityUuidGenerator, PasswordHasher};
 use crate::ports::{
-    AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand, AppAuthRegistrationCommand,
-    AppAuthStore, AppAuthUserCredential, AppAuthVerificationCodeCommand,
-    AppAuthVerificationCodeLookup, AppSessionEventStore, DebugVerificationCodeSender,
+    AdminAuthSettings, AdminAuthSettingsStore, AppAuthPasswordResetCodeCommand,
+    AppAuthPasswordResetCommand, AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
+    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppSessionEventStore,
+    DebugVerificationCodeSender, GetAdminAuthSettingsScopeQuery,
     RecordAppSessionIssuedEventCommand, VerificationCodeDeliveryRequest, VerificationCodeSender,
 };
 
@@ -44,6 +45,7 @@ const LOCAL_DEBUG_VERIFICATION_CODE: &str = "666666";
 #[derive(Clone)]
 struct AppAuthState {
     auth_store: Arc<dyn AppAuthStore + Send + Sync>,
+    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
@@ -61,6 +63,8 @@ struct IamSessionCreateRequest {
     email: Option<String>,
     phone: Option<String>,
     code: Option<String>,
+    tenant_code: Option<String>,
+    organization_code: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -118,6 +122,22 @@ struct IamOauthSessionCreateRequest {
     code: String,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct IamOauthAuthorizationUrlQuery {
+    provider: String,
+    redirect_uri: String,
+    state: Option<String>,
+    scope: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "snake_case")]
+struct IamRuntimeSettingsQuery {
+    tenant_code: Option<String>,
+    organization_code: Option<String>,
+}
+
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct IamLoginQrCodeResponse {
@@ -133,6 +153,29 @@ struct IamLoginQrCodeResponse {
 #[serde(rename_all = "camelCase")]
 struct IamLoginQrCodeStatusResponse {
     status: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct IamRuntimeAuthSettingsResponse {
+    left_rail_mode: String,
+    login_methods: Vec<String>,
+    oauth_login_enabled: bool,
+    oauth_providers: Vec<String>,
+    oauth_region: String,
+    qr_login_enabled: bool,
+    recovery_methods: Vec<String>,
+    register_methods: Vec<String>,
+    verification_policy: IamRuntimeAuthVerificationPolicyResponse,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct IamRuntimeAuthVerificationPolicyResponse {
+    email_code_login_enabled: bool,
+    email_registration_verification_required: bool,
+    phone_code_login_enabled: bool,
+    phone_registration_verification_required: bool,
 }
 
 #[derive(Debug, Serialize)]
@@ -282,6 +325,28 @@ pub fn app_auth_router_with_store_and_verification_sender(
     verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
     expose_debug_code: bool,
 ) -> Router {
+    app_auth_router_with_store_auth_settings_store_and_verification_sender(
+        auth_store,
+        None,
+        event_store,
+        entity_uuid_generator,
+        app_session_config,
+        password_hasher,
+        verification_code_sender,
+        expose_debug_code,
+    )
+}
+
+pub fn app_auth_router_with_store_auth_settings_store_and_verification_sender(
+    auth_store: Arc<dyn AppAuthStore + Send + Sync>,
+    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
+    event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    app_session_config: AppSessionConfig,
+    password_hasher: Arc<dyn PasswordHasher + Send + Sync>,
+    verification_code_sender: Arc<dyn VerificationCodeSender + Send + Sync>,
+    expose_debug_code: bool,
+) -> Router {
     Router::new()
         .route(APP_SESSION_PATH, post(create_session))
         .route(
@@ -317,8 +382,13 @@ pub fn app_auth_router_with_store_and_verification_sender(
             "/app/v3/api/auth/oauth_sessions",
             post(create_oauth_session),
         )
+        .route(
+            "/app/v3/api/auth/runtime_settings",
+            get(retrieve_runtime_settings),
+        )
         .with_state(AppAuthState {
             auth_store,
+            auth_settings_store,
             event_store,
             verification_code_sender,
             entity_uuid_generator,
@@ -330,6 +400,7 @@ pub fn app_auth_router_with_store_and_verification_sender(
 
 pub fn app_sessions_router_with_store(
     auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
+    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
@@ -371,8 +442,13 @@ pub fn app_sessions_router_with_store(
             "/app/v3/api/auth/oauth_sessions",
             post(create_oauth_session),
         )
+        .route(
+            "/app/v3/api/auth/runtime_settings",
+            get(retrieve_runtime_settings),
+        )
         .with_state(AppAuthState {
             auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
+            auth_settings_store,
             event_store,
             verification_code_sender: Arc::new(DebugVerificationCodeSender),
             entity_uuid_generator,
@@ -388,6 +464,7 @@ pub fn app_sessions_router_with_store(
 
 pub fn app_sessions_router_with_store_and_verification_sender(
     auth_store: Option<Arc<dyn AppAuthStore + Send + Sync>>,
+    auth_settings_store: Option<Arc<dyn AdminAuthSettingsStore + Send + Sync>>,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
     trusted_subject_config: TrustedSubjectConfig,
@@ -431,8 +508,13 @@ pub fn app_sessions_router_with_store_and_verification_sender(
             "/app/v3/api/auth/oauth_sessions",
             post(create_oauth_session),
         )
+        .route(
+            "/app/v3/api/auth/runtime_settings",
+            get(retrieve_runtime_settings),
+        )
         .with_state(AppAuthState {
             auth_store: auth_store.unwrap_or_else(|| Arc::new(UnconfiguredAppAuthStore)),
+            auth_settings_store,
             event_store,
             verification_code_sender,
             entity_uuid_generator,
@@ -489,6 +571,7 @@ async fn create_login_qr_code(State(state): State<AppAuthState>) -> Response {
 async fn create_login_qr_code_inner(
     state: AppAuthState,
 ) -> Result<IamLoginQrCodeResponse, AppSessionCreateError> {
+    ensure_qr_login_enabled(&state).await?;
     let qr_key = state
         .entity_uuid_generator
         .generate_entity_uuid()
@@ -523,6 +606,234 @@ async fn retrieve_login_qr_code_inner(
     Ok(IamLoginQrCodeStatusResponse {
         status: "pending".to_owned(),
     })
+}
+
+async fn auth_settings_for_scope(
+    state: &AppAuthState,
+    tenant_code: &str,
+    organization_code: &str,
+) -> Result<AdminAuthSettings, AppSessionCreateError> {
+    let Some(store) = state.auth_settings_store.as_ref() else {
+        return Ok(AdminAuthSettings::default());
+    };
+    store
+        .get_auth_settings_for_scope(GetAdminAuthSettingsScopeQuery {
+            tenant_code: optional_string(tenant_code.to_owned()),
+            organization_code: optional_string(organization_code.to_owned()),
+        })
+        .await
+        .map_err(|error| {
+            if error.is_not_found() {
+                AppSessionCreateError::BadRequest(error.to_string())
+            } else {
+                AppSessionCreateError::System(error.to_string())
+            }
+        })
+}
+
+async fn default_auth_settings(
+    state: &AppAuthState,
+) -> Result<AdminAuthSettings, AppSessionCreateError> {
+    auth_settings_for_scope(state, "", "").await
+}
+
+async fn ensure_login_method_enabled(
+    state: &AppAuthState,
+    tenant_code: &str,
+    organization_code: &str,
+    grant_type: &str,
+) -> Result<(), AppSessionCreateError> {
+    let settings = auth_settings_for_scope(state, tenant_code, organization_code).await?;
+    let method = login_method_from_grant_type(grant_type)?;
+    if !settings.login_methods.iter().any(|item| item == method) {
+        return Err(AppSessionCreateError::BadRequest(format!(
+            "{} is not enabled",
+            login_method_label(method)
+        )));
+    }
+    if method == "emailCode" && !settings.verification_policy.email_code_login_enabled {
+        return Err(AppSessionCreateError::BadRequest(
+            "email code login is not enabled".to_owned(),
+        ));
+    }
+    if method == "phoneCode" && !settings.verification_policy.phone_code_login_enabled {
+        return Err(AppSessionCreateError::BadRequest(
+            "phone code login is not enabled".to_owned(),
+        ));
+    }
+    Ok(())
+}
+
+fn login_method_from_grant_type(grant_type: &str) -> Result<&'static str, AppSessionCreateError> {
+    match grant_type {
+        "password" => Ok("password"),
+        "email_code" => Ok("emailCode"),
+        "phone_code" => Ok("phoneCode"),
+        "session_bridge" => Ok("sessionBridge"),
+        _ => Err(AppSessionCreateError::BadRequest(format!(
+            "grantType {grant_type} is not supported by this endpoint"
+        ))),
+    }
+}
+
+fn login_method_label(method: &str) -> &'static str {
+    match method {
+        "emailCode" => "email code login",
+        "phoneCode" => "phone code login",
+        "sessionBridge" => "session bridge login",
+        _ => "password login",
+    }
+}
+
+async fn ensure_registration_method_enabled(
+    state: &AppAuthState,
+    tenant_code: &str,
+    organization_code: &str,
+    channel: &str,
+) -> Result<(), AppSessionCreateError> {
+    let settings = auth_settings_for_scope(state, tenant_code, organization_code).await?;
+    let method = register_method_from_channel(channel);
+    if settings.register_methods.iter().any(|item| item == method) {
+        return Ok(());
+    }
+    Err(AppSessionCreateError::BadRequest(format!(
+        "{} registration is not enabled",
+        method_label(method)
+    )))
+}
+
+async fn ensure_recovery_method_enabled(
+    state: &AppAuthState,
+    channel: &str,
+) -> Result<(), AppSessionCreateError> {
+    let settings = default_auth_settings(state).await?;
+    let method = recovery_method_from_channel(channel);
+    if settings.recovery_methods.iter().any(|item| item == method) {
+        return Ok(());
+    }
+    Err(AppSessionCreateError::BadRequest(format!(
+        "{} password recovery is not enabled",
+        method_label(method)
+    )))
+}
+
+async fn ensure_verification_code_allowed(
+    state: &AppAuthState,
+    scene: &str,
+    verify_type: &str,
+) -> Result<(), AppSessionCreateError> {
+    let settings = default_auth_settings(state).await?;
+    match scene {
+        "LOGIN" => {
+            let method = if verify_type == "PHONE" {
+                "phoneCode"
+            } else {
+                "emailCode"
+            };
+            if !settings.login_methods.iter().any(|item| item == method) {
+                return Err(AppSessionCreateError::BadRequest(format!(
+                    "{} is not enabled",
+                    login_method_label(method)
+                )));
+            }
+            if method == "emailCode" && !settings.verification_policy.email_code_login_enabled {
+                return Err(AppSessionCreateError::BadRequest(
+                    "email code login is not enabled".to_owned(),
+                ));
+            }
+            if method == "phoneCode" && !settings.verification_policy.phone_code_login_enabled {
+                return Err(AppSessionCreateError::BadRequest(
+                    "phone code login is not enabled".to_owned(),
+                ));
+            }
+            Ok(())
+        }
+        "REGISTER" => {
+            let method = register_method_from_verify_type(verify_type);
+            if settings.register_methods.iter().any(|item| item == method) {
+                return Ok(());
+            }
+            Err(AppSessionCreateError::BadRequest(format!(
+                "{} registration is not enabled",
+                method_label(method)
+            )))
+        }
+        "RESET_PASSWORD" => {
+            let method = recovery_method_from_verify_type(verify_type);
+            if settings.recovery_methods.iter().any(|item| item == method) {
+                return Ok(());
+            }
+            Err(AppSessionCreateError::BadRequest(format!(
+                "{} password recovery is not enabled",
+                method_label(method)
+            )))
+        }
+        _ => Err(AppSessionCreateError::BadRequest(
+            "scene must be LOGIN, REGISTER, or RESET_PASSWORD".to_owned(),
+        )),
+    }
+}
+
+async fn ensure_qr_login_enabled(state: &AppAuthState) -> Result<(), AppSessionCreateError> {
+    let settings = default_auth_settings(state).await?;
+    if settings.qr_login_enabled {
+        Ok(())
+    } else {
+        Err(AppSessionCreateError::BadRequest(
+            "QR login is not enabled".to_owned(),
+        ))
+    }
+}
+
+async fn ensure_oauth_login_enabled(state: &AppAuthState) -> Result<(), AppSessionCreateError> {
+    let settings = default_auth_settings(state).await?;
+    if settings.oauth_login_enabled {
+        Ok(())
+    } else {
+        Err(AppSessionCreateError::BadRequest(
+            "OAuth login is not enabled".to_owned(),
+        ))
+    }
+}
+
+fn register_method_from_channel(channel: &str) -> &'static str {
+    if channel == "PHONE" {
+        "phone"
+    } else {
+        "email"
+    }
+}
+
+fn register_method_from_verify_type(verify_type: &str) -> &'static str {
+    if verify_type == "PHONE" {
+        "phone"
+    } else {
+        "email"
+    }
+}
+
+fn recovery_method_from_channel(channel: &str) -> &'static str {
+    if channel == "SMS" {
+        "phone"
+    } else {
+        "email"
+    }
+}
+
+fn recovery_method_from_verify_type(verify_type: &str) -> &'static str {
+    if verify_type == "PHONE" {
+        "phone"
+    } else {
+        "email"
+    }
+}
+
+fn method_label(method: &str) -> &'static str {
+    if method == "phone" {
+        "phone"
+    } else {
+        "email"
+    }
 }
 
 fn auth_error_response(error: AppSessionCreateError) -> Response {
@@ -563,6 +874,17 @@ async fn create_session_inner(
         .as_deref()
         .map(normalize_grant_type)
         .unwrap_or_else(|| "password".to_owned());
+    let tenant_code = normalize_optional_field(
+        "tenantCode",
+        request.tenant_code.as_deref(),
+        MAX_TENANT_CODE_LENGTH,
+    )?;
+    let organization_code = normalize_optional_field(
+        "organizationCode",
+        request.organization_code.as_deref(),
+        MAX_ORGANIZATION_CODE_LENGTH,
+    )?;
+    ensure_login_method_enabled(&state, &tenant_code, &organization_code, &grant_type).await?;
     if grant_type == "session_bridge" {
         let request_id = normalize_request_id(&headers)?;
         return crate::api::app_session::create_session_bridge_response(
@@ -739,11 +1061,20 @@ async fn create_registration_inner(
         request.organization_code.as_deref(),
         MAX_ORGANIZATION_CODE_LENGTH,
     )?;
-    let verification_code = normalize_required_field(
+    let verification_code = normalize_optional_field(
         "verificationCode",
-        request.verification_code.as_deref().unwrap_or_default(),
+        request.verification_code.as_deref(),
         MAX_CODE_LENGTH,
     )?;
+    ensure_registration_method_enabled(&state, &tenant_code, &organization_code, &channel).await?;
+    let registration_verification_required =
+        registration_verification_required(&state, &tenant_code, &organization_code, &channel)
+            .await?;
+    if registration_verification_required && verification_code.is_empty() {
+        return Err(AppSessionCreateError::BadRequest(
+            "verificationCode must not be empty".to_owned(),
+        ));
+    }
     let request_id = normalize_request_id(&headers)?;
     let now = current_unix_seconds();
     let password_hash = state
@@ -761,7 +1092,8 @@ async fn create_registration_inner(
             phone,
             channel,
             password_hash,
-            verification_code_hash: sha256_hex(&verification_code),
+            verification_code_hash: optional_string(verification_code)
+                .map(|code| sha256_hex(&code)),
             now,
         })
         .await
@@ -784,6 +1116,27 @@ async fn create_registration_inner(
     .await
 }
 
+async fn registration_verification_required(
+    state: &AppAuthState,
+    tenant_code: &str,
+    organization_code: &str,
+    channel: &str,
+) -> Result<bool, AppSessionCreateError> {
+    let settings = auth_settings_for_scope(state, tenant_code, organization_code).await?;
+    Ok(match channel {
+        "PHONE" => {
+            settings
+                .verification_policy
+                .phone_registration_verification_required
+        }
+        _ => {
+            settings
+                .verification_policy
+                .email_registration_verification_required
+        }
+    })
+}
+
 async fn create_verification_code(
     State(state): State<AppAuthState>,
     Json(request): Json<IamVerificationCodeCreateRequest>,
@@ -801,6 +1154,7 @@ async fn create_verification_code_inner(
     let target = normalize_required_field("target", &request.target, MAX_CODE_TARGET_LENGTH)?;
     let scene = normalize_scene(&request.scene)?;
     let verify_type = normalize_verify_type(&request.verify_type)?;
+    ensure_verification_code_allowed(&state, &scene, &verify_type).await?;
     let now = current_unix_seconds();
     let expires_at = now
         .checked_add(VERIFICATION_CODE_TTL_SECONDS)
@@ -898,6 +1252,7 @@ async fn create_password_reset_request_inner(
 ) -> Result<IamPasswordResetRequestResponse, AppSessionCreateError> {
     let account = normalize_required_field("account", &request.account, MAX_CODE_TARGET_LENGTH)?;
     let channel = normalize_reset_channel(&request.channel)?;
+    ensure_recovery_method_enabled(&state, &channel).await?;
     let now = current_unix_seconds();
     let expires_at = now
         .checked_add(PASSWORD_RESET_CODE_TTL_SECONDS)
@@ -989,14 +1344,74 @@ async fn create_password_reset_inner(
     Ok(NoData {})
 }
 
-async fn oauth_authorization_url_not_configured() -> Response {
-    oauth_not_configured_response()
+async fn oauth_authorization_url_not_configured(
+    State(state): State<AppAuthState>,
+    Query(query): Query<IamOauthAuthorizationUrlQuery>,
+) -> Response {
+    let _provider = query.provider;
+    let _redirect_uri_len = query.redirect_uri.len();
+    let _state_len = query.state.as_deref().unwrap_or_default().len();
+    let _scope_len = query.scope.as_deref().unwrap_or_default().len();
+    match ensure_oauth_login_enabled(&state).await {
+        Ok(()) => oauth_not_configured_response(),
+        Err(error) => auth_error_response(error),
+    }
 }
 
-async fn create_oauth_session(Json(request): Json<IamOauthSessionCreateRequest>) -> Response {
+async fn create_oauth_session(
+    State(state): State<AppAuthState>,
+    Json(request): Json<IamOauthSessionCreateRequest>,
+) -> Response {
     let _provider = request.provider;
     let _code_len = request.code.len();
-    oauth_not_configured_response()
+    match ensure_oauth_login_enabled(&state).await {
+        Ok(()) => oauth_not_configured_response(),
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn retrieve_runtime_settings(
+    State(state): State<AppAuthState>,
+    Query(query): Query<IamRuntimeSettingsQuery>,
+) -> Response {
+    match retrieve_runtime_settings_inner(state, query).await {
+        Ok(settings) => {
+            Json(PlusApiResult::success(to_auth_settings_response(settings))).into_response()
+        }
+        Err(error) => auth_error_response(error),
+    }
+}
+
+async fn retrieve_runtime_settings_inner(
+    state: AppAuthState,
+    query: IamRuntimeSettingsQuery,
+) -> Result<crate::ports::AdminAuthSettings, AppSessionCreateError> {
+    let Some(store) = state.auth_settings_store.as_ref() else {
+        return Ok(crate::ports::AdminAuthSettings::default());
+    };
+    let tenant_code = normalize_optional_field(
+        "tenant_code",
+        query.tenant_code.as_deref(),
+        MAX_TENANT_CODE_LENGTH,
+    )?;
+    let organization_code = normalize_optional_field(
+        "organization_code",
+        query.organization_code.as_deref(),
+        MAX_ORGANIZATION_CODE_LENGTH,
+    )?;
+    store
+        .get_auth_settings_for_scope(GetAdminAuthSettingsScopeQuery {
+            tenant_code: optional_string(tenant_code),
+            organization_code: optional_string(organization_code),
+        })
+        .await
+        .map_err(|error| {
+            if error.is_not_found() {
+                AppSessionCreateError::BadRequest(error.to_string())
+            } else {
+                AppSessionCreateError::System(error.to_string())
+            }
+        })
 }
 
 fn oauth_not_configured_response() -> Response {
@@ -1197,6 +1612,31 @@ pub(crate) async fn issue_iam_session(
             third_party_bound: user.third_party_bound,
         },
     })
+}
+
+fn to_auth_settings_response(
+    settings: crate::ports::AdminAuthSettings,
+) -> IamRuntimeAuthSettingsResponse {
+    IamRuntimeAuthSettingsResponse {
+        left_rail_mode: settings.left_rail_mode,
+        login_methods: settings.login_methods,
+        oauth_login_enabled: settings.oauth_login_enabled,
+        oauth_providers: settings.oauth_providers,
+        oauth_region: settings.oauth_region,
+        qr_login_enabled: settings.qr_login_enabled,
+        recovery_methods: settings.recovery_methods,
+        register_methods: settings.register_methods,
+        verification_policy: IamRuntimeAuthVerificationPolicyResponse {
+            email_code_login_enabled: settings.verification_policy.email_code_login_enabled,
+            email_registration_verification_required: settings
+                .verification_policy
+                .email_registration_verification_required,
+            phone_code_login_enabled: settings.verification_policy.phone_code_login_enabled,
+            phone_registration_verification_required: settings
+                .verification_policy
+                .phone_registration_verification_required,
+        },
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]

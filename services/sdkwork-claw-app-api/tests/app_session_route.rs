@@ -9,7 +9,9 @@ use sdkwork_claw_http::{
 };
 use sdkwork_claw_product::domain::DomainError;
 use sdkwork_claw_product::ports::{
-    AppSessionEventStore, AppSessionEventStoreFuture, RecordAppSessionIssuedEventCommand,
+    AdminAuthSettings, AdminAuthSettingsFuture, AdminAuthSettingsStore, AppSessionEventStore,
+    AppSessionEventStoreFuture, GetAdminAuthSettingsQuery, GetAdminAuthSettingsScopeQuery,
+    RecordAppSessionIssuedEventCommand, UpdateAdminAuthSettingsCommand,
 };
 use tower::ServiceExt;
 
@@ -86,14 +88,57 @@ impl AppSessionEventStore for TestAppSessionEventStore {
     }
 }
 
+#[derive(Debug)]
+struct TestAdminAuthSettingsStore {
+    settings: AdminAuthSettings,
+}
+
+impl TestAdminAuthSettingsStore {
+    fn with_session_bridge_enabled() -> Self {
+        let mut settings = AdminAuthSettings::default();
+        settings.login_methods.push("sessionBridge".to_owned());
+        Self {
+            settings: settings.normalized(),
+        }
+    }
+}
+
+impl AdminAuthSettingsStore for TestAdminAuthSettingsStore {
+    fn get_auth_settings<'a>(
+        &'a self,
+        _query: GetAdminAuthSettingsQuery,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(self.settings.clone()) })
+    }
+
+    fn get_auth_settings_for_scope<'a>(
+        &'a self,
+        _query: GetAdminAuthSettingsScopeQuery,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(self.settings.clone()) })
+    }
+
+    fn update_auth_settings<'a>(
+        &'a self,
+        command: UpdateAdminAuthSettingsCommand,
+    ) -> AdminAuthSettingsFuture<'a, AdminAuthSettings> {
+        Box::pin(async move { Ok(command.settings.normalized()) })
+    }
+}
+
+fn session_bridge_router(event_store: Arc<TestAppSessionEventStore>) -> axum::Router {
+    sdkwork_claw_app_api::router_with_app_session_event_store_auth_settings_store_and_config(
+        event_store,
+        Arc::new(TestAdminAuthSettingsStore::with_session_bridge_enabled()),
+        trusted_subject_config(),
+        app_session_config(),
+    )
+}
+
 #[tokio::test]
 async fn app_session_exchange_issues_session_from_signed_subject_and_audits_event() {
     let event_store = Arc::new(TestAppSessionEventStore::default());
-    let router = sdkwork_claw_app_api::router_with_app_session_event_store_and_config(
-        event_store.clone(),
-        trusted_subject_config(),
-        app_session_config(),
-    );
+    let router = session_bridge_router(event_store.clone());
 
     let response = router
         .oneshot(
@@ -160,24 +205,20 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
 
 #[tokio::test]
 async fn app_session_exchange_rejects_direct_trusted_subject_headers() {
-    let response = sdkwork_claw_app_api::router_with_app_session_event_store_and_config(
-        Arc::new(TestAppSessionEventStore::default()),
-        trusted_subject_config(),
-        app_session_config(),
-    )
-    .oneshot(
-        Request::builder()
-            .method("POST")
-            .uri(APP_SESSION_PATH)
-            .header("x-sdkwork-tenant-id", "999")
-            .header("x-sdkwork-organization-id", "999")
-            .header("x-sdkwork-user-id", "999")
-            .header("content-type", "application/json")
-            .body(Body::from(r#"{"grantType":"session_bridge"}"#))
-            .unwrap(),
-    )
-    .await
-    .unwrap();
+    let response = session_bridge_router(Arc::new(TestAppSessionEventStore::default()))
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri(APP_SESSION_PATH)
+                .header("x-sdkwork-tenant-id", "999")
+                .header("x-sdkwork-organization-id", "999")
+                .header("x-sdkwork-user-id", "999")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"grantType":"session_bridge"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
 
     assert_eq!(StatusCode::UNAUTHORIZED, response.status());
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)

@@ -4962,7 +4962,7 @@ tables:
     system_of_record: true
     write_owner: control-plane
     common_columns: event_log
-    frontend_routes: [/console/routing, /console/providers, /admin/channel, /admin/model]
+    frontend_routes: [/auth/login, /console/routing, /console/providers, /admin/channel, /admin/model, /admin/settings]
     api_surfaces: [app, backend, worker]
     columns:
       snapshot_no: string(128)
@@ -4988,7 +4988,7 @@ tables:
     system_of_record: true
     write_owner: audit-service
     common_columns: audit_log
-    frontend_routes: [/console/account, /console/api-keys, /console/billing, /console/routing, /admin/user, /admin/channel, /admin/model, /admin/app, /admin/finance, /admin/announcement, /admin/group, /admin/marketing, /admin/ratelimit, /admin/skill]
+    frontend_routes: [/console/account, /console/api-keys, /console/billing, /console/routing, /admin/user, /admin/channel, /admin/model, /admin/app, /admin/finance, /admin/announcement, /admin/group, /admin/marketing, /admin/ratelimit, /admin/skill, /admin/settings]
     api_surfaces: [app, backend, worker]
     columns:
       operator_type: enum_int32

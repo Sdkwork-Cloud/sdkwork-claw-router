@@ -146,8 +146,8 @@ const result = await client.platform.apps.list(params);
 ### system
 
 ```typescript
-// List dashboard data
-const result = await client.system.dashboard.admin.overview.retrieve();
+// Retrieve IAM auth runtime settings
+const result = await client.system.auth.settings.retrieve();
 ```
 
 ## Error Handling

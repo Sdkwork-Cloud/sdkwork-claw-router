@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Users, UserCog, Network, Megaphone,
-  TrendingUp, Activity, Database, LogOut, Search, Settings, Link, ShieldAlert, Store, Package
+  TrendingUp, Activity, Database, LogOut, Search, Settings, Link, ShieldAlert, Store, Package, ShieldCheck
 } from 'lucide-react';
 import { Navbar } from 'sdkwork-claw-router-commons';
 
@@ -17,6 +17,7 @@ const ADMIN_LINKS = [
   { path: '/admin/finance', icon: <TrendingUp className="w-4 h-4 text-emerald-500" />, label: '财务管理' },
   { path: '/admin/record', icon: <Activity className="w-4 h-4" />, label: '使用记录' },
   { path: '/admin/ratelimit', icon: <ShieldAlert className="w-4 h-4 text-red-500" />, label: '限流与风控' },
+  { path: '/admin/settings', icon: <ShieldCheck className="w-4 h-4 text-blue-500" />, label: 'Auth Settings' },
   { path: '/admin/monitor', icon: <Settings className="w-4 h-4" />, label: '运维监控' },
 ];
 

@@ -53,6 +53,7 @@ class ClawRouterOpenApiGenerator:
         "passwordResetRequests.create",
         "passwordResets.create",
         "registrations.create",
+        "runtimeSettings.retrieve",
         "sessions.create",
         "verificationCodes.create",
         "verificationCodes.verify",
