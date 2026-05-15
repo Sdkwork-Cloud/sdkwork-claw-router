@@ -40,7 +40,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts.release,
-    'pnpm release:preflight && pnpm verify',
+    'pnpm release:preflight -- --strict --env-file .env.release.local && pnpm verify',
   );
   assert.equal(
     rootPackage.scripts['desktop:dev'],
@@ -2258,11 +2258,19 @@ test('release preflight parser supports strict, json, dry-run, and root cleanlin
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
   );
 
-  assert.deepEqual(module.parseArgs(['--strict', '--json', '--dry-run', '--strict-root-clean']), {
+  assert.deepEqual(module.parseArgs([
+    '--strict',
+    '--json',
+    '--dry-run',
+    '--strict-root-clean',
+    '--env-file',
+    '.env.release.local',
+  ]), {
     strict: true,
     json: true,
     dryRun: true,
     strictRootClean: true,
+    envFile: '.env.release.local',
     help: false,
   });
   assert.deepEqual(module.parseArgs(['--', '--json']), {
@@ -2270,8 +2278,134 @@ test('release preflight parser supports strict, json, dry-run, and root cleanlin
     json: true,
     dryRun: false,
     strictRootClean: false,
+    envFile: '',
     help: false,
   });
+});
+
+test('release preflight publishes a single release environment contract', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
+  );
+
+  assert.deepEqual(module.RELEASE_ENVIRONMENT_CONTRACT.requiredReleaseEnv, [
+    'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL',
+  ]);
+  assert.deepEqual(module.RELEASE_ENVIRONMENT_CONTRACT.requiredPortalPublicEnv, [
+    'PORTAL_PUBLIC_API_BASE_URL',
+    'PORTAL_PUBLIC_APP_API_BASE_URL',
+    'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
+    'PORTAL_PUBLIC_TOOL_API_ENABLED',
+  ]);
+  assert.equal(module.RELEASE_ENVIRONMENT_CONTRACT.exampleFile, '.env.release.example');
+  assert.equal(module.RELEASE_ENVIRONMENT_CONTRACT.localFile, '.env.release.local');
+});
+
+test('release preflight env-file values satisfy strict release environment checks', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
+  );
+  const envFile = [
+    'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release.example"',
+    'PORTAL_PUBLIC_API_BASE_URL=https://tenant.example.com/v1',
+    'PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api',
+    'PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api',
+    'PORTAL_PUBLIC_TOOL_API_ENABLED=false',
+  ].join('\n');
+
+  const result = module.buildReleasePreflightReport({
+    settings: module.parseArgs(['--strict', '--env-file', '.env.release.local']),
+    platform: 'linux',
+    env: module.mergeEnvWithEnvFile({}, envFile),
+    probes: {
+      branch: 'main',
+      mainOriginCounts: { behind: 0, ahead: 0 },
+      appStatusLines: [],
+      rootStatusLines: [],
+      commandVersions: {
+        git: 'git version 2.51.0',
+        node: 'v24.11.1',
+        pnpm: '10.33.0',
+        cargo: 'cargo 1.92.0',
+        python: 'Python 3.13.7',
+      },
+      codexSessionStats: { count: 0, totalBytes: 0 },
+      gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
+      gitLfsVersion: 'git-lfs/3.7.1',
+      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+    },
+  });
+  const byId = Object.fromEntries(result.checks.map((check) => [check.id, check]));
+
+  assert.equal(result.exitCode, 0);
+  assert.equal(byId['env.releaseContract'].status, 'PASS');
+  assert.equal(byId['env.postgres'].status, 'PASS');
+  assert.equal(byId['env.portalPublic'].status, 'PASS');
+  assert.ok(byId['env.releaseContract'].details.includes('.env.release.local'));
+});
+
+test('release preflight rejects malformed release environment values in strict mode', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
+  );
+
+  const result = module.buildReleasePreflightReport({
+    settings: module.parseArgs(['--strict', '--env-file', '.env.release.local']),
+    platform: 'linux',
+    env: {
+      SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: 'not-a-postgres-url',
+      PORTAL_PUBLIC_API_BASE_URL: 'javascript:alert(1)',
+      PORTAL_PUBLIC_APP_API_BASE_URL: '//evil.example.com/app',
+      PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api#fragment',
+      PORTAL_PUBLIC_TOOL_API_ENABLED: 'yes',
+    },
+    probes: {
+      branch: 'main',
+      mainOriginCounts: { behind: 0, ahead: 0 },
+      appStatusLines: [],
+      rootStatusLines: [],
+      commandVersions: {
+        git: 'git version 2.51.0',
+        node: 'v24.11.1',
+        pnpm: '10.33.0',
+        cargo: 'cargo 1.92.0',
+        python: 'Python 3.13.7',
+      },
+      codexSessionStats: { count: 0, totalBytes: 0 },
+      gitObjectHealth: { count: 0, size: '0 bytes', inPack: 1, sizePack: '1 MiB' },
+      gitLfsVersion: 'git-lfs/3.7.1',
+      lfsHydrationFiles: [{ path: 'data/skills/skills.json', hydrated: true }],
+    },
+  });
+  const byId = Object.fromEntries(result.checks.map((check) => [check.id, check]));
+
+  assert.equal(result.exitCode, 1);
+  assert.equal(byId['env.releaseContract'].status, 'FAIL');
+  assert.ok(byId['env.releaseContract'].details.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL'));
+  assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_API_BASE_URL'));
+  assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_TOOL_API_ENABLED'));
+});
+
+test('release environment documentation stays aligned with the executable contract', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'release-preflight.mjs')).href
+  );
+  const rootReadme = readFileSync(path.join(workspaceRoot, 'README.md'), 'utf8');
+  const exampleEnv = readFileSync(path.join(workspaceRoot, '.env.release.example'), 'utf8');
+  const ignored = readFileSync(path.join(workspaceRoot, '.gitignore'), 'utf8');
+  const requiredNames = [
+    ...module.RELEASE_ENVIRONMENT_CONTRACT.requiredReleaseEnv,
+    ...module.RELEASE_ENVIRONMENT_CONTRACT.requiredPortalPublicEnv,
+  ];
+
+  assert.ok(rootReadme.includes('## Release Environment Contract'));
+  assert.ok(rootReadme.includes('pnpm.cmd release:preflight -- --strict --env-file .env.release.local'));
+  assert.ok(ignored.includes('.env.release.local'));
+  assert.ok(!ignored.includes('.env.release.example'));
+  for (const name of requiredNames) {
+    assert.ok(rootReadme.includes(name), `README.md must document ${name}`);
+    assert.ok(exampleEnv.includes(`${name}=`), `.env.release.example must declare ${name}`);
+  }
 });
 
 test('release preflight parses main origin counts as local ahead then remote ahead', async () => {

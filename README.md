@@ -441,8 +441,41 @@ packaging a commercial release.
 Use strict mode on CI, staging, or release packaging hosts:
 
 ```powershell
-pnpm.cmd release:preflight -- --strict --strict-root-clean
+pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
+
+## Release Environment Contract
+
+Release and staging hosts must satisfy the executable environment contract in
+`scripts/release-environment-contract.mjs`. The checked-in template is
+`.env.release.example`; copy it to `.env.release.local` on the release host and
+fill in deployment-specific values without committing the local file.
+
+Required release verification variable:
+
+```text
+SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL
+```
+
+Required browser-visible portal runtime variables:
+
+```text
+PORTAL_PUBLIC_API_BASE_URL
+PORTAL_PUBLIC_APP_API_BASE_URL
+PORTAL_PUBLIC_BACKEND_API_BASE_URL
+PORTAL_PUBLIC_TOOL_API_ENABLED
+```
+
+Run strict preflight against the local release env file before packaging:
+
+```powershell
+Copy-Item .env.release.example .env.release.local
+pnpm.cmd release:preflight -- --strict --env-file .env.release.local
+```
+
+`PORTAL_PUBLIC_*` values are intentionally visible to the browser through
+`/runtime-env.js`; do not place secrets in them. The Postgres URL is used only
+for release verification and Postgres contract tests.
 
 `--strict` upgrades missing release environment variables to failures.
 `--strict-root-clean` also fails when unrelated files outside this application
@@ -713,8 +746,8 @@ configured but the normalized archive is missing, it returns
 ## Recommended Delivery Sequence
 
 1. Run `pnpm.cmd release:preflight`; use
-   `pnpm.cmd release:preflight -- --strict --strict-root-clean` on CI or a
-   release host.
+   `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
+   on CI or a release host.
 2. Run `pnpm.cmd verify`.
 3. In CI or release packaging, opt into the live dev edge smoke when required
    with `pnpm.cmd verify -- --with-edge-dev-smoke` and

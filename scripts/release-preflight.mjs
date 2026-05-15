@@ -1,24 +1,17 @@
 #!/usr/bin/env node
 
 import { execFile } from 'node:child_process';
-import { open, readdir, stat } from 'node:fs/promises';
+import { open, readFile, readdir, stat } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import process from 'node:process';
 import { promisify } from 'node:util';
+import { RELEASE_ENVIRONMENT_CONTRACT } from './release-environment-contract.mjs';
 
 const execFileAsync = promisify(execFile);
 
-const REQUIRED_RELEASE_ENV = [
-  'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL',
-];
-
-const REQUIRED_PORTAL_PUBLIC_ENV = [
-  'PORTAL_PUBLIC_API_BASE_URL',
-  'PORTAL_PUBLIC_APP_API_BASE_URL',
-  'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
-  'PORTAL_PUBLIC_TOOL_API_ENABLED',
-];
+const REQUIRED_RELEASE_ENV = RELEASE_ENVIRONMENT_CONTRACT.requiredReleaseEnv;
+const REQUIRED_PORTAL_PUBLIC_ENV = RELEASE_ENVIRONMENT_CONTRACT.requiredPortalPublicEnv;
 
 const REQUIRED_COMMANDS = [
   ['git', 'git', ['--version']],
@@ -48,6 +41,7 @@ Run a lightweight release readiness preflight before the full commercial gate.
 Options:
   --strict             Fail when release/staging environment variables are missing.
   --strict-root-clean  Fail when the repository root has unrelated dirty files.
+  --env-file <path>    Merge release environment values from a dotenv file.
   --json               Print machine-readable JSON.
   --dry-run            Print the check plan without running local probes.
   -h, --help           Show this help.
@@ -60,10 +54,12 @@ function parseArgs(argv) {
     json: false,
     dryRun: false,
     strictRootClean: false,
+    envFile: '',
     help: false,
   };
 
-  for (const arg of argv) {
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
     if (arg === '--') {
       continue;
     }
@@ -79,6 +75,13 @@ function parseArgs(argv) {
         break;
       case '--strict-root-clean':
         settings.strictRootClean = true;
+        break;
+      case '--env-file':
+        index += 1;
+        if (!argv[index]) {
+          throw new Error('--env-file requires a path');
+        }
+        settings.envFile = argv[index];
         break;
       case '--help':
       case '-h':
@@ -112,6 +115,123 @@ function commandLine(command, args = []) {
 
 function missingEnv(env, names) {
   return names.filter((name) => !String(env[name] ?? '').trim());
+}
+
+function releaseEnvironmentIssues(env) {
+  const issues = [];
+  const missingContractEnv = missingEnv(env, [
+    ...REQUIRED_RELEASE_ENV,
+    ...REQUIRED_PORTAL_PUBLIC_ENV,
+  ]);
+  for (const name of missingContractEnv) {
+    issues.push(`${name} is missing`);
+  }
+
+  const postgresUrl = String(env.SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL ?? '').trim();
+  if (postgresUrl && !isPostgresDatabaseUrl(postgresUrl)) {
+    issues.push('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL must be a postgres:// or postgresql:// URL');
+  }
+
+  for (const name of [
+    'PORTAL_PUBLIC_API_BASE_URL',
+    'PORTAL_PUBLIC_APP_API_BASE_URL',
+    'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
+  ]) {
+    const value = String(env[name] ?? '').trim();
+    if (value && !isHttpOrRootRelativeRuntimePath(value)) {
+      issues.push(`${name} must be an HTTP/HTTPS URL or root-relative path without query, fragment, or control characters`);
+    }
+  }
+
+  const toolApiEnabled = String(env.PORTAL_PUBLIC_TOOL_API_ENABLED ?? '').trim();
+  if (toolApiEnabled && toolApiEnabled !== 'true' && toolApiEnabled !== 'false') {
+    issues.push('PORTAL_PUBLIC_TOOL_API_ENABLED must be true or false');
+  }
+
+  return issues;
+}
+
+function isPostgresDatabaseUrl(value) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === 'postgres:' || parsed.protocol === 'postgresql:';
+  } catch {
+    return false;
+  }
+}
+
+function isHttpOrRootRelativeRuntimePath(value) {
+  if (/[\u0000-\u001f\u007f]/.test(value) || value.includes('?') || value.includes('#')) {
+    return false;
+  }
+  if (value.startsWith('//')) {
+    return false;
+  }
+  if (value.startsWith('/')) {
+    return true;
+  }
+  try {
+    const parsed = new URL(value);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:')
+      && !parsed.search
+      && !parsed.hash;
+  } catch {
+    return false;
+  }
+}
+
+function parseEnvFileContent(raw) {
+  const values = {};
+  for (const line of raw.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) {
+      continue;
+    }
+    const equalsIndex = trimmed.indexOf('=');
+    if (equalsIndex <= 0) {
+      continue;
+    }
+    const name = trimmed.slice(0, equalsIndex).trim();
+    const rawValue = trimmed.slice(equalsIndex + 1).trim();
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(name)) {
+      continue;
+    }
+    values[name] = unquoteEnvFileValue(rawValue);
+  }
+  return values;
+}
+
+function unquoteEnvFileValue(rawValue) {
+  const quote = rawValue[0];
+  if ((quote === '"' || quote === "'") && rawValue.endsWith(quote)) {
+    const inner = rawValue.slice(1, -1);
+    if (quote === "'") {
+      return inner;
+    }
+    return inner
+      .replaceAll('\\n', '\n')
+      .replaceAll('\\r', '\r')
+      .replaceAll('\\t', '\t')
+      .replaceAll('\\"', '"')
+      .replaceAll('\\\\', '\\');
+  }
+  const commentIndex = rawValue.search(/\s#/);
+  return (commentIndex === -1 ? rawValue : rawValue.slice(0, commentIndex)).trim();
+}
+
+function mergeEnvWithEnvFile(env, envFileContent = '') {
+  return {
+    ...env,
+    ...parseEnvFileContent(envFileContent),
+  };
+}
+
+async function readReleaseEnvFile(envFile, workspaceRoot) {
+  if (!envFile) {
+    return '';
+  }
+  const resolvedPath = path.isAbsolute(envFile) ? envFile : path.resolve(workspaceRoot, envFile);
+  return readFile(resolvedPath, 'utf8');
 }
 
 function formatBytes(bytes) {
@@ -442,6 +562,18 @@ function buildReleasePreflightReport({
   }
 
   const missingReleaseEnv = missingEnv(env, REQUIRED_RELEASE_ENV);
+  const envFileLabel = settings.envFile || RELEASE_ENVIRONMENT_CONTRACT.localFile;
+  const contractIssues = releaseEnvironmentIssues(env);
+  checks.push(createCheck(
+    'env.releaseContract',
+    'Release environment contract',
+    contractIssues.length === 0 ? 'PASS' : settings.strict ? 'FAIL' : 'WARN',
+    contractIssues.length === 0
+      ? `release environment contract v${RELEASE_ENVIRONMENT_CONTRACT.version} is satisfied; env file: ${envFileLabel}`
+      : `${contractIssues.join('; ')}; use ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} as the template for ${envFileLabel}`,
+    `Copy ${RELEASE_ENVIRONMENT_CONTRACT.exampleFile} to ${RELEASE_ENVIRONMENT_CONTRACT.localFile} on the release host and run release preflight with --env-file ${RELEASE_ENVIRONMENT_CONTRACT.localFile}.`,
+  ));
+
   checks.push(createCheck(
     'env.postgres',
     'Postgres integration environment',
@@ -614,18 +746,25 @@ async function main() {
     return;
   }
 
+  const workspaceRoot = path.resolve(import.meta.dirname, '..');
+  let env = process.env;
+  if (settings.envFile) {
+    const envFileContent = await readReleaseEnvFile(settings.envFile, workspaceRoot);
+    env = mergeEnvWithEnvFile(process.env, envFileContent);
+  }
+
   const probes = settings.dryRun
     ? buildDryRunProbes()
     : await collectReleasePreflightProbes({
-      workspaceRoot: path.resolve(import.meta.dirname, '..'),
+      workspaceRoot,
       platform: process.platform,
-      env: process.env,
+      env,
     });
 
   const report = buildReleasePreflightReport({
     settings,
     platform: process.platform,
-    env: process.env,
+    env,
     probes,
   });
   process.stdout.write(formatReport(report, { json: settings.json }));
@@ -640,6 +779,7 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 }
 
 export {
+  RELEASE_ENVIRONMENT_CONTRACT,
   buildDryRunProbes,
   buildReleasePreflightReport,
   collectCodexSessionStats,
@@ -647,8 +787,13 @@ export {
   collectReleasePreflightProbes,
   formatBytes,
   formatReport,
+  isHttpOrRootRelativeRuntimePath,
+  isPostgresDatabaseUrl,
+  mergeEnvWithEnvFile,
   parseArgs,
+  parseEnvFileContent,
   parseGitObjectHealth,
   parseMainOriginCounts,
   pnpmCommand,
+  releaseEnvironmentIssues,
 };

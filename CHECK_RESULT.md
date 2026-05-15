@@ -3418,6 +3418,14 @@ Remaining delivery policy:
 - Use `pnpm.cmd release:preflight` before every local release handoff.
 - Use `pnpm.cmd release:preflight -- --strict --strict-root-clean` on CI or a
   release packaging host.
+- Keep release environment variables aligned with
+  `scripts/release-environment-contract.mjs`. Copy `.env.release.example` to
+  `.env.release.local` on release hosts and run
+  `pnpm.cmd release:preflight -- --strict --env-file .env.release.local`
+  before packaging. The contract requires
+  `SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL`, `PORTAL_PUBLIC_API_BASE_URL`,
+  `PORTAL_PUBLIC_APP_API_BASE_URL`, `PORTAL_PUBLIC_BACKEND_API_BASE_URL`, and
+  `PORTAL_PUBLIC_TOOL_API_ENABLED`.
 - Continue to use `pnpm.cmd verify` as the final commercial gate; preflight is
   a readiness check, not a replacement for compile, build, smoke, schema, and
   architecture verification.
