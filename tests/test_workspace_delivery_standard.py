@@ -156,6 +156,27 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             with self.subTest(pattern=pattern):
                 self.assertIn(pattern, ignored)
 
+    def test_large_skill_seed_aggregates_are_lfs_managed(self) -> None:
+        attributes = {
+            line.strip()
+            for line in (ROOT / ".gitattributes").read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        }
+
+        for path in [
+            "data/skills/skills.json",
+            "data/skills/artifacts.json",
+            "data/skills/assets.json",
+            "data/skills/clawhub/raw/checkpoint.json",
+            "data/skills/clawhub/raw/index.json",
+        ]:
+            with self.subTest(path=path):
+                self.assertIn(
+                    f"{path} filter=lfs diff=lfs merge=lfs -text",
+                    attributes,
+                    "large skill seed aggregates must stay in Git LFS instead of normal Git blobs",
+                )
+
     def test_root_delivery_documents_are_readable_and_actionable(self) -> None:
         required_snippets = [
             "pnpm.cmd verify",

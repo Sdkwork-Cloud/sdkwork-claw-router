@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execFile } from 'node:child_process';
-import { readdir, stat } from 'node:fs/promises';
+import { open, readdir, stat } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import process from 'node:process';
@@ -31,6 +31,14 @@ const REQUIRED_COMMANDS = [
 const CODEX_SESSION_WARN_BYTES = 1_000 * 1024 * 1024;
 const CODEX_SESSION_WARN_COUNT = 12;
 const GIT_LOOSE_OBJECT_WARN_COUNT = 1_000;
+const LFS_POINTER_PREFIX = 'version https://git-lfs.github.com/spec/v1';
+const LFS_MANAGED_SKILL_SEED_FILES = [
+  'data/skills/skills.json',
+  'data/skills/artifacts.json',
+  'data/skills/assets.json',
+  'data/skills/clawhub/raw/checkpoint.json',
+  'data/skills/clawhub/raw/index.json',
+];
 
 function printHelp() {
   console.log(`Usage: node scripts/release-preflight.mjs [options]
@@ -147,6 +155,37 @@ function parseGitObjectHealth(raw) {
   };
 }
 
+async function readFilePrefix(filePath, byteCount = 128) {
+  const fileHandle = await open(filePath, 'r');
+  try {
+    const buffer = Buffer.alloc(byteCount);
+    const { bytesRead } = await fileHandle.read(buffer, 0, byteCount, 0);
+    return buffer.subarray(0, bytesRead).toString('utf8');
+  } finally {
+    await fileHandle.close();
+  }
+}
+
+async function collectLfsHydrationStatus(workspaceRoot) {
+  const files = [];
+  for (const relativePath of LFS_MANAGED_SKILL_SEED_FILES) {
+    try {
+      const prefix = await readFilePrefix(path.join(workspaceRoot, relativePath));
+      files.push({
+        path: relativePath,
+        hydrated: !prefix.startsWith(LFS_POINTER_PREFIX),
+      });
+    } catch (error) {
+      files.push({
+        path: relativePath,
+        hydrated: false,
+        error: error instanceof Error ? error.message : String(error),
+      });
+    }
+  }
+  return files;
+}
+
 function isChildProcessPermissionError(error) {
   return error?.code === 'EPERM' || String(error?.message ?? error).includes('spawn EPERM');
 }
@@ -255,6 +294,8 @@ async function collectReleasePreflightProbes({
       commandVersions,
       codexSessionStats: await collectCodexSessionStats(),
       gitObjectHealth: { count: 0, size: 'unknown', inPack: 0, sizePack: 'unknown' },
+      gitLfsVersion: '',
+      lfsHydrationFiles: [],
     };
   }
   const mainOriginRaw = await runCommand('git', ['rev-list', '--left-right', '--count', 'main...origin/main'], {
@@ -263,6 +304,7 @@ async function collectReleasePreflightProbes({
   const appStatusRaw = await runCommand('git', ['status', '--short', '--', '.'], { cwd: workspaceRoot });
   const rootStatusRaw = await runCommand('git', ['status', '--short'], { cwd: workspaceRoot });
   const gitObjectRaw = await runCommand('git', ['count-objects', '-vH'], { cwd: workspaceRoot });
+  const gitLfsVersion = await runCommand('git', ['lfs', 'version'], { cwd: workspaceRoot });
 
   for (const [id, configuredCommand, args] of REQUIRED_COMMANDS) {
     const command = configuredCommand ?? pnpm;
@@ -282,6 +324,8 @@ async function collectReleasePreflightProbes({
     commandVersions,
     codexSessionStats: await collectCodexSessionStats(),
     gitObjectHealth: parseGitObjectHealth(gitObjectRaw),
+    gitLfsVersion,
+    lfsHydrationFiles: await collectLfsHydrationStatus(workspaceRoot),
   };
 }
 
@@ -449,6 +493,42 @@ function buildReleasePreflightReport({
     'Ask before running destructive git cleanup; git prune/gc should not be run implicitly.',
   ));
 
+  const gitLfsVersion = probes.gitLfsVersion;
+  const gitLfsVersionBlocked = isBlockedProbeResult(gitLfsVersion);
+  const gitLfsVersionDetails = probeResultDetails(gitLfsVersion);
+  checks.push(createCheck(
+    'tools.gitLfs',
+    'Git LFS availability',
+    localProbeSkipped ? 'WARN' : gitLfsVersionDetails ? 'PASS' : 'FAIL',
+    childProcessBlocked && gitLfsVersionBlocked
+      ? `git lfs was not probed because child process execution is blocked: ${gitLfsVersionDetails}`
+      : childProcessBlocked
+      ? 'git lfs was not probed because child process execution is blocked'
+      : dryRun
+        ? gitLfsVersionDetails || 'dry-run: would run git lfs version'
+      : gitLfsVersionDetails || 'git lfs is not available from this shell',
+    'Install Git LFS and run git lfs pull before release packaging.',
+  ));
+
+  const lfsHydrationFiles = probes.lfsHydrationFiles ?? [];
+  const blockedLfsHydrationProbe = localProbeSkipped || lfsHydrationFiles.length === 0;
+  const unhydratedLfsFiles = lfsHydrationFiles.filter((file) => file.hydrated !== true);
+  checks.push(createCheck(
+    'data.skillSeedsLfsHydrated',
+    'Skill seed LFS hydration',
+    blockedLfsHydrationProbe ? 'WARN' : unhydratedLfsFiles.length === 0 ? 'PASS' : 'FAIL',
+    childProcessBlocked
+      ? 'skill seed LFS files were not probed because child process execution is blocked'
+      : dryRun
+      ? 'dry-run: skill seed LFS hydration was not probed'
+      : blockedLfsHydrationProbe
+      ? 'skill seed LFS hydration was not probed'
+      : unhydratedLfsFiles.length === 0
+      ? `${lfsHydrationFiles.length} Git LFS skill seed files are hydrated`
+      : `unhydrated or unreadable Git LFS skill seed files: ${unhydratedLfsFiles.map((file) => file.path).join(', ')}`,
+    'Run git lfs pull so Rust include_str! reads real JSON seed data instead of LFS pointer files.',
+  ));
+
   const recommendedCommands = [
     commandLine(pnpm, ['models:check']),
     commandLine(pnpm, ['verify']),
@@ -522,6 +602,8 @@ function buildDryRunProbes(platform = process.platform) {
     ),
     codexSessionStats: { count: 0, totalBytes: 0 },
     gitObjectHealth: { count: 0, size: '0 bytes', inPack: 0, sizePack: '0 bytes' },
+    gitLfsVersion: 'dry-run: would run git lfs version',
+    lfsHydrationFiles: [],
   };
 }
 
@@ -561,6 +643,7 @@ export {
   buildDryRunProbes,
   buildReleasePreflightReport,
   collectCodexSessionStats,
+  collectLfsHydrationStatus,
   collectReleasePreflightProbes,
   formatBytes,
   formatReport,

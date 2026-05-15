@@ -420,10 +420,12 @@ pnpm.cmd release:preflight
 The preflight is read-only. It checks that the current branch is `main`,
 `main...origin/main` is synchronized, the `sdkwork-claw-router` application
 worktree is clean, required commands are available, staging/Postgres
-environment variables are present, and local Codex/Git IO footprint is not
+environment variables are present, Git LFS is available, LFS-managed bundled
+skill seed JSON files are hydrated, and local Codex/Git IO footprint is not
 large enough to slow command input. Missing staging environment variables are
 warnings by default so local developers can still run the check before a
-release host is provisioned.
+release host is provisioned. If a fresh clone has LFS pointer files instead of
+real skill seed JSON, run `git lfs pull` before building or packaging.
 
 Release preflight uses Node `child_process.spawn` probes through `execFile` to
 inspect Git state and required tool availability. If the local execution
