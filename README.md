@@ -512,8 +512,9 @@ The install package standard is executable through
 `scripts/plan-claw-router-install-packages.mjs`. It is intentionally plan-only:
 it does not run `pnpm dev`, does not launch the live edge dev smoke, does not
 start production services, and does not build platform packages. Real archive,
-service, and container builders must consume this plan so Windows, Linux,
-macOS, x64, arm64, archive, service, and container delivery cannot drift.
+service, container, and desktop builders must consume this plan so Windows,
+Linux, macOS, x64, arm64, archive, service, container, desktop, and database
+configuration delivery cannot drift.
 
 Run the planner before wiring package builders:
 
@@ -525,10 +526,11 @@ pnpm.cmd install:init:smoke
 node scripts/plan-claw-router-install-packages.mjs --json --check
 ```
 
-The default matrix contains 18 package contracts: `windows`, `linux`, and
-`macos` multiplied by `x64` and `arm64`, then by `archive`, `service`, and
-`container`. Examples include `windows-x64-service` and
-`linux-arm64-container`. Each package contract declares:
+The default matrix contains 24 package contracts: `windows`, `linux`, and
+`macos` multiplied by `x64` and `arm64`, then by `archive`, `service`,
+`container`, and `desktop`. Examples include `windows-x64-service`,
+`linux-arm64-container`, and `macos-arm64-desktop`. Each package contract
+declares:
 
 - the Rust edge binary, `sdkwork-claw-gateway` or
   `sdkwork-claw-gateway.exe`
@@ -537,9 +539,53 @@ The default matrix contains 18 package contracts: `windows`, `linux`, and
 - `portal/dist` production assets
 - `portal/dist/sdk-archives` generated SDK ZIP artifacts
 - `.env.release.example` as a reference template only
+- `config/sdkwork-claw-router.toml.example` as the runtime configuration
+  template
 - an `install-manifest.json`
 - service manifests for service mode and container entrypoint metadata for
   container mode
+- desktop metadata for desktop mode
+
+Database defaults are explicit by package profile. `archive`, `service`, and
+`container` are server release profiles and default to PostgreSQL. Server
+packages require the deployed host to provide a managed PostgreSQL DSN in the
+runtime TOML config or through `SDKWORK_CLAW_DATABASE_URL`. The desktop packages default to a local SQLite database in the operating system user data directory
+and may still be pointed at another database through the same runtime config
+file.
+
+The runtime config file is TOML and supports:
+
+```toml
+[database]
+engine = "postgresql"
+url = "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router"
+max_connections = 16
+```
+
+Desktop templates use:
+
+```toml
+[database]
+engine = "sqlite"
+url = "sqlite://<os-user-data-dir>/sdkwork-claw-router.sqlite"
+max_connections = 1
+```
+
+The standard config file locations are:
+
+- Linux server: `/etc/sdkwork-claw-router/sdkwork-claw-router.toml`
+- Linux desktop: `${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml`
+- Windows server: `%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml`
+- Windows desktop: `%APPDATA%/SdkWork/Claw Router/sdkwork-claw-router.toml`
+- macOS server: `/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml`
+- macOS desktop: `~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml`
+
+At runtime, `SDKWORK_CLAW_CONFIG_FILE` can point to any explicit TOML config
+file. `SDKWORK_CLAW_DATABASE_URL` and
+`SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS` override the file for emergency
+operations and container orchestration. The Rust gateway, installer, admin API,
+and app API all read this shared configuration layer through
+`sdkwork-claw-config`.
 
 Fast initialization is standardized around host-local environment generation
 and installer commands:
@@ -564,7 +610,7 @@ header trust only when a controlled reverse proxy is the sole inbound client.
 `scripts/build-claw-router-install-package.mjs` consumes the same matrix to
 create one install package from a staged production directory. The default
 `pnpm.cmd install:package:check` command is dry-run only, so it validates the
-full 18-package builder matrix without requiring `pnpm.cmd build` output. To
+full 24-package builder matrix without requiring `pnpm.cmd build` output. To
 build a real package, stage the package contents under a directory shaped like
 the package plan and pass it explicitly:
 
@@ -579,20 +625,24 @@ gzip-compressed tar bytes for `.tar.gz` and preserve executable mode on
 extensionless binaries under `bin/`. The tar writer supports standard ustar
 prefix paths for nested production asset names. Service packages generate
 Windows service, systemd, or launchd manifests from the shared package plan.
-Container packages generate a `container/Containerfile`, platform-specific
+All packages generate `config/sdkwork-claw-router.toml.example`. Container
+packages generate a `container/Containerfile`, platform-specific
 entrypoint (`container/entrypoint` on Linux/macOS,
 `container/entrypoint.ps1` on Windows), and `container/metadata.json` without
-starting services. The builder excludes `.env.release.local` even if it exists
-in the staging directory. Add `--json` for pure machine-readable output.
+starting services. Desktop packages generate `desktop/metadata.json` with the
+desktop SQLite policy and OS config/data directories. The builder excludes
+`.env.release.local` even if it exists in the staging directory. Add `--json`
+for pure machine-readable output.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run
 smoke that creates a temporary install root, writes a safe
-`.env.release.local`, verifies the SQLite initialization URL, verifies
-`sdkwork-claw-installer ensure` plus `sdkwork-claw-installer refresh-catalog
---force` are the only installer actions, and confirms `/healthz` plus
-`/readyz` remain the readiness contract. It never starts `pnpm dev`, the live
-edge dev smoke, or production services.
+`.env.release.local`, writes a temporary `sdkwork-claw-router.toml`, verifies
+that server package dry-runs use PostgreSQL while desktop package dry-runs use
+a file-backed SQLite URL, verifies `sdkwork-claw-installer ensure` plus
+`sdkwork-claw-installer refresh-catalog --force` are the only installer
+actions, and confirms `/healthz` plus `/readyz` remain the readiness contract.
+It never starts `pnpm dev`, the live edge dev smoke, or production services.
 
 ```powershell
 pnpm.cmd install:init:smoke

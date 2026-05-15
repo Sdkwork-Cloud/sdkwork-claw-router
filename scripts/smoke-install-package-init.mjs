@@ -18,6 +18,7 @@ const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
 const DEFAULT_VERSION = '0.1.0';
 const DEFAULT_RELEASE_POSTGRES_URL = 'postgres://release-smoke.invalid:5432/sdkwork_claw_router';
+const DEFAULT_RELEASE_POSTGRES_RUNTIME_URL = 'postgresql://release-smoke.invalid:5432/sdkwork_claw_router';
 
 function printHelp() {
   console.log(`Usage: node scripts/smoke-install-package-init.mjs [options]
@@ -138,13 +139,21 @@ function createInstallInitSmokePlan({
     throw new Error('--installer-bin is required unless --dry-run is used');
   }
 
-  const databasePath = path.join(absoluteTmpRoot, 'sdkwork-claw-router-install-init.sqlite');
-  const databaseUrl = `sqlite://${toPosixPath(databasePath)}`;
+  const runtimeConfigPath = path.join(absoluteTmpRoot, 'sdkwork-claw-router.toml');
+  const databaseEngine = packageItem.databasePolicy.defaultEngine;
+  const databasePath = databaseEngine === 'sqlite'
+    ? path.join(absoluteTmpRoot, 'sdkwork-claw-router-install-init.sqlite')
+    : null;
+  const databaseUrl = databaseEngine === 'sqlite'
+    ? `sqlite://${toPosixPath(databasePath)}`
+    : DEFAULT_RELEASE_POSTGRES_RUNTIME_URL;
   const releaseEnvPath = path.join(absoluteTmpRoot, '.env.release.local');
   const modelsCatalogRoot = path.join(root, 'data', 'sdkwork-models');
   const env = createSmokeEnvironment({
     databaseUrl,
+    databaseEngine,
     releaseEnvPath,
+    runtimeConfigPath,
     modelsCatalogRoot,
   });
   const installerCommand = absoluteInstallerBin ?? packageItem.installerBinaryName;
@@ -164,6 +173,8 @@ function createInstallInitSmokePlan({
     packageRootProvided: Boolean(packageRoot),
     tmpRoot: absoluteTmpRoot,
     releaseEnvPath,
+    runtimeConfigPath,
+    databaseEngine,
     databasePath,
     databaseUrl,
     modelsCatalogRoot,
@@ -185,7 +196,7 @@ function createInstallInitSmokePlan({
         executable: installerCommand,
         args: ['ensure'],
         env,
-        writes: [databasePath],
+        writes: databasePath ? [databasePath] : [],
       },
       {
         id: 'catalog-refresh',
@@ -193,7 +204,7 @@ function createInstallInitSmokePlan({
         executable: installerCommand,
         args: ['refresh-catalog', '--force'],
         env,
-        writes: [databasePath],
+        writes: databasePath ? [databasePath] : [],
       },
       {
         id: 'readiness-contract',
@@ -207,10 +218,8 @@ function createInstallInitSmokePlan({
   };
 }
 
-function createSmokeEnvironment({ databaseUrl, releaseEnvPath, modelsCatalogRoot }) {
-  return {
-    SDKWORK_CLAW_DATABASE_URL: databaseUrl,
-    SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS: '1',
+function createSmokeEnvironment({ databaseUrl, databaseEngine, releaseEnvPath, runtimeConfigPath, modelsCatalogRoot }) {
+  const env = {
     SDKWORK_MODELS_CATALOG_ROOT: modelsCatalogRoot,
     SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: DEFAULT_RELEASE_POSTGRES_URL,
     PORTAL_PUBLIC_API_BASE_URL: '/v1',
@@ -218,7 +227,14 @@ function createSmokeEnvironment({ databaseUrl, releaseEnvPath, modelsCatalogRoot
     PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api',
     PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',
     SDKWORK_CLAW_RELEASE_ENV_FILE: releaseEnvPath,
+    SDKWORK_CLAW_CONFIG_FILE: runtimeConfigPath,
+    SDKWORK_CLAW_DEPLOYMENT_MODE: databaseEngine === 'sqlite' ? 'desktop' : 'server',
   };
+  if (databaseEngine === 'sqlite') {
+    env.SDKWORK_CLAW_DATABASE_URL = databaseUrl;
+    env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS = '1';
+  }
+  return env;
 }
 
 function validateInstallInitSmokePlan(plan) {
@@ -235,8 +251,14 @@ function validateInstallInitSmokePlan(plan) {
   if (!plan.releaseEnvPath || !path.isAbsolute(plan.releaseEnvPath)) {
     issues.push('releaseEnvPath must be an absolute path');
   }
-  if (!plan.databaseUrl?.startsWith('sqlite://')) {
-    issues.push('databaseUrl must use sqlite:// for fast install smoke');
+  if (plan.databaseEngine === 'sqlite' && !plan.databaseUrl?.startsWith('sqlite://')) {
+    issues.push('desktop install init smoke must use sqlite://');
+  }
+  if (plan.databaseEngine === 'postgresql' && !plan.databaseUrl?.startsWith('postgresql://')) {
+    issues.push('server install init smoke must use postgresql://');
+  }
+  if (plan.databaseEngine === 'postgresql' && plan.databasePath !== null) {
+    issues.push('server install init smoke must not declare a SQLite database path');
   }
   if (String(plan.databaseUrl).includes(':memory:')) {
     issues.push('databaseUrl must use a real temporary file, not sqlite::memory:');
@@ -258,8 +280,14 @@ function validateInstallInitSmokePlan(plan) {
       issues.push(`steps must include ${stepId}`);
     }
   }
-  if (!plan.env?.SDKWORK_CLAW_DATABASE_URL || !plan.env?.SDKWORK_MODELS_CATALOG_ROOT) {
-    issues.push('installer environment must include database and model catalog roots');
+  if (!plan.runtimeConfigPath || !path.isAbsolute(plan.runtimeConfigPath)) {
+    issues.push('runtimeConfigPath must be an absolute path');
+  }
+  if (!plan.env?.SDKWORK_CLAW_CONFIG_FILE || !plan.env?.SDKWORK_MODELS_CATALOG_ROOT) {
+    issues.push('installer environment must include config file and model catalog roots');
+  }
+  if (plan.databaseEngine === 'sqlite' && !plan.env?.SDKWORK_CLAW_DATABASE_URL) {
+    issues.push('desktop installer environment must include SDKWORK_CLAW_DATABASE_URL for SQLite smoke');
   }
   if (plan.mode === 'real-installer' && !plan.installerBin) {
     issues.push('real-installer mode requires installerBin');
@@ -278,6 +306,7 @@ async function runInstallInitSmoke(plan, { dryRun = false } = {}) {
     await mkdir(plan.packageRoot, { recursive: true });
   }
   await writeReleaseEnvForSmoke(plan);
+  await writeRuntimeConfigForSmoke(plan);
   const releaseEnvContent = await readFile(plan.releaseEnvPath, 'utf8');
   const releaseEnv = inspectReleaseEnvContent(releaseEnvContent, plan);
 
@@ -300,9 +329,14 @@ async function runInstallInitSmoke(plan, { dryRun = false } = {}) {
     executedInstaller: installerReports.length > 0,
     releaseEnv,
     database: {
+      engine: plan.databaseEngine,
       url: plan.databaseUrl,
       path: plan.databasePath,
-      exists: existsSync(plan.databasePath),
+      exists: plan.databasePath ? existsSync(plan.databasePath) : false,
+    },
+    runtimeConfig: {
+      path: plan.runtimeConfigPath,
+      written: existsSync(plan.runtimeConfigPath),
     },
     installerReports,
     healthChecks: plan.healthChecks,
@@ -318,8 +352,8 @@ async function writeReleaseEnvForSmoke(plan) {
   });
   const content = [
     envPlan.content.trimEnd(),
-    `SDKWORK_CLAW_DATABASE_URL=${quoteDotenvValue(plan.env.SDKWORK_CLAW_DATABASE_URL)}`,
-    `SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS=${quoteDotenvValue(plan.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS)}`,
+    `SDKWORK_CLAW_CONFIG_FILE=${quoteDotenvValue(plan.env.SDKWORK_CLAW_CONFIG_FILE)}`,
+    `SDKWORK_CLAW_DEPLOYMENT_MODE=${quoteDotenvValue(plan.env.SDKWORK_CLAW_DEPLOYMENT_MODE)}`,
     `SDKWORK_MODELS_CATALOG_ROOT=${quoteDotenvValue(plan.env.SDKWORK_MODELS_CATALOG_ROOT)}`,
     '',
   ].join('\n');
@@ -327,11 +361,32 @@ async function writeReleaseEnvForSmoke(plan) {
   await writeFile(plan.releaseEnvPath, content, 'utf8');
 }
 
+async function writeRuntimeConfigForSmoke(plan) {
+  const content = [
+    '# Generated by install init smoke. Do not commit this file.',
+    '[database]',
+    `engine = "${plan.databaseEngine}"`,
+    `url = "${plan.databaseUrl}"`,
+    `max_connections = ${plan.databaseEngine === 'sqlite' ? 1 : 16}`,
+    '',
+    '[paths]',
+    `data_directory = "${toPosixPath(plan.tmpRoot)}"`,
+    '',
+    '[runtime]',
+    `deployment_mode = "${plan.databaseEngine === 'sqlite' ? 'desktop' : 'server'}"`,
+    '',
+  ].join('\n');
+  await mkdir(path.dirname(plan.runtimeConfigPath), { recursive: true });
+  await writeFile(plan.runtimeConfigPath, content, 'utf8');
+}
+
 function inspectReleaseEnvContent(content, plan) {
   return {
     path: plan.releaseEnvPath,
     written: true,
-    containsLocalDatabaseUrl: content.includes(`SDKWORK_CLAW_DATABASE_URL="${plan.env.SDKWORK_CLAW_DATABASE_URL}"`),
+    containsLocalDatabaseUrl: Boolean(plan.env.SDKWORK_CLAW_DATABASE_URL)
+      && content.includes(`SDKWORK_CLAW_DATABASE_URL="${plan.env.SDKWORK_CLAW_DATABASE_URL}"`),
+    containsConfigFile: /^SDKWORK_CLAW_CONFIG_FILE=/mu.test(content),
     containsHostSecret: /SDKWORK_SECRET|SECRET_KEY|PRIVATE_KEY|TOKEN=/u.test(content),
     containsExamplePath: content.includes('.env.release.example'),
     variableCount: content
@@ -405,7 +460,8 @@ function renderInstallInitSmokePlan(plan) {
     `[install-init-smoke] package: ${plan.package.id}`,
     `[install-init-smoke] mode: ${plan.mode}`,
     `[install-init-smoke] tmpRoot: ${plan.tmpRoot}`,
-    `[install-init-smoke] database: ${plan.databaseUrl}`,
+    `[install-init-smoke] database: ${plan.databaseEngine} ${plan.databaseUrl}`,
+    `[install-init-smoke] runtimeConfig: ${plan.runtimeConfigPath}`,
     `[install-init-smoke] releaseEnv: ${plan.releaseEnvPath}`,
     `[install-init-smoke] health: ${plan.healthChecks.join(', ')}`,
     ...plan.steps.map((step) => `[install-init-smoke]   ${step.id}: ${step.command}`),

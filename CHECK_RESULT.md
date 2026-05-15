@@ -19,15 +19,25 @@ The main improvements made in this pass are:
   and `pnpm.cmd install:packages:check` are backed by
   `scripts/plan-claw-router-install-packages.mjs`
 - install package building is now executable: `pnpm.cmd
-  install:package:check` validates the full 18-package builder matrix in
+  install:package:check` validates the full 24-package builder matrix in
   dry-run mode and
   `pnpm.cmd install:package:build` writes manifest-backed install archives
 - fast install initialization smoke is now executable:
   `pnpm.cmd install:init:smoke` validates the init contract in dry-run mode
   without starting services or requiring built binaries
 - the install package matrix now covers Windows, Linux, macOS, x64, arm64,
-  archive, service, and container delivery, including contracts such as
-  `windows-x64-service` and `linux-arm64-container`
+  archive, service, container, and desktop delivery, including contracts such
+  as `windows-x64-service`, `linux-arm64-container`, and
+  `macos-arm64-desktop`
+- server release packages (`archive`, `service`, and `container`) now default
+  to PostgreSQL through `config/sdkwork-claw-router.toml.example`, while
+  desktop packages default to a local SQLite database in the OS user data
+  directory
+- runtime database configuration is now shared by the gateway, installer,
+  admin API, and app API through `sdkwork-claw-config`; it reads
+  `SDKWORK_CLAW_CONFIG_FILE` or the OS-standard config file path, with
+  `SDKWORK_CLAW_DATABASE_URL` and
+  `SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS` kept as explicit overrides
 - fast initialization is now a delivery contract instead of tribal knowledge:
   release env validation/write, `sdkwork-claw-installer ensure`,
   `sdkwork-claw-installer refresh-catalog --force`, and `/healthz` plus
@@ -3408,12 +3418,17 @@ Solution applied:
   `pnpm.cmd install:package:build`
 - added `scripts/smoke-install-package-init.mjs`
 - added `pnpm.cmd install:init:smoke`
-- the planner generates an 18-entry matrix across platforms, architectures, and
+- the planner generates a 24-entry matrix across platforms, architectures, and
   deployment modes
 - every package contract declares the edge binary, installer binary,
   `portal/dist`, `portal/dist/sdk-archives`, `.env.release.example`,
-  `install-manifest.json`, mode-specific service/container metadata, fast init
-  commands, and `/healthz` plus `/readyz`
+  `config/sdkwork-claw-router.toml.example`, `install-manifest.json`,
+  mode-specific service/container/desktop metadata, fast init commands, and
+  `/healthz` plus `/readyz`
+- archive, service, and container are server release profiles and default to PostgreSQL
+  and require an external database DSN in the runtime TOML config or environment
+  override; desktop packages default to a local SQLite database in the OS user
+  data directory
 - the planner rejects drift through `validateInstallPackagePlan(plan)` and CLI
   `--check`; JSON output is available for CI and future package builders
 - the install package builder consumes the plan, writes real `.zip` outputs for
@@ -3425,14 +3440,17 @@ Solution applied:
   supports ustar prefix paths for long production asset names, supports pure
   `--json` output, and excludes `.env.release.local`
 - the builder also supports `--all --check --dry-run` so the root
-  `pnpm.cmd install:package:check` command validates archive, service, and
-  container package plans across all 18 platform/architecture/mode combinations
-  without requiring staged production artifacts
-- the install init smoke writes a temporary `.env.release.local`, validates a
-  file-backed SQLite initialization URL, verifies `sdkwork-claw-installer
-  ensure` and `sdkwork-claw-installer refresh-catalog --force` are the
-  initialization actions, supports pure JSON for CI, and can execute a real
-  installer only when `--installer-bin` is provided
+  `pnpm.cmd install:package:check` command validates archive, service,
+  container, and desktop package plans across all 24
+  platform/architecture/mode combinations without requiring staged production
+  artifacts
+- the install init smoke writes a temporary `.env.release.local` and
+  `sdkwork-claw-router.toml`, validates PostgreSQL for server package dry-runs
+  and a file-backed SQLite initialization URL for desktop package dry-runs,
+  verifies `sdkwork-claw-installer ensure` and
+  `sdkwork-claw-installer refresh-catalog --force` are the initialization
+  actions, supports pure JSON for CI, and can execute a real installer only
+  when `--installer-bin` is provided
 - README and CHECK_RESULT now document the install package standard, fast init
   commands, and security defaults
 

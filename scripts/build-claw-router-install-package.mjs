@@ -10,6 +10,7 @@ import { gzipSync } from 'node:zlib';
 import { createZip } from './archive-claw-router-sdks.mjs';
 import {
   createInstallPackagePlan,
+  RUNTIME_CONFIG_TEMPLATE_PATH,
   validateInstallPackagePlan,
 } from './plan-claw-router-install-packages.mjs';
 
@@ -157,12 +158,20 @@ function createArchiveEntriesForPackage(packageItem, stagingRoot, { requireStage
     if (artifact.kind === 'install-manifest') {
       continue;
     }
+    if (artifact.kind === 'runtime-config-template') {
+      entries.push(createGeneratedRuntimeConfigTemplateEntry());
+      continue;
+    }
     if (artifact.kind === 'service-manifest') {
       entries.push(createGeneratedServiceManifestEntry(packageItem));
       continue;
     }
     if (artifact.kind === 'container-entrypoint') {
       entries.push(...createGeneratedContainerEntries(packageItem));
+      continue;
+    }
+    if (artifact.kind === 'desktop-manifest') {
+      entries.push(...createGeneratedDesktopEntries());
       continue;
     }
     entries.push(...artifactEntries({
@@ -183,6 +192,17 @@ function createArchiveEntriesForPackage(packageItem, stagingRoot, { requireStage
   return entries.sort((left, right) => left.archivePath.localeCompare(right.archivePath));
 }
 
+function createGeneratedRuntimeConfigTemplateEntry() {
+  return {
+    archivePath: RUNTIME_CONFIG_TEMPLATE_PATH,
+    sourcePath: null,
+    generated: true,
+    generatedKind: 'runtime-config-template',
+    mode: 0o644,
+    required: true,
+  };
+}
+
 function createGeneratedServiceManifestEntry(packageItem) {
   return {
     archivePath: normalizeArchivePath(packageItem.serviceIntegration.manifest),
@@ -192,6 +212,19 @@ function createGeneratedServiceManifestEntry(packageItem) {
     mode: 0o644,
     required: true,
   };
+}
+
+function createGeneratedDesktopEntries() {
+  return [
+    {
+      archivePath: 'desktop/metadata.json',
+      sourcePath: null,
+      generated: true,
+      generatedKind: 'desktop-metadata',
+      mode: 0o644,
+      required: true,
+    },
+  ];
 }
 
 function createGeneratedContainerEntries(packageItem) {
@@ -316,6 +349,13 @@ function validateInstallPackageBuildPlan(buildPlan) {
   if (!buildPlan.entries.some((entry) => entry.archivePath === PACKAGE_MANIFEST_FILE && entry.generated)) {
     issues.push('install-manifest.json must be generated into the archive');
   }
+  if (!buildPlan.entries.some((entry) =>
+    entry.archivePath === RUNTIME_CONFIG_TEMPLATE_PATH
+    && entry.generated
+    && entry.generatedKind === 'runtime-config-template'
+  )) {
+    issues.push(`${buildPlan.package.id} must generate ${RUNTIME_CONFIG_TEMPLATE_PATH}`);
+  }
   if (buildPlan.package.deploymentMode === 'service') {
     const expectedManifest = buildPlan.package.serviceIntegration?.manifest;
     if (!expectedManifest || !buildPlan.entries.some((entry) =>
@@ -334,6 +374,15 @@ function validateInstallPackageBuildPlan(buildPlan) {
       if (!buildPlan.entries.some((entry) => entry.archivePath === containerArtifact && entry.generated)) {
         issues.push(`${buildPlan.package.id} must generate ${containerArtifact}`);
       }
+    }
+  }
+  if (buildPlan.package.deploymentMode === 'desktop') {
+    if (!buildPlan.entries.some((entry) =>
+      entry.archivePath === 'desktop/metadata.json'
+      && entry.generated
+      && entry.generatedKind === 'desktop-metadata'
+    )) {
+      issues.push(`${buildPlan.package.id} must generate desktop/metadata.json`);
     }
   }
   for (const entry of buildPlan.entries) {
@@ -430,6 +479,7 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
       platform: buildPlan.package.platform,
       architecture: buildPlan.package.architecture,
       deploymentMode: buildPlan.package.deploymentMode,
+      runtimeProfile: buildPlan.package.runtimeProfile,
       archiveName: buildPlan.package.archiveName,
       binaryName: buildPlan.package.binaryName,
       installerBinaryName: buildPlan.package.installerBinaryName,
@@ -437,6 +487,12 @@ function createPackageManifest(buildPlan, artifactFiles, generatedArtifacts = []
       healthChecks: buildPlan.package.healthChecks,
     },
     initCommands: buildPlan.package.initCommands,
+    databasePolicy: buildPlan.package.databasePolicy,
+    runtimeConfig: {
+      templatePath: RUNTIME_CONFIG_TEMPLATE_PATH,
+      configFile: buildPlan.package.databasePolicy.configFile.path,
+      dataDirectory: buildPlan.package.databasePolicy.dataDirectory.path,
+    },
     artifacts: artifactFiles,
     generatedArtifacts,
     security: buildPlan.package.security,
@@ -447,15 +503,59 @@ function createGeneratedArtifactBytes(buildPlan, entry) {
   switch (entry.generatedKind) {
     case 'service-manifest':
       return Buffer.from(createServiceManifest(buildPlan.package), 'utf8');
+    case 'runtime-config-template':
+      return Buffer.from(createRuntimeConfigTemplate(buildPlan.package), 'utf8');
     case 'containerfile':
       return Buffer.from(createContainerfile(buildPlan.package), 'utf8');
     case 'container-entrypoint':
       return Buffer.from(createContainerEntrypoint(buildPlan.package), 'utf8');
     case 'container-metadata':
       return Buffer.from(`${JSON.stringify(createContainerMetadata(buildPlan.package), null, 2)}\n`, 'utf8');
+    case 'desktop-metadata':
+      return Buffer.from(`${JSON.stringify(createDesktopMetadata(buildPlan.package), null, 2)}\n`, 'utf8');
     default:
       throw new Error(`Unsupported generated install package artifact: ${entry.generatedKind}`);
   }
+}
+
+function createRuntimeConfigTemplate(packageItem) {
+  const policy = packageItem.databasePolicy;
+  const lines = [
+    '# SdkWork Claw Router runtime configuration template.',
+    `# Install this file as: ${policy.configFile.path}`,
+    `# Runtime profile: ${packageItem.runtimeProfile}`,
+    '',
+  ];
+
+  if (policy.defaultEngine === 'postgresql') {
+    lines.push(
+      '# Server, service, archive, and container releases require an external PostgreSQL database.',
+      '# Replace the url with the managed PostgreSQL DSN for the target environment.',
+      '',
+    );
+  } else {
+    lines.push(
+      '# Desktop releases default to a local SQLite database in the OS user data directory.',
+      `# Default SQLite file: ${policy.defaultSqlitePath}`,
+      '',
+    );
+  }
+
+  lines.push(
+    '[database]',
+    `engine = "${policy.defaultEngine}"`,
+    `url = "${policy.defaultUrl}"`,
+    `max_connections = ${policy.maxConnections}`,
+    '',
+    '[paths]',
+    `data_directory = "${policy.dataDirectory.path}"`,
+    '',
+    '[runtime]',
+    `deployment_mode = "${packageItem.runtimeProfile === 'desktop' ? 'desktop' : 'server'}"`,
+    '',
+  );
+
+  return lines.join('\n');
 }
 
 function createServiceManifest(packageItem) {
@@ -467,6 +567,7 @@ function createServiceManifest(packageItem) {
       '  <description>SdkWork Claw Router edge server</description>',
       `  <executable>%BASE%\\bin\\${packageItem.binaryName}</executable>`,
       '  <workingdirectory>%BASE%</workingdirectory>',
+      `  <env name="SDKWORK_CLAW_CONFIG_FILE" value="${packageItem.databasePolicy.configFile.path.replaceAll('/', '\\')}"/>`,
       '  <onfailure action="restart" delay="5 sec"/>',
       '</service>',
       '',
@@ -486,6 +587,11 @@ function createServiceManifest(packageItem) {
       '  </array>',
       '  <key>WorkingDirectory</key>',
       '  <string>/opt/sdkwork-claw-router</string>',
+      '  <key>EnvironmentVariables</key>',
+      '  <dict>',
+      '    <key>SDKWORK_CLAW_CONFIG_FILE</key>',
+      `    <string>${packageItem.databasePolicy.configFile.path}</string>`,
+      '  </dict>',
       '  <key>RunAtLoad</key>',
       '  <true/>',
       '  <key>KeepAlive</key>',
@@ -510,6 +616,7 @@ function createServiceManifest(packageItem) {
     'WorkingDirectory=/opt/sdkwork-claw-router',
     `ExecStart=/opt/sdkwork-claw-router/bin/${packageItem.binaryName}`,
     'EnvironmentFile=/etc/sdkwork-claw-router/.env.release.local',
+    `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
     'Restart=on-failure',
     'RestartSec=5',
     'User=sdkwork',
@@ -536,6 +643,7 @@ function createContainerfile(packageItem) {
       'FROM mcr.microsoft.com/windows/nanoserver:ltsc2022',
       'WORKDIR C:/sdkwork-claw-router',
       'COPY . C:/sdkwork-claw-router',
+      `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
       'EXPOSE 3900',
       `ENTRYPOINT ${entrypoint}`,
       '',
@@ -548,6 +656,7 @@ function createContainerfile(packageItem) {
     'WORKDIR /opt/sdkwork-claw-router',
     'COPY . /opt/sdkwork-claw-router',
     `RUN chmod 0755 /opt/sdkwork-claw-router/bin/${packageItem.binaryName} /opt/sdkwork-claw-router/bin/${packageItem.installerBinaryName} /opt/sdkwork-claw-router/container/entrypoint`,
+    `ENV SDKWORK_CLAW_CONFIG_FILE="${packageItem.databasePolicy.configFile.path}"`,
     'USER sdkwork',
     'EXPOSE 3900',
     `ENTRYPOINT ${entrypoint}`,
@@ -588,6 +697,24 @@ function createContainerMetadata(packageItem) {
     workingDirectory: packageItem.containerIntegration.workingDirectory,
     runtimeUser: packageItem.containerIntegration.runtimeUser,
     exposedPorts: packageItem.containerIntegration.exposedPorts,
+    configFile: packageItem.databasePolicy.configFile.path,
+    database: packageItem.databasePolicy,
+    healthChecks: packageItem.healthChecks,
+    initCommands: packageItem.initCommands,
+    noSecretsInPackage: packageItem.security.noSecretsInPackage,
+  };
+}
+
+function createDesktopMetadata(packageItem) {
+  return {
+    schemaVersion: '2026-05-15.desktop-package.v1',
+    packageId: packageItem.id,
+    platform: packageItem.platform,
+    architecture: packageItem.architecture,
+    runtimeProfile: packageItem.runtimeProfile,
+    configFile: packageItem.databasePolicy.configFile.path,
+    dataDirectory: packageItem.databasePolicy.dataDirectory.path,
+    database: packageItem.databasePolicy,
     healthChecks: packageItem.healthChecks,
     initCommands: packageItem.initCommands,
     noSecretsInPackage: packageItem.security.noSecretsInPackage,

@@ -1154,20 +1154,20 @@ test('install package planner covers platforms, architectures, modes, fast init,
   );
   assert.deepEqual(module.SUPPORTED_PLATFORMS, ['windows', 'linux', 'macos']);
   assert.deepEqual(module.SUPPORTED_ARCHITECTURES, ['x64', 'arm64']);
-  assert.deepEqual(module.SUPPORTED_DEPLOYMENT_MODES, ['archive', 'service', 'container']);
+  assert.deepEqual(module.SUPPORTED_DEPLOYMENT_MODES, ['archive', 'service', 'container', 'desktop']);
 
   const plan = module.createInstallPackagePlan({
     version: '0.1.0',
     platforms: ['windows', 'linux', 'macos'],
     architectures: ['x64', 'arm64'],
-    deploymentModes: ['archive', 'service', 'container'],
+    deploymentModes: ['archive', 'service', 'container', 'desktop'],
   });
 
-  assert.equal(plan.schemaVersion, '2026-05-15.install-packages.v1');
+  assert.equal(plan.schemaVersion, '2026-05-15.install-packages.v2');
   assert.deepEqual(plan.platforms, ['windows', 'linux', 'macos']);
   assert.deepEqual(plan.architectures, ['x64', 'arm64']);
-  assert.deepEqual(plan.deploymentModes, ['archive', 'service', 'container']);
-  assert.equal(plan.packages.length, 18);
+  assert.deepEqual(plan.deploymentModes, ['archive', 'service', 'container', 'desktop']);
+  assert.equal(plan.packages.length, 24);
   assert.equal(plan.artifactPolicy.noSecretsInPackage, true);
   assert.equal(plan.artifactPolicy.envLocalGeneratedOnHost, true);
   assert.equal(plan.artifactPolicy.envExampleReferenceOnly, true);
@@ -1211,6 +1211,17 @@ test('install package planner covers platforms, architectures, modes, fast init,
   assert.ok(windowsService.initCommands.includes('sdkwork-claw-installer.exe refresh-catalog --force'));
   assert.equal(windowsService.startCommand, 'sdkwork-claw-gateway.exe');
   assert.deepEqual(windowsService.healthChecks, ['/healthz', '/readyz']);
+  assert.equal(windowsService.runtimeProfile, 'server');
+  assert.equal(windowsService.databasePolicy.defaultEngine, 'postgresql');
+  assert.equal(windowsService.databasePolicy.configurableFromFile, true);
+  assert.equal(windowsService.databasePolicy.requiresExternalDatabase, true);
+  assert.equal(windowsService.databasePolicy.configFile.path, '%ProgramData%/SdkWork/Claw Router/sdkwork-claw-router.toml');
+  assert.equal(windowsService.databasePolicy.envOverrides.includes('SDKWORK_CLAW_DATABASE_URL'), true);
+  assert.equal(windowsService.databasePolicy.defaultUrl.startsWith('postgresql://'), true);
+  assert.equal(windowsService.databasePolicy.defaultUrl.includes('localhost:5432'), true);
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'runtime-config-template' && artifact.path === 'config/sdkwork-claw-router.toml.example'
+  ));
   assert.equal(windowsService.security.noSecretsInPackage, true);
   assert.equal(windowsService.security.trustForwardedHeadersDefault, false);
 
@@ -1244,11 +1255,49 @@ test('install package planner covers platforms, architectures, modes, fast init,
     artifact.kind === 'container-entrypoint' && artifact.path === 'container/entrypoint.ps1'
   ));
 
+  const linuxArchive = plan.packages.find((item) =>
+    item.platform === 'linux' && item.architecture === 'x64' && item.deploymentMode === 'archive'
+  );
+  assert.ok(linuxArchive);
+  assert.equal(linuxArchive.runtimeProfile, 'server');
+  assert.equal(linuxArchive.databasePolicy.defaultEngine, 'postgresql');
+  assert.equal(linuxArchive.databasePolicy.configFile.path, '/etc/sdkwork-claw-router/sdkwork-claw-router.toml');
+  assert.equal(linuxArchive.databasePolicy.dataDirectory.path, '/var/lib/sdkwork-claw-router');
+  assert.equal(linuxArchive.databasePolicy.defaultSqliteUrl, null);
+  assert.equal(linuxArchive.databasePolicy.defaultUrl.startsWith('postgresql://'), true);
+
+  const macosDesktop = plan.packages.find((item) =>
+    item.platform === 'macos' && item.architecture === 'arm64' && item.deploymentMode === 'desktop'
+  );
+  assert.ok(macosDesktop);
+  assert.equal(macosDesktop.id, 'macos-arm64-desktop');
+  assert.equal(macosDesktop.runtimeProfile, 'desktop');
+  assert.equal(macosDesktop.packageKind, 'desktop-app-installer');
+  assert.equal(macosDesktop.databasePolicy.defaultEngine, 'sqlite');
+  assert.equal(macosDesktop.databasePolicy.requiresExternalDatabase, false);
+  assert.equal(macosDesktop.databasePolicy.configFile.path, '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.toml');
+  assert.equal(macosDesktop.databasePolicy.dataDirectory.path, '~/Library/Application Support/SdkWork/Claw Router');
+  assert.equal(macosDesktop.databasePolicy.defaultSqlitePath, '~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite');
+  assert.equal(macosDesktop.databasePolicy.defaultUrl, 'sqlite://~/Library/Application Support/SdkWork/Claw Router/sdkwork-claw-router.sqlite');
+  assert.ok(macosDesktop.artifacts.some((artifact) =>
+    artifact.kind === 'desktop-manifest' && artifact.path === 'desktop'
+  ));
+
+  const linuxDesktop = plan.packages.find((item) =>
+    item.platform === 'linux' && item.architecture === 'x64' && item.deploymentMode === 'desktop'
+  );
+  assert.ok(linuxDesktop);
+  assert.equal(linuxDesktop.databasePolicy.configFile.path, '${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml');
+  assert.equal(linuxDesktop.databasePolicy.defaultSqlitePath, '${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite');
+
   assert.deepEqual(module.validateInstallPackagePlan(plan), []);
   const rendered = module.renderInstallPackagePlan(plan).join('\n');
   assert.ok(rendered.includes('[install-packages] supported platforms: windows, linux, macos'));
-  assert.ok(rendered.includes('[install-packages] packages: 18'));
+  assert.ok(rendered.includes('[install-packages] packages: 24'));
   assert.ok(rendered.includes('windows-x64-service'));
+  assert.ok(rendered.includes('macos-arm64-desktop'));
+  assert.ok(rendered.includes('database=postgresql'));
+  assert.ok(rendered.includes('database=sqlite'));
   assert.ok(!rendered.includes('secret'));
   assert.ok(!rendered.includes('.env.release.local'));
 });
@@ -1317,6 +1366,7 @@ test('install package archive builder creates manifest-backed archives without l
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'bin/sdkwork-claw-gateway.exe'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'portal/dist/index.html'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === '.env.release.example'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'config/sdkwork-claw-router.toml.example'));
     assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'install-manifest.json'));
     assert.ok(!buildPlan.entries.some((entry) => entry.archivePath === '.env.release.local'));
     assert.deepEqual(module.validateInstallPackageBuildPlan(buildPlan), []);
@@ -1324,6 +1374,11 @@ test('install package archive builder creates manifest-backed archives without l
     const result = await module.buildInstallPackageArchive(buildPlan);
     assert.equal(result.archive.file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
     assert.equal(result.manifest.package.id, 'windows-x64-archive');
+    assert.equal(result.manifest.package.runtimeProfile, 'server');
+    assert.equal(result.manifest.databasePolicy.defaultEngine, 'postgresql');
+    assert.equal(result.manifest.generatedArtifacts.some((artifact) =>
+      artifact.path === 'config/sdkwork-claw-router.toml.example'
+    ), true);
     assert.equal(result.manifest.security.noSecretsInPackage, true);
     assert.equal(result.manifest.artifacts.some((artifact) => artifact.path === '.env.release.local'), false);
     assert.ok(result.archive.size > 0);
@@ -1380,6 +1435,13 @@ test('install package builder emits service and container deployment packages fr
     const serviceResult = await module.buildInstallPackageArchive(servicePlan);
     const serviceTar = readTarEntries(gunzipSync(readFileSync(serviceResult.archivePath)));
     assert.ok(serviceTar.has('service/linux/sdkwork-claw-router.service'));
+    assert.ok(serviceTar.has('config/sdkwork-claw-router.toml.example'));
+    const serviceConfigTemplate = readTarEntryText(
+      gunzipSync(readFileSync(serviceResult.archivePath)),
+      'config/sdkwork-claw-router.toml.example',
+    );
+    assert.ok(serviceConfigTemplate.includes('engine = "postgresql"'));
+    assert.ok(serviceConfigTemplate.includes('/etc/sdkwork-claw-router/sdkwork-claw-router.toml'));
     assert.equal(
       serviceResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'service/linux/sdkwork-claw-router.service'
@@ -1414,6 +1476,8 @@ test('install package builder emits service and container deployment packages fr
     assert.equal(metadata.packageId, 'linux-arm64-container');
     assert.equal(metadata.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
     assert.equal(metadata.runtimeUser, 'sdkwork');
+    assert.equal(metadata.database.defaultEngine, 'postgresql');
+    assert.equal(metadata.configFile, '/etc/sdkwork-claw-router/sdkwork-claw-router.toml');
     assert.equal(
       containerResult.manifest.generatedArtifacts.some((artifact) =>
         artifact.path === 'container/Containerfile'
@@ -1452,6 +1516,27 @@ test('install package builder emits service and container deployment packages fr
       aggregateManifest.archives.map((archive) => archive.packageId),
       ['linux-arm64-container', 'linux-x64-service', 'windows-x64-container'],
     );
+
+    const desktopPlan = module.createInstallPackageBuildPlan({
+      packageId: 'linux-x64-desktop',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(desktopPlan.package.runtimeProfile, 'desktop');
+    assert.ok(desktopPlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'desktop/metadata.json'
+    ));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(desktopPlan), []);
+    const desktopResult = await module.buildInstallPackageArchive(desktopPlan);
+    const desktopTarBytes = gunzipSync(readFileSync(desktopResult.archivePath));
+    const desktopConfigTemplate = readTarEntryText(desktopTarBytes, 'config/sdkwork-claw-router.toml.example');
+    const desktopMetadata = JSON.parse(readTarEntryText(desktopTarBytes, 'desktop/metadata.json'));
+    assert.ok(desktopConfigTemplate.includes('engine = "sqlite"'));
+    assert.ok(desktopConfigTemplate.includes('${XDG_CONFIG_HOME:-~/.config}/sdkwork-claw-router/sdkwork-claw-router.toml'));
+    assert.ok(desktopConfigTemplate.includes('${XDG_DATA_HOME:-~/.local/share}/sdkwork-claw-router/sdkwork-claw-router.sqlite'));
+    assert.equal(desktopMetadata.database.defaultEngine, 'sqlite');
+    assert.equal(desktopMetadata.database.requiresExternalDatabase, false);
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
   }
@@ -1568,10 +1653,11 @@ test('install package builder CLI checks the full package matrix in dry-run mode
   const payload = JSON.parse(stdout);
   assert.equal(stderr, '');
   assert.equal(payload.ok, true);
-  assert.equal(payload.plans.length, 18);
+  assert.equal(payload.plans.length, 24);
   assert.deepEqual(payload.issues, []);
   assert.ok(payload.plans.some((plan) => plan.package.id === 'windows-x64-service'));
   assert.ok(payload.plans.some((plan) => plan.package.id === 'linux-arm64-container'));
+  assert.ok(payload.plans.some((plan) => plan.package.id === 'macos-arm64-desktop'));
   assert.ok(payload.plans.every((plan) =>
     plan.entries.some((entry) => entry.archivePath === 'install-manifest.json')
   ));
@@ -1613,8 +1699,11 @@ test('install init smoke validates fast initialization without starting dev serv
     });
     assert.equal(smokePlan.package.id, 'linux-x64-archive');
     assert.equal(smokePlan.mode, 'contract-dry-run');
-    assert.equal(smokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'sdkwork-claw-router-install-init.sqlite').replaceAll('\\', '/')}`);
+    assert.equal(smokePlan.databaseEngine, 'postgresql');
+    assert.equal(smokePlan.databaseUrl, 'postgresql://release-smoke.invalid:5432/sdkwork_claw_router');
+    assert.equal(smokePlan.databasePath, null);
     assert.equal(smokePlan.releaseEnvPath, path.join(fixtureRoot, '.env.release.local'));
+    assert.equal(smokePlan.runtimeConfigPath, path.join(fixtureRoot, 'sdkwork-claw-router.toml'));
     assert.deepEqual(smokePlan.healthChecks, ['/healthz', '/readyz']);
     assert.ok(smokePlan.steps.some((step) =>
       step.id === 'release-env-write' && step.command.includes('write-release-env.mjs')
@@ -1634,17 +1723,34 @@ test('install init smoke validates fast initialization without starting dev serv
     assert.equal(result.ok, true);
     assert.equal(result.executedInstaller, false);
     assert.equal(result.releaseEnv.written, true);
-    assert.equal(result.releaseEnv.containsLocalDatabaseUrl, true);
+    assert.equal(result.releaseEnv.containsLocalDatabaseUrl, false);
+    assert.equal(result.releaseEnv.containsConfigFile, true);
     assert.equal(result.releaseEnv.containsHostSecret, false);
     assert.equal(existsSync(smokePlan.releaseEnvPath), true);
     const writtenEnv = readFileSync(smokePlan.releaseEnvPath, 'utf8');
-    assert.ok(writtenEnv.includes('SDKWORK_CLAW_DATABASE_URL="sqlite://'));
+    assert.ok(writtenEnv.includes('SDKWORK_CLAW_CONFIG_FILE='));
+    assert.ok(!writtenEnv.includes('SDKWORK_CLAW_DATABASE_URL="sqlite://'));
     assert.ok(writtenEnv.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release-smoke.invalid:5432/sdkwork_claw_router"'));
+    const writtenConfig = readFileSync(smokePlan.runtimeConfigPath, 'utf8');
+    assert.ok(writtenConfig.includes('engine = "postgresql"'));
+    assert.ok(writtenConfig.includes('url = "postgresql://release-smoke.invalid:5432/sdkwork_claw_router"'));
     assert.ok(!writtenEnv.includes('SDKWORK_SECRET'));
+
+    const desktopSmokePlan = module.createInstallInitSmokePlan({
+      packageId: 'linux-x64-desktop',
+      tmpRoot: path.join(fixtureRoot, 'desktop'),
+      version: '0.1.0',
+      requireInstaller: false,
+    });
+    assert.equal(desktopSmokePlan.databaseEngine, 'sqlite');
+    assert.equal(desktopSmokePlan.databaseUrl, `sqlite://${path.join(fixtureRoot, 'desktop', 'sdkwork-claw-router-install-init.sqlite').replaceAll('\\', '/')}`);
+    assert.ok(desktopSmokePlan.databasePath.endsWith('sdkwork-claw-router-install-init.sqlite'));
+    assert.deepEqual(module.validateInstallInitSmokePlan(desktopSmokePlan), []);
 
     const rendered = module.renderInstallInitSmokePlan(smokePlan).join('\n');
     assert.ok(rendered.includes('[install-init-smoke] package: linux-x64-archive'));
     assert.ok(rendered.includes('[install-init-smoke] mode: contract-dry-run'));
+    assert.ok(rendered.includes('[install-init-smoke] database: postgresql'));
     assert.ok(!rendered.includes('pnpm dev'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
@@ -1673,7 +1779,9 @@ test('install init smoke CLI emits pure JSON for CI dry-run checks', async () =>
     assert.equal(payload.ok, true);
     assert.equal(payload.plan.package.id, 'linux-arm64-container');
     assert.equal(payload.result.executedInstaller, false);
-    assert.equal(payload.result.releaseEnv.containsLocalDatabaseUrl, true);
+    assert.equal(payload.result.releaseEnv.containsLocalDatabaseUrl, false);
+    assert.equal(payload.result.releaseEnv.containsConfigFile, true);
+    assert.equal(payload.result.database.engine, 'postgresql');
     assert.ok(!stdout.includes('[install-init-smoke] package:'));
   } finally {
     rmSync(fixtureRoot, { recursive: true, force: true });
