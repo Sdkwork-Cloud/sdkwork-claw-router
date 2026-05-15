@@ -192,6 +192,8 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             ".env.release.example",
             ".env.release.local",
             "--env-file",
+            "pnpm.cmd release:env:write",
+            "--check",
             "Docker Desktop",
             "--skip-contract-guardians",
             "tools.repository_delivery_guardian",

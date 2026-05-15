@@ -3419,13 +3419,19 @@ Remaining delivery policy:
 - Use `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
   on CI or a release packaging host.
 - Keep release environment variables aligned with
-  `scripts/release-environment-contract.mjs`. Copy `.env.release.example` to
-  `.env.release.local` on release hosts and run
+  `scripts/release-environment-contract.mjs`. Treat `.env.release.example` as
+  the checked-in reference template, generate `.env.release.local` on release
+  hosts from the process environment with `pnpm.cmd release:env:write`, and run
   `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
   before packaging. The contract requires
   `SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL`, `PORTAL_PUBLIC_API_BASE_URL`,
   `PORTAL_PUBLIC_APP_API_BASE_URL`, `PORTAL_PUBLIC_BACKEND_API_BASE_URL`, and
   `PORTAL_PUBLIC_TOOL_API_ENABLED`.
+- Prefer `pnpm.cmd release:env:write -- --check` followed by
+  `pnpm.cmd release:env:write` on CI or release hosts. The writer reads the
+  same contract variables from the process environment, refuses accidental
+  overwrite without `--force`, refuses `.env.release.example` as an output
+  target, and prints only a safe summary without secret values.
 - Continue to use `pnpm.cmd verify` as the final commercial gate; preflight is
   a readiness check, not a replacement for compile, build, smoke, schema, and
   architecture verification.

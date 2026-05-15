@@ -448,8 +448,9 @@ pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-ro
 
 Release and staging hosts must satisfy the executable environment contract in
 `scripts/release-environment-contract.mjs`. The checked-in template is
-`.env.release.example`; copy it to `.env.release.local` on the release host and
-fill in deployment-specific values without committing the local file.
+`.env.release.example`; use it as a reviewable reference for release variable
+names and example value shapes. Generate `.env.release.local` on the release
+host from the host process environment, and never commit the local file.
 
 Required release verification variable:
 
@@ -469,13 +470,18 @@ PORTAL_PUBLIC_TOOL_API_ENABLED
 Run strict preflight against the local release env file before packaging:
 
 ```powershell
-Copy-Item .env.release.example .env.release.local
-pnpm.cmd release:preflight -- --strict --env-file .env.release.local
+pnpm.cmd release:env:write -- --check
+pnpm.cmd release:env:write
+pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
 
 `PORTAL_PUBLIC_*` values are intentionally visible to the browser through
 `/runtime-env.js`; do not place secrets in them. The Postgres URL is used only
 for release verification and Postgres contract tests.
+`pnpm.cmd release:env:write` reads the contract variables from the release
+host process environment, refuses to overwrite `.env.release.local` unless
+`--force` is passed, refuses to write the checked-in `.env.release.example`
+template, and prints only a safe summary without variable values.
 
 `--strict` upgrades missing release environment variables to failures.
 `--strict-root-clean` also fails when unrelated files outside this application

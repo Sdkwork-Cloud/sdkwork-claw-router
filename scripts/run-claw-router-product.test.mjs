@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
@@ -8,6 +8,14 @@ import { promisify } from 'node:util';
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
 const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
 const execFileAsync = promisify(execFile);
+
+const validReleaseEnv = Object.freeze({
+  SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: 'postgres://release:secret@db.example.com:5432/claw',
+  PORTAL_PUBLIC_API_BASE_URL: 'https://tenant.example.com/v1',
+  PORTAL_PUBLIC_APP_API_BASE_URL: '/app/v3/api',
+  PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api',
+  PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',
+});
 
 const tests = [];
 
@@ -73,6 +81,10 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['release:preflight'],
     'node scripts/release-preflight.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['release:env:write'],
+    'node scripts/write-release-env.mjs',
   );
   assert.equal(
     rootPackage.scripts['app-store:seed:update'],
@@ -2363,6 +2375,191 @@ test('release preflight CLI reads env-file values before building the report', a
   assert.equal(byId['env.postgres'].status, 'PASS');
   assert.equal(byId['env.portalPublic'].status, 'PASS');
   assert.ok(byId['env.releaseContract'].details.includes('.env.release.example'));
+});
+
+test('release env writer creates a dotenv file from the executable contract without leaking values', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'write-release-env.mjs')).href
+  );
+
+  const plan = module.buildReleaseEnvFilePlan({
+    env: validReleaseEnv,
+    outputPath: '.env.release.local',
+    overwrite: false,
+    existingFile: false,
+  });
+
+  assert.equal(plan.outputPath, '.env.release.local');
+  assert.equal(plan.safeSummary, 'release env file would be written with 5 contract variables');
+  assert.ok(plan.content.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release:secret@db.example.com:5432/claw"'));
+  assert.ok(plan.content.includes('PORTAL_PUBLIC_TOOL_API_ENABLED="false"'));
+  assert.ok(!plan.safeSummary.includes('secret'));
+});
+
+test('release env writer refuses unsafe overwrite and invalid values', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'write-release-env.mjs')).href
+  );
+
+  assert.throws(
+    () => module.buildReleaseEnvFilePlan({
+      env: {
+        ...validReleaseEnv,
+        PORTAL_PUBLIC_API_BASE_URL: '/v1',
+      },
+      outputPath: '.env.release.local',
+      overwrite: false,
+      existingFile: true,
+    }),
+    /\.env\.release\.local already exists/,
+  );
+
+  assert.throws(
+    () => module.buildReleaseEnvFilePlan({
+      env: {
+        ...validReleaseEnv,
+        PORTAL_PUBLIC_API_BASE_URL: 'javascript:alert(1)',
+      },
+      outputPath: '.env.release.local',
+      overwrite: true,
+      existingFile: false,
+    }),
+    /PORTAL_PUBLIC_API_BASE_URL/,
+  );
+});
+
+test('release env writer refuses to write secrets into the checked-in example template', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'write-release-env.mjs')).href
+  );
+
+  assert.throws(
+    () => module.buildReleaseEnvFilePlan({
+      env: validReleaseEnv,
+      outputPath: '.env.release.example',
+      overwrite: true,
+      existingFile: true,
+    }),
+    /\.env\.release\.example is a checked-in template and cannot be used as release env writer output/,
+  );
+
+  assert.throws(
+    () => module.buildReleaseEnvFilePlan({
+      env: validReleaseEnv,
+      outputPath: path.join(workspaceRoot, '.env.release.example'),
+      overwrite: true,
+      existingFile: true,
+    }),
+    /\.env\.release\.example is a checked-in template and cannot be used as release env writer output/,
+  );
+});
+
+test('release env writer CLI check prints only a safe summary', async () => {
+  const { stdout } = await execFileAsync('node', [
+    'scripts/write-release-env.mjs',
+    '--check',
+    '--output',
+    '.env.release.local',
+  ], {
+    cwd: workspaceRoot,
+    windowsHide: true,
+    env: {
+      ...process.env,
+      ...validReleaseEnv,
+    },
+  });
+
+  assert.ok(stdout.includes('[release-env] validated: .env.release.local'));
+  assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+  assert.ok(!stdout.includes('secret'));
+  assert.ok(!stdout.includes('tenant.example.com'));
+});
+
+test('release env writer CLI writes a local dotenv file without leaking values', async () => {
+  const outputPath = path.join('.tmp', 'release-env-writer-test', '.env.release.local');
+  const absoluteOutputPath = path.join(workspaceRoot, outputPath);
+  rmSync(path.dirname(absoluteOutputPath), { recursive: true, force: true });
+
+  try {
+    const { stdout } = await execFileAsync('node', [
+      'scripts/write-release-env.mjs',
+      '--output',
+      outputPath,
+    ], {
+      cwd: workspaceRoot,
+      windowsHide: true,
+      env: {
+        ...process.env,
+        ...validReleaseEnv,
+      },
+    });
+
+    const written = readFileSync(absoluteOutputPath, 'utf8');
+    assert.ok(stdout.includes(`[release-env] written: ${outputPath}`));
+    assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+    assert.ok(!stdout.includes('secret'));
+    assert.ok(!stdout.includes('tenant.example.com'));
+    assert.ok(written.includes('# Generated by node scripts/write-release-env.mjs. Do not commit this file.'));
+    assert.ok(written.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release:secret@db.example.com:5432/claw"'));
+    assert.ok(written.includes('PORTAL_PUBLIC_API_BASE_URL="https://tenant.example.com/v1"'));
+
+    await assert.rejects(
+      () => execFileAsync('node', [
+        'scripts/write-release-env.mjs',
+        '--output',
+        outputPath,
+      ], {
+        cwd: workspaceRoot,
+        windowsHide: true,
+        env: {
+          ...process.env,
+          ...validReleaseEnv,
+        },
+      }),
+      (error) => {
+        assert.equal(error.code, 1);
+        assert.match(error.stderr, /already exists; pass --force to overwrite it/);
+        assert.ok(!error.stderr.includes('secret'));
+        assert.ok(!error.stderr.includes('tenant.example.com'));
+        return true;
+      },
+    );
+  } finally {
+    rmSync(path.dirname(absoluteOutputPath), { recursive: true, force: true });
+  }
+});
+
+test('release env writer CLI check is idempotent when the output file already exists', async () => {
+  const outputPath = path.join('.tmp', 'release-env-writer-check-test', '.env.release.local');
+  const absoluteOutputPath = path.join(workspaceRoot, outputPath);
+  rmSync(path.dirname(absoluteOutputPath), { recursive: true, force: true });
+
+  try {
+    mkdirSync(path.dirname(absoluteOutputPath), { recursive: true });
+    writeFileSync(absoluteOutputPath, 'already generated\n', { encoding: 'utf8' });
+
+    const { stdout } = await execFileAsync('node', [
+      'scripts/write-release-env.mjs',
+      '--check',
+      '--output',
+      outputPath,
+    ], {
+      cwd: workspaceRoot,
+      windowsHide: true,
+      env: {
+        ...process.env,
+        ...validReleaseEnv,
+      },
+    });
+
+    assert.ok(stdout.includes(`[release-env] validated: ${outputPath}`));
+    assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+    assert.equal(readFileSync(absoluteOutputPath, 'utf8'), 'already generated\n');
+    assert.ok(!stdout.includes('secret'));
+    assert.ok(!stdout.includes('tenant.example.com'));
+  } finally {
+    rmSync(path.dirname(absoluteOutputPath), { recursive: true, force: true });
+  }
 });
 
 test('release preflight rejects malformed release environment values in strict mode', async () => {
