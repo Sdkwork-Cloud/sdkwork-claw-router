@@ -179,7 +179,9 @@ Command intent:
 - `pnpm.cmd start` serves the built production portal from
   `apps/sdkwork-claw-router-portal/dist` through the Rust edge server, using
   the release binary when it exists.
-- `pnpm.cmd release` runs `release:preflight` and the full `verify` gate.
+- `pnpm.cmd release` validates the release environment, regenerates
+  `.env.release.local` from the release host process environment, runs strict
+  `release:preflight`, and then runs the full `verify` gate.
 - `pnpm.cmd portal:dev` starts the browser portal only.
 - `pnpm.cmd desktop:dev` starts the full install-checked workspace with
   desktop environment flags.
@@ -751,10 +753,12 @@ configured but the normalized archive is missing, it returns
 
 ## Recommended Delivery Sequence
 
-1. Run `pnpm.cmd release:preflight`; use
-   `pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean`
-   on CI or a release host.
-2. Run `pnpm.cmd verify`.
+1. On CI or a release host, run `pnpm.cmd release`. The root release script
+   runs `pnpm.cmd release:env:write -- --check`, regenerates
+   `.env.release.local` with `--force`, runs strict release preflight, and then
+   runs `pnpm.cmd verify`.
+2. For local handoff without real release secrets, run
+   `pnpm.cmd release:preflight` and `pnpm.cmd verify:fast`.
 3. In CI or release packaging, opt into the live dev edge smoke when required
    with `pnpm.cmd verify -- --with-edge-dev-smoke` and
    `CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED=1`.

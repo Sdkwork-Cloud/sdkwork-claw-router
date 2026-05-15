@@ -8,7 +8,7 @@
     "test": "node scripts/run-claw-router-product.test.mjs",
     "build": "node scripts/build-claw-router-production.mjs",
     "start": "node scripts/start-claw-router-production.mjs",
-    "release": "pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify",
+    "release": "pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify",
     "portal:dev": "node scripts/run-claw-router-product.mjs browser",
     "desktop:dev": "node scripts/run-claw-router-product.mjs desktop",
     "tauri:dev": "node scripts/run-claw-router-product.mjs desktop",

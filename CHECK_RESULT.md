@@ -3432,6 +3432,10 @@ Remaining delivery policy:
   same contract variables from the process environment, refuses accidental
   overwrite without `--force`, refuses `.env.release.example` as an output
   target, and prints only a safe summary without secret values.
+- `pnpm.cmd release` is the canonical release host entrypoint: it runs the
+  release env writer in `--check` mode, regenerates `.env.release.local` with
+  `--force`, runs strict release preflight, and then runs the full `pnpm verify`
+  gate.
 - Continue to use `pnpm.cmd verify` as the final commercial gate; preflight is
   a readiness check, not a replacement for compile, build, smoke, schema, and
   architecture verification.

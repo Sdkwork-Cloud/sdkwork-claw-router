@@ -48,7 +48,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts.release,
-    'pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
+    'pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
   );
   assert.equal(
     rootPackage.scripts['desktop:dev'],
@@ -102,6 +102,23 @@ test('root package exposes pnpm product entrypoints', () => {
     rootPackage.scripts['skills:seed:check'],
     'node scripts/mirror-clawhub-skills-seed.mjs --check',
   );
+});
+
+test('root release entrypoint regenerates the release env before strict preflight and verify', () => {
+  const rootPackage = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
+  );
+  const releaseScript = rootPackage.scripts.release;
+  const envCheckIndex = releaseScript.indexOf('pnpm release:env:write -- --check');
+  const envWriteIndex = releaseScript.indexOf('pnpm release:env:write -- --force');
+  const preflightIndex = releaseScript.indexOf('pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean');
+  const verifyIndex = releaseScript.indexOf('pnpm verify');
+
+  assert.ok(envCheckIndex >= 0, 'release must validate release env before writing');
+  assert.ok(envWriteIndex > envCheckIndex, 'release must write .env.release.local after check');
+  assert.ok(preflightIndex > envWriteIndex, 'release must run strict preflight after env write');
+  assert.ok(verifyIndex > preflightIndex, 'release must run verify after strict preflight');
+  assert.ok(!releaseScript.includes('.env.release.example'), 'release must not write or consume the checked-in example template');
 });
 
 test('app store seed updater defaults to file seed updates and gates database sync behind explicit flag', async () => {
