@@ -271,6 +271,7 @@ those origins for internal service-to-service proxying. The browser runtime API
 bases stay same-origin in server mode:
 
 - `PORTAL_PUBLIC_API_BASE_URL=/v1`
+- `PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1`
 - `PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api`
 - `PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api`
 
@@ -480,6 +481,12 @@ PORTAL_PUBLIC_API_BASE_URL
 PORTAL_PUBLIC_APP_API_BASE_URL
 PORTAL_PUBLIC_BACKEND_API_BASE_URL
 PORTAL_PUBLIC_TOOL_API_ENABLED
+```
+
+Optional browser-visible SDK runtime override:
+
+```text
+PORTAL_PUBLIC_OPEN_API_BASE_URL
 ```
 
 Run strict preflight against the local release env file before packaging:
@@ -855,6 +862,7 @@ visible in the browser:
 
 ```powershell
 $env:PORTAL_PUBLIC_API_BASE_URL="https://tenant-api.example.com/api"
+$env:PORTAL_PUBLIC_OPEN_API_BASE_URL="https://tenant-api.example.com/api"
 $env:PORTAL_PUBLIC_APP_API_BASE_URL="/app/v3/api"
 $env:PORTAL_PUBLIC_BACKEND_API_BASE_URL="/backend/v3/api"
 $env:PORTAL_PUBLIC_TOOL_API_ENABLED="false"
@@ -865,10 +873,13 @@ $env:PORTAL_TOOL_API_SDK_GENERATOR_API_KEY=""
 $env:PORTAL_TOOL_API_SDK_ARCHIVE_ROOT="D:\release\clawrouter-sdk-archives"
 ```
 
-`PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_APP_API_BASE_URL`, and
-`PORTAL_PUBLIC_BACKEND_API_BASE_URL` accept HTTP/HTTPS URLs or root-relative
-paths. Query strings, fragments, protocol-relative URLs, control characters,
-and non-HTTP schemes fail startup. Absolute runtime API origins are added to
+`PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`,
+`PORTAL_PUBLIC_APP_API_BASE_URL`, and `PORTAL_PUBLIC_BACKEND_API_BASE_URL`
+accept HTTP/HTTPS URLs or root-relative paths. Query strings, fragments,
+protocol-relative URLs, control characters, and non-HTTP schemes fail startup.
+`PORTAL_PUBLIC_OPEN_API_BASE_URL` is the generated
+`@sdkwork/clawrouter-open-sdk` base URL and defaults to
+`PORTAL_PUBLIC_API_BASE_URL` when unset. Absolute runtime API origins are added to
 the production CSP `connect-src` automatically. `/runtime-env.js` is served with
 `Cache-Control: no-store` and is referenced before the hashed portal bundle so
 SDK clients read deployment values before they are constructed.

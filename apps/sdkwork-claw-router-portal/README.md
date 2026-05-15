@@ -91,12 +91,16 @@ pnpm.cmd start -- --server-bind 0.0.0.0:12900 --gateway-forward-url http://gatew
 In server mode, browser API bases stay same-origin so remote browsers never receive local loopback addresses:
 
 - `PORTAL_PUBLIC_API_BASE_URL=/v1`
+- `PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1`
 - `PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api`
 - `PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api`
 
 The direct `3901` Vite dev server proxies these same same-origin API paths to
 the Rust services, so direct portal debugging keeps the generated SDK base URLs
 identical to unified edge access.
+`PORTAL_PUBLIC_OPEN_API_BASE_URL` controls the generated
+`@sdkwork/clawrouter-open-sdk` base URL and defaults to
+`PORTAL_PUBLIC_API_BASE_URL` when unset.
 
 Bind overrides use separate names for the public edge entrypoint and the direct portal dev server:
 

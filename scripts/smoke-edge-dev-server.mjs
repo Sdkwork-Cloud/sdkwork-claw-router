@@ -24,6 +24,7 @@ const MAX_CAPTURED_OUTPUT_CHARS = 80_000;
 
 const EXPECTED_RUNTIME_ENV_OUTPUT = [
   'PORTAL_PUBLIC_API_BASE_URL=/v1',
+  'PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1',
   'PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api',
   'PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api',
 ];
@@ -61,6 +62,7 @@ const ISOLATED_ENV_NAMES = [
   'PORT',
   'OPENAPI_DEV_URL',
   'PORTAL_PUBLIC_API_BASE_URL',
+  'PORTAL_PUBLIC_OPEN_API_BASE_URL',
   'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
   'PORTAL_PUBLIC_APP_API_BASE_URL',
 ];
@@ -363,6 +365,7 @@ function assertRuntimeEnv({ response, body }, label) {
   for (const expected of [
     'window.__CLAWROUTER_ENV__ = Object.freeze(',
     '"VITE_API_BASE_URL":"/v1"',
+    '"VITE_CLAWROUTER_OPEN_API_BASE_URL":"/v1"',
     '"VITE_CLAWROUTER_BACKEND_API_BASE_URL":"/backend/v3/api"',
     '"VITE_CLAWROUTER_APP_API_BASE_URL":"/app/v3/api"',
   ]) {

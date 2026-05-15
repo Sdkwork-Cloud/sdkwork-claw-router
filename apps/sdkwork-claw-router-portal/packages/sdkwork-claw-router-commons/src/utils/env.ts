@@ -2,7 +2,7 @@ type ClawRouterRuntimeWindow = Window & {
   __CLAWROUTER_ENV__?: Record<string, unknown>;
 };
 
-const DEFAULT_API_BASE_URL = '/v1';
+export const DEFAULT_API_BASE_URL = '/v1';
 
 export function readClawRouterRuntimeEnv(name: string): string | undefined {
   if (typeof window === 'undefined') {
@@ -45,4 +45,22 @@ function resolveApiBaseUrl(): string {
   }
 }
 
+function resolveOpenApiBaseUrl(): string {
+  const configuredUrl =
+    readClawRouterRuntimeEnv('VITE_CLAWROUTER_OPEN_API_BASE_URL')
+    ?? readClawRouterRuntimeEnv('VITE_API_BASE_URL');
+  const baseUrl = configuredUrl ?? DEFAULT_API_BASE_URL;
+
+  try {
+    new URL(baseUrl);
+    return baseUrl;
+  } catch {
+    if (typeof window === 'undefined') {
+      return DEFAULT_API_BASE_URL;
+    }
+    return baseUrl;
+  }
+}
+
 export const API_BASE_URL = resolveApiBaseUrl();
+export const OPEN_API_BASE_URL = resolveOpenApiBaseUrl();

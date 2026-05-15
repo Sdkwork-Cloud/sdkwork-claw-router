@@ -21,7 +21,6 @@ const localPortalPackageModuleCache = new Map<string, string | null>();
 const portalPackageModuleCache = new Map<string, string | null>();
 
 const PORTAL_RUNTIME_URL_ENV = [
-  ['PORTAL_PUBLIC_API_BASE_URL', 'VITE_API_BASE_URL'],
   ['PORTAL_PUBLIC_APP_API_BASE_URL', 'VITE_CLAWROUTER_APP_API_BASE_URL'],
   ['PORTAL_PUBLIC_BACKEND_API_BASE_URL', 'VITE_CLAWROUTER_BACKEND_API_BASE_URL'],
 ] as const;
@@ -629,6 +628,21 @@ function resolvePortalDevProxyTarget(value: string | undefined, name: string): s
 
 function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<string, string> {
   const runtimeEnv: Record<string, string> = {};
+  const publicApiBaseUrl = resolvePortalPublicUrl(
+    env.PORTAL_PUBLIC_API_BASE_URL,
+    'PORTAL_PUBLIC_API_BASE_URL',
+  );
+  if (publicApiBaseUrl !== undefined) {
+    runtimeEnv.VITE_API_BASE_URL = publicApiBaseUrl;
+  }
+
+  const openApiBaseUrl = resolvePortalPublicUrl(
+    env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? env.PORTAL_PUBLIC_API_BASE_URL,
+    'PORTAL_PUBLIC_OPEN_API_BASE_URL',
+  );
+  if (openApiBaseUrl !== undefined) {
+    runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL = openApiBaseUrl;
+  }
 
   for (const [sourceName, targetName] of PORTAL_RUNTIME_URL_ENV) {
     const value = resolvePortalPublicUrl(env[sourceName], sourceName);
@@ -722,3 +736,9 @@ function resolveBooleanEnv(value: string | undefined, name: string): boolean | u
   }
   throw new Error(`Invalid ${name} value`);
 }
+
+export {
+  buildPortalRuntimeEnvScript,
+  injectPortalRuntimeEnvScript,
+  resolvePortalRuntimeEnv,
+};

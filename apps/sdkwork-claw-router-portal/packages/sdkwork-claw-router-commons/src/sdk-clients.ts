@@ -9,6 +9,7 @@ import { readClawRouterRuntimeEnv } from './utils/env.ts';
 
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
+export const OPEN_API_PREFIX = '/v1';
 
 export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai';
 
@@ -56,8 +57,8 @@ export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadat
   packageName: '@sdkwork/clawrouter-open-sdk',
   version: '0.1.0',
   sdkType: 'ai',
-  apiPrefix: '/v1',
-  runtimeEnvName: 'VITE_API_BASE_URL',
+  apiPrefix: OPEN_API_PREFIX,
+  runtimeEnvName: 'VITE_CLAWROUTER_OPEN_API_BASE_URL',
   sourceDir: 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip',

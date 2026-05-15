@@ -126,6 +126,7 @@ pub struct EdgeServerConfig {
 #[derive(Clone, Debug)]
 struct PortalRuntimeEnv {
     api_base_url: String,
+    open_api_base_url: String,
     app_api_base_url: String,
     backend_api_base_url: String,
     tool_api_enabled: bool,
@@ -135,6 +136,7 @@ impl Default for PortalRuntimeEnv {
     fn default() -> Self {
         Self {
             api_base_url: "/v1".to_owned(),
+            open_api_base_url: "/v1".to_owned(),
             app_api_base_url: "/app/v3/api".to_owned(),
             backend_api_base_url: "/backend/v3/api".to_owned(),
             tool_api_enabled: false,
@@ -210,6 +212,17 @@ impl EdgeServerConfig {
     ) -> Result<Self, String> {
         self.portal_runtime_env.api_base_url =
             normalize_portal_public_url(value.as_ref(), "PORTAL_PUBLIC_API_BASE_URL")?;
+        self.portal_runtime_env.open_api_base_url = self.portal_runtime_env.api_base_url.clone();
+        self.refresh_portal_content_security_policy()?;
+        Ok(self)
+    }
+
+    pub fn with_portal_public_open_api_base_url(
+        mut self,
+        value: impl AsRef<str>,
+    ) -> Result<Self, String> {
+        self.portal_runtime_env.open_api_base_url =
+            normalize_portal_public_url(value.as_ref(), "PORTAL_PUBLIC_OPEN_API_BASE_URL")?;
         self.refresh_portal_content_security_policy()?;
         Ok(self)
     }
@@ -2076,6 +2089,7 @@ fn find_module_script_index(html: &str) -> Option<usize> {
 fn build_portal_runtime_env_script(runtime_env: &PortalRuntimeEnv) -> String {
     let serialized = json!({
         "VITE_API_BASE_URL": runtime_env.api_base_url,
+        "VITE_CLAWROUTER_OPEN_API_BASE_URL": runtime_env.open_api_base_url,
         "VITE_CLAWROUTER_APP_API_BASE_URL": runtime_env.app_api_base_url,
         "VITE_CLAWROUTER_BACKEND_API_BASE_URL": runtime_env.backend_api_base_url,
         "VITE_TOOL_API_ENABLED": if runtime_env.tool_api_enabled { "true" } else { "false" },
@@ -2332,6 +2346,7 @@ fn build_portal_content_security_policy(config: &EdgeServerConfig) -> Result<Hea
     let mut connect_src = vec!["'self'".to_owned(), "https://api.sdkwork.com".to_owned()];
     for public_url in [
         &config.portal_runtime_env.api_base_url,
+        &config.portal_runtime_env.open_api_base_url,
         &config.portal_runtime_env.app_api_base_url,
         &config.portal_runtime_env.backend_api_base_url,
     ] {

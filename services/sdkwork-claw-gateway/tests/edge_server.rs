@@ -938,6 +938,8 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
     let runtime_env = String::from_utf8_lossy(&runtime_env_body);
     assert!(runtime_env.contains("window.__CLAWROUTER_ENV__ = Object.freeze("));
     assert!(runtime_env.contains(r#""VITE_API_BASE_URL":"https://tenant-api.example.com/api""#));
+    assert!(runtime_env
+        .contains(r#""VITE_CLAWROUTER_OPEN_API_BASE_URL":"https://tenant-api.example.com/api""#));
     assert!(runtime_env.contains(r#""VITE_CLAWROUTER_APP_API_BASE_URL":"/app/v3/api""#));
     assert!(runtime_env.contains(r#""VITE_CLAWROUTER_BACKEND_API_BASE_URL":"/backend/v3/api""#));
     assert!(runtime_env.contains(r#""VITE_TOOL_API_ENABLED":"false""#));
@@ -1749,6 +1751,8 @@ async fn edge_server_portal_csp_allows_explicit_private_api_origins() {
     .unwrap()
     .with_portal_public_api_base_url("https://tenant-api.example.com/api")
     .unwrap()
+    .with_portal_public_open_api_base_url("https://open-sdk.example.com/v1")
+    .unwrap()
     .with_portal_public_app_api_base_url("https://app-api.example.com/app/v3/api")
     .unwrap()
     .with_portal_public_backend_api_base_url("https://admin-api.example.com/backend/v3/api")
@@ -1777,6 +1781,7 @@ async fn edge_server_portal_csp_allows_explicit_private_api_origins() {
 
     assert!(csp.contains("connect-src 'self' https://api.sdkwork.com"));
     assert!(csp.contains("https://tenant-api.example.com"));
+    assert!(csp.contains("https://open-sdk.example.com"));
     assert!(csp.contains("https://app-api.example.com"));
     assert!(csp.contains("https://admin-api.example.com"));
     assert!(csp.contains("https://analytics.example.com"));

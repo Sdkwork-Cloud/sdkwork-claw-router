@@ -58,6 +58,27 @@ const sdkReferencePageSource = () => readFileSync(
   new URL("./packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
   "utf8",
 );
+const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+
+function withClawRouterRuntimeEnv<T>(env: Record<string, string>, fn: () => T): T {
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    enumerable: true,
+    value: {
+      __CLAWROUTER_ENV__: env,
+    },
+  });
+
+  try {
+    return fn();
+  } finally {
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, "window", originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+}
 
 const gatewaySpec = {
   paths: {
@@ -1132,6 +1153,25 @@ test("sdk reference generates gateway SDKs from domain-root paths", () => {
   assert.equal(appConfig.apiPrefix, "/app/v3/api");
   assert.equal(gatewayTypescriptSdk.initCode.includes('baseUrl: process.env.CLAWROUTER_API_BASE_URL ?? "https://api.sdkwork.com"'), true);
   assert.equal(gatewayTypescriptSdk.initCode.includes('?? "/v1"'), false);
+});
+
+test("sdk reference gateway base URL uses SDK-specific runtime override and falls back to public API base URL", () => {
+  const inheritedConfig = withClawRouterRuntimeEnv(
+    {
+      VITE_API_BASE_URL: "https://tenant.example.com/v1",
+    },
+    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+  );
+  const overriddenConfig = withClawRouterRuntimeEnv(
+    {
+      VITE_API_BASE_URL: "https://tenant.example.com/v1",
+      VITE_CLAWROUTER_OPEN_API_BASE_URL: "https://open.example.com/v1",
+    },
+    () => createGeneratedSdkToolConfig("gateway", "typescript", "/openapi.json"),
+  );
+
+  assert.equal(inheritedConfig.baseUrl, "https://tenant.example.com");
+  assert.equal(overriddenConfig.baseUrl, "https://open.example.com");
 });
 
 test("sdk reference sidebar builds nested modality vendor tree", async () => {

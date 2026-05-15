@@ -13,6 +13,7 @@ const execFileAsync = promisify(execFile);
 const validReleaseEnv = Object.freeze({
   SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: 'postgres://release:secret@db.example.com:5432/claw',
   PORTAL_PUBLIC_API_BASE_URL: 'https://tenant.example.com/v1',
+  PORTAL_PUBLIC_OPEN_API_BASE_URL: 'https://open.tenant.example.com/v1',
   PORTAL_PUBLIC_APP_API_BASE_URL: '/app/v3/api',
   PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api',
   PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',
@@ -294,6 +295,7 @@ test('portal env example defaults to same-origin Rust edge API paths', () => {
   );
 
   assert.ok(envExample.includes('PORTAL_PUBLIC_API_BASE_URL="/v1"'));
+  assert.ok(envExample.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL="/v1"'));
   assert.ok(envExample.includes('PORTAL_PUBLIC_APP_API_BASE_URL="/app/v3/api"'));
   assert.ok(envExample.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL="/backend/v3/api"'));
   assert.ok(!envExample.includes('https://api.sdkwork.com'));
@@ -404,6 +406,7 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(plan.steps[5].env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
   assert.equal(plan.steps[5].env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
   assert.equal(plan.steps[5].env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
+  assert.equal(plan.steps[5].env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
   assert.equal(plan.steps[5].env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
   assert.equal(plan.steps[5].env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
   assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
@@ -685,6 +688,7 @@ test('workspace dry-run output uses server and portal bind names without obsolet
   assert.ok(textOutput.includes('SDKWORK_CLAW_PORTAL_BIND=0.0.0.0:13900'));
   assert.ok(textOutput.includes(`SDKWORK_MODELS_CATALOG_ROOT=${path.join(workspaceRoot, 'data', 'sdkwork-models')}`));
   assert.ok(textOutput.includes('PORTAL_PUBLIC_API_BASE_URL=/v1'));
+  assert.ok(textOutput.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1'));
   assert.ok(textOutput.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api'));
   assert.ok(textOutput.includes('PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api'));
   assert.ok(!textOutput.includes('PORTAL_DEV_BIND'));
@@ -1017,6 +1021,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.equal(env.SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME, 'https');
   assert.equal(env.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS, '1');
   assert.equal(env.PORTAL_PUBLIC_API_BASE_URL, 'https://api.example.com/v1');
+  assert.equal(env.PORTAL_PUBLIC_OPEN_API_BASE_URL, 'https://api.example.com/v1');
   assert.equal(env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
   assert.equal(env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
   assert.equal(env.PORTAL_PUBLIC_TOOL_API_ENABLED, 'false');
@@ -2801,6 +2806,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
   assert.ok(smokeSource.includes("label: 'direct portal backend OpenAPI proxy'"));
   assert.ok(smokeSource.includes("label: 'direct portal app OpenAPI proxy'"));
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_API_BASE_URL=/v1'));
+  assert.ok(smokeSource.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1'));
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api'));
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api'));
   assert.ok(
@@ -3037,6 +3043,7 @@ test('release preflight env-file values satisfy strict release environment check
   const envFile = [
     'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release.example"',
     'PORTAL_PUBLIC_API_BASE_URL=https://tenant.example.com/v1',
+    'PORTAL_PUBLIC_OPEN_API_BASE_URL=https://open.tenant.example.com/v1',
     'PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api',
     'PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api',
     'PORTAL_PUBLIC_TOOL_API_ENABLED=false',
@@ -3110,8 +3117,9 @@ test('release env writer creates a dotenv file from the executable contract with
   });
 
   assert.equal(plan.outputPath, '.env.release.local');
-  assert.equal(plan.safeSummary, 'release env file would be written with 5 contract variables');
+  assert.equal(plan.safeSummary, 'release env file would be written with 6 contract variables');
   assert.ok(plan.content.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release:secret@db.example.com:5432/claw"'));
+  assert.ok(plan.content.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL="https://open.tenant.example.com/v1"'));
   assert.ok(plan.content.includes('PORTAL_PUBLIC_TOOL_API_ENABLED="false"'));
   assert.ok(!plan.safeSummary.includes('secret'));
 });
@@ -3190,7 +3198,7 @@ test('release env writer CLI check prints only a safe summary', async () => {
   });
 
   assert.ok(stdout.includes('[release-env] validated: .env.release.local'));
-  assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+  assert.ok(stdout.includes('release env file would be written with 6 contract variables'));
   assert.ok(!stdout.includes('secret'));
   assert.ok(!stdout.includes('tenant.example.com'));
 });
@@ -3216,12 +3224,13 @@ test('release env writer CLI writes a local dotenv file without leaking values',
 
     const written = readFileSync(absoluteOutputPath, 'utf8');
     assert.ok(stdout.includes(`[release-env] written: ${outputPath}`));
-    assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+    assert.ok(stdout.includes('release env file would be written with 6 contract variables'));
     assert.ok(!stdout.includes('secret'));
     assert.ok(!stdout.includes('tenant.example.com'));
     assert.ok(written.includes('# Generated by node scripts/write-release-env.mjs. Do not commit this file.'));
     assert.ok(written.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://release:secret@db.example.com:5432/claw"'));
     assert.ok(written.includes('PORTAL_PUBLIC_API_BASE_URL="https://tenant.example.com/v1"'));
+    assert.ok(written.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL="https://open.tenant.example.com/v1"'));
 
     await assert.rejects(
       () => execFileAsync('node', [
@@ -3273,7 +3282,7 @@ test('release env writer CLI check is idempotent when the output file already ex
     });
 
     assert.ok(stdout.includes(`[release-env] validated: ${outputPath}`));
-    assert.ok(stdout.includes('release env file would be written with 5 contract variables'));
+    assert.ok(stdout.includes('release env file would be written with 6 contract variables'));
     assert.equal(readFileSync(absoluteOutputPath, 'utf8'), 'already generated\n');
     assert.ok(!stdout.includes('secret'));
     assert.ok(!stdout.includes('tenant.example.com'));
@@ -3293,6 +3302,7 @@ test('release preflight rejects malformed release environment values in strict m
     env: {
       SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: 'not-a-postgres-url',
       PORTAL_PUBLIC_API_BASE_URL: 'javascript:alert(1)',
+      PORTAL_PUBLIC_OPEN_API_BASE_URL: 'ftp://open.example.com/v1',
       PORTAL_PUBLIC_APP_API_BASE_URL: '//evil.example.com/app',
       PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api#fragment',
       PORTAL_PUBLIC_TOOL_API_ENABLED: 'yes',
@@ -3321,6 +3331,7 @@ test('release preflight rejects malformed release environment values in strict m
   assert.equal(byId['env.releaseContract'].status, 'FAIL');
   assert.ok(byId['env.releaseContract'].details.includes('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL'));
   assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_API_BASE_URL'));
+  assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL'));
   assert.ok(byId['env.releaseContract'].details.includes('PORTAL_PUBLIC_TOOL_API_ENABLED'));
   assert.ok(byId['env.releaseContract'].details.includes('run pnpm.cmd release:env:write'));
   assert.ok(byId['env.releaseContract'].recommendation.includes('pnpm.cmd release:env:write -- --check'));
@@ -4101,6 +4112,7 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   assert.ok(viteConfig.includes("order: 'post'"));
   assert.ok(viteConfig.includes('type="module" src="${RUNTIME_ENV_SCRIPT_PATH}"'));
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_API_BASE_URL'));
+  assert.ok(viteConfig.includes('PORTAL_PUBLIC_OPEN_API_BASE_URL'));
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
   assert.ok(viteConfig.includes('optimizeDeps'));
@@ -4489,6 +4501,9 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /--lang=en-US/);
   assert.match(browserSmokeSource, /Emulation\.setLocaleOverride/);
   assert.match(browserSmokeSource, /Emulation\.setUserAgentOverride/);
+  assert.match(browserSmokeSource, /PORTAL_PUBLIC_OPEN_API_BASE_URL/);
+  assert.match(browserSmokeSource, /previousPublicOpenApiBaseUrl/);
+  assert.match(browserSmokeSource, /VITE_CLAWROUTER_OPEN_API_BASE_URL/);
   assert.match(browserSmokeSource, /PORTAL_PUBLIC_APP_API_BASE_URL/);
   assert.match(browserSmokeSource, /previousPublicAppApiBaseUrl/);
   assert.match(browserSmokeSource, /VITE_CLAWROUTER_APP_API_BASE_URL/);

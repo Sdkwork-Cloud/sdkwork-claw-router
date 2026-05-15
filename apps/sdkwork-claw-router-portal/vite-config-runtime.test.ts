@@ -6,6 +6,7 @@ import test from "node:test";
 import type { UserConfig } from "vite";
 
 import portalViteConfig from "./vite.config.ts";
+import { buildPortalRuntimeEnvScript, resolvePortalRuntimeEnv } from "./vite.config.ts";
 
 async function resolvePortalViteConfig(): Promise<UserConfig> {
   if (typeof portalViteConfig !== "function") {
@@ -271,4 +272,32 @@ test("production TypeScript transform does not allocate source maps when build s
   assert.match(source, /map:\s*ENABLE_TYPESCRIPT_TRANSFORM_SOURCE_MAPS/);
   assert.doesNotMatch(source, /sourceMap:\s*true/);
   assert.doesNotMatch(source, /inlineSources:\s*true/);
+});
+
+test("portal runtime env exposes an open SDK base URL that defaults to the public API base URL", () => {
+  assert.deepEqual(
+    resolvePortalRuntimeEnv({
+      PORTAL_PUBLIC_API_BASE_URL: "https://tenant.example.com/v1",
+      PORTAL_PUBLIC_APP_API_BASE_URL: "/app/v3/api",
+      PORTAL_PUBLIC_BACKEND_API_BASE_URL: "/backend/v3/api",
+    }),
+    {
+      VITE_API_BASE_URL: "https://tenant.example.com/v1",
+      VITE_CLAWROUTER_OPEN_API_BASE_URL: "https://tenant.example.com/v1",
+      VITE_CLAWROUTER_APP_API_BASE_URL: "/app/v3/api",
+      VITE_CLAWROUTER_BACKEND_API_BASE_URL: "/backend/v3/api",
+    },
+  );
+});
+
+test("portal runtime env allows the open SDK base URL to differ from the public API reference base URL", () => {
+  const runtimeEnv = resolvePortalRuntimeEnv({
+    PORTAL_PUBLIC_API_BASE_URL: "https://tenant.example.com/v1",
+    PORTAL_PUBLIC_OPEN_API_BASE_URL: "https://open.example.com/v1",
+  });
+  const script = buildPortalRuntimeEnvScript(runtimeEnv);
+
+  assert.equal(runtimeEnv.VITE_API_BASE_URL, "https://tenant.example.com/v1");
+  assert.equal(runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL, "https://open.example.com/v1");
+  assert.match(script, /"VITE_CLAWROUTER_OPEN_API_BASE_URL":"https:\/\/open\.example\.com\/v1"/u);
 });

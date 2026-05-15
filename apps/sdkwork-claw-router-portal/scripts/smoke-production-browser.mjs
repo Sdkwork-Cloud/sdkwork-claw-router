@@ -3405,6 +3405,11 @@ async function verifyRuntimeEnvironment(cdp, baseUrl) {
   if (runtimeEnv.VITE_API_BASE_URL !== "https://tenant-api.example.com/api") {
     throw new Error(`Browser runtime env used an unexpected API base URL: ${runtimeEnv.VITE_API_BASE_URL}`);
   }
+  if (runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL !== "https://tenant-api.example.com/api") {
+    throw new Error(
+      `Browser runtime env used an unexpected open SDK base URL: ${runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL}`,
+    );
+  }
   if (runtimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL !== "/app/v3/api") {
     throw new Error(
       `Browser runtime env used an unexpected app base URL: ${runtimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL}`,
@@ -3748,6 +3753,7 @@ async function main() {
   const previousEdgeServer = process.env.SDKWORK_CLAW_EDGE_SERVER;
   const previousPortalStaticDist = process.env.SDKWORK_CLAW_EDGE_PORTAL_STATIC_DIST;
   const previousPublicApiBaseUrl = process.env.PORTAL_PUBLIC_API_BASE_URL;
+  const previousPublicOpenApiBaseUrl = process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL;
   const previousPublicAppApiBaseUrl = process.env.PORTAL_PUBLIC_APP_API_BASE_URL;
   const previousPublicBackendApiBaseUrl = process.env.PORTAL_PUBLIC_BACKEND_API_BASE_URL;
   const previousPublicToolApiEnabled = process.env.PORTAL_PUBLIC_TOOL_API_ENABLED;
@@ -3769,6 +3775,7 @@ async function main() {
     process.env.SDKWORK_CLAW_EDGE_SERVER = "1";
     process.env.SDKWORK_CLAW_EDGE_PORTAL_STATIC_DIST = path.join(portalRoot, "dist");
     process.env.PORTAL_PUBLIC_API_BASE_URL = "https://tenant-api.example.com/api";
+    process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL = "https://tenant-api.example.com/api";
     process.env.PORTAL_PUBLIC_APP_API_BASE_URL = "/app/v3/api";
     process.env.PORTAL_PUBLIC_BACKEND_API_BASE_URL = "/backend/v3/api";
     process.env.PORTAL_PUBLIC_TOOL_API_ENABLED = "false";
@@ -3936,6 +3943,11 @@ async function main() {
       delete process.env.PORTAL_PUBLIC_API_BASE_URL;
     } else {
       process.env.PORTAL_PUBLIC_API_BASE_URL = previousPublicApiBaseUrl;
+    }
+    if (previousPublicOpenApiBaseUrl === undefined) {
+      delete process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL;
+    } else {
+      process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL = previousPublicOpenApiBaseUrl;
     }
     if (previousPublicAppApiBaseUrl === undefined) {
       delete process.env.PORTAL_PUBLIC_APP_API_BASE_URL;

@@ -119,7 +119,8 @@ export function buildSdkReferenceSidebarTree(categories: ApiCategory[]): ApiCate
 
 function resolveGeneratedSdkBaseUrl(system: SdkReferenceSystem): string {
   const sdkMetadata = getGeneratedSdkMetadataForSystem(system);
-  const configuredBaseUrl = readClawRouterRuntimeEnv(sdkMetadata.runtimeEnvName);
+  const configuredBaseUrl = readClawRouterRuntimeEnv(sdkMetadata.runtimeEnvName)
+    ?? (system === 'gateway' ? readClawRouterRuntimeEnv('VITE_API_BASE_URL') : undefined);
   if (system === 'gateway') {
     return stripGatewayOpenAiVersionBaseUrl(configuredBaseUrl ?? GATEWAY_GENERATED_SDK_DEFAULT_BASE_URL);
   }

@@ -180,6 +180,10 @@ function resolveStartProductionEnv(
         ? '1'
         : baseEnv.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS ?? '0',
     PORTAL_PUBLIC_API_BASE_URL: baseEnv.PORTAL_PUBLIC_API_BASE_URL ?? '/v1',
+    PORTAL_PUBLIC_OPEN_API_BASE_URL:
+      baseEnv.PORTAL_PUBLIC_OPEN_API_BASE_URL
+      ?? baseEnv.PORTAL_PUBLIC_API_BASE_URL
+      ?? '/v1',
     PORTAL_PUBLIC_APP_API_BASE_URL: baseEnv.PORTAL_PUBLIC_APP_API_BASE_URL ?? '/app/v3/api',
     PORTAL_PUBLIC_BACKEND_API_BASE_URL:
       baseEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL ?? '/backend/v3/api',
@@ -230,6 +234,7 @@ function buildStartProductionAccessLines(env) {
     `[start-production]   Backend/Admin API: ${appendPath(backendTarget, '/backend/v3/api')}`,
     `[start-production]   App API: ${appendPath(appTarget, '/app/v3/api')}`,
     `[start-production]   PORTAL_PUBLIC_API_BASE_URL=${env.PORTAL_PUBLIC_API_BASE_URL}`,
+    `[start-production]   PORTAL_PUBLIC_OPEN_API_BASE_URL=${env.PORTAL_PUBLIC_OPEN_API_BASE_URL}`,
     `[start-production]   PORTAL_PUBLIC_BACKEND_API_BASE_URL=${env.PORTAL_PUBLIC_BACKEND_API_BASE_URL}`,
     `[start-production]   PORTAL_PUBLIC_APP_API_BASE_URL=${env.PORTAL_PUBLIC_APP_API_BASE_URL}`,
     `[start-production]   PORTAL_PUBLIC_TOOL_API_ENABLED=${env.PORTAL_PUBLIC_TOOL_API_ENABLED}`,

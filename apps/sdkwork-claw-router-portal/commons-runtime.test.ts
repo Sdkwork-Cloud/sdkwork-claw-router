@@ -25,7 +25,10 @@ import {
   resolvePortalLoginRequiredAction,
 } from "./packages/sdkwork-claw-router-commons/src/portal-auth.ts";
 import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-claw-router-commons/src/sdk-base-url.ts";
-import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
+import {
+  resetClawRouterSdkClients,
+  SDK_SYSTEM_CONFIG,
+} from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
   optionalBoundedPositiveInteger,
   optionalInteger,
@@ -188,6 +191,12 @@ test("reference sidebar group element ids are safe and stable for aria controls"
 
 test("api base url defaults to same-origin edge gateway path when runtime env is absent", () => {
   assert.equal(API_BASE_URL, "/v1");
+});
+
+test("generated SDK metadata declares independent runtime base URL variables for every SDK surface", () => {
+  assert.equal(SDK_SYSTEM_CONFIG.gateway.runtimeEnvName, "VITE_CLAWROUTER_OPEN_API_BASE_URL");
+  assert.equal(SDK_SYSTEM_CONFIG.app.runtimeEnvName, "VITE_CLAWROUTER_APP_API_BASE_URL");
+  assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
 });
 
 test("portal auth helpers preserve the current route for login-required actions", () => {

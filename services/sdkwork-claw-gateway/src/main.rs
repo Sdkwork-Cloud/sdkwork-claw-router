@@ -55,6 +55,11 @@ fn build_edge_server_config() -> anyhow::Result<sdkwork_claw_gateway::EdgeServer
             .with_portal_public_api_base_url(value)
             .map_err(anyhow::Error::msg)?;
     }
+    if let Some(value) = env_optional("PORTAL_PUBLIC_OPEN_API_BASE_URL") {
+        edge_config = edge_config
+            .with_portal_public_open_api_base_url(value)
+            .map_err(anyhow::Error::msg)?;
+    }
     if let Some(value) = env_optional("PORTAL_PUBLIC_APP_API_BASE_URL") {
         edge_config = edge_config
             .with_portal_public_app_api_base_url(value)

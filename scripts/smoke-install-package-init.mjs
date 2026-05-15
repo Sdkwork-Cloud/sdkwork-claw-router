@@ -223,6 +223,7 @@ function createSmokeEnvironment({ databaseUrl, databaseEngine, releaseEnvPath, r
     SDKWORK_MODELS_CATALOG_ROOT: modelsCatalogRoot,
     SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL: DEFAULT_RELEASE_POSTGRES_URL,
     PORTAL_PUBLIC_API_BASE_URL: '/v1',
+    PORTAL_PUBLIC_OPEN_API_BASE_URL: '/v1',
     PORTAL_PUBLIC_APP_API_BASE_URL: '/app/v3/api',
     PORTAL_PUBLIC_BACKEND_API_BASE_URL: '/backend/v3/api',
     PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',

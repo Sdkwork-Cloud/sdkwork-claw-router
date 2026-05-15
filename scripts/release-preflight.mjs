@@ -134,6 +134,7 @@ function releaseEnvironmentIssues(env) {
 
   for (const name of [
     'PORTAL_PUBLIC_API_BASE_URL',
+    'PORTAL_PUBLIC_OPEN_API_BASE_URL',
     'PORTAL_PUBLIC_APP_API_BASE_URL',
     'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
   ]) {
