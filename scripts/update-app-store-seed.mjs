@@ -5,11 +5,14 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import {
+  resolveClawRouterBusinessAppsRoot,
+} from './claw-router-layout.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DEFAULT_WORKSPACE_ROOT = path.resolve(__dirname, '..');
-const DEFAULT_APPS_ROOT = path.resolve(DEFAULT_WORKSPACE_ROOT, '..');
+const DEFAULT_APPS_ROOT = resolveClawRouterBusinessAppsRoot(DEFAULT_WORKSPACE_ROOT);
 const DEFAULT_ENVIRONMENT = 'production';
 const DEFAULT_CHANNEL = 'STABLE';
 
@@ -19,7 +22,7 @@ function printHelp() {
 Refresh SDKWork App Store install-time seed data from all apps under spring-ai-plus-business/apps.
 
 Options:
-  --apps-root <path>       Apps root to scan, default ../ from sdkwork-claw-router.
+  --apps-root <path>       Apps root to scan, default the nearest spring-ai-plus-business/apps sibling.
   --environment <name>     PlusApp projection environment, default production.
   --channel <name>         PlusApp release channel, default STABLE.
   --platform <name>        Optional package platform selector.

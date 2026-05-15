@@ -5,6 +5,10 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
 import { gunzipSync } from 'node:zlib';
+import {
+  resolveClawRouterBusinessAppsRoot,
+  resolveClawRouterBusinessSpecsRoot,
+} from './claw-router-layout.mjs';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
 const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
@@ -139,7 +143,7 @@ test('app store seed updater defaults to file seed updates and gates database sy
   const defaults = module.parseAppStoreSeedArgs([]);
   const defaultPlan = module.buildAppStoreSeedCommandPlan(defaults, { workspaceRoot });
 
-  assert.equal(defaults.appsRoot, path.resolve(workspaceRoot, '..'));
+  assert.equal(defaults.appsRoot, resolveClawRouterBusinessAppsRoot(workspaceRoot));
   assert.equal(defaults.check, false);
   assert.equal(defaults.syncDb, false);
   assert.equal(defaults.initializeMissing, true);
@@ -3566,7 +3570,7 @@ test('release environment documentation stays aligned with the executable contra
 });
 
 test('environment and deployment specs document Claw Router runtime config standards', () => {
-  const specsRoot = path.resolve(workspaceRoot, '..', '..', 'specs');
+  const specsRoot = resolveClawRouterBusinessSpecsRoot(workspaceRoot);
   const environmentSpec = readFileSync(path.join(specsRoot, 'ENVIRONMENT_SPEC.md'), 'utf8');
   const deploymentSpec = readFileSync(path.join(specsRoot, 'DEPLOYMENT_SPEC.md'), 'utf8');
 
