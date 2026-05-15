@@ -40,7 +40,7 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts.release,
-    'pnpm release:preflight -- --strict --env-file .env.release.local && pnpm verify',
+    'pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify',
   );
   assert.equal(
     rootPackage.scripts['desktop:dev'],
@@ -2342,6 +2342,27 @@ test('release preflight env-file values satisfy strict release environment check
   assert.equal(byId['env.postgres'].status, 'PASS');
   assert.equal(byId['env.portalPublic'].status, 'PASS');
   assert.ok(byId['env.releaseContract'].details.includes('.env.release.local'));
+});
+
+test('release preflight CLI reads env-file values before building the report', async () => {
+  const { stdout } = await execFileAsync('node', [
+    'scripts/release-preflight.mjs',
+    '--dry-run',
+    '--env-file',
+    '.env.release.example',
+    '--json',
+  ], {
+    cwd: workspaceRoot,
+    windowsHide: true,
+  });
+  const parsed = JSON.parse(stdout);
+  const byId = Object.fromEntries(parsed.checks.map((check) => [check.id, check]));
+
+  assert.equal(parsed.exitCode, 0);
+  assert.equal(byId['env.releaseContract'].status, 'PASS');
+  assert.equal(byId['env.postgres'].status, 'PASS');
+  assert.equal(byId['env.portalPublic'].status, 'PASS');
+  assert.ok(byId['env.releaseContract'].details.includes('.env.release.example'));
 });
 
 test('release preflight rejects malformed release environment values in strict mode', async () => {
