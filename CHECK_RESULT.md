@@ -15,6 +15,24 @@ gate.
 
 The main improvements made in this pass are:
 
+- install package planning is now executable: `pnpm.cmd install:packages:plan`
+  and `pnpm.cmd install:packages:check` are backed by
+  `scripts/plan-claw-router-install-packages.mjs`
+- install package building is now executable: `pnpm.cmd
+  install:package:check` validates the full 18-package builder matrix in
+  dry-run mode and
+  `pnpm.cmd install:package:build` writes manifest-backed install archives
+- the install package matrix now covers Windows, Linux, macOS, x64, arm64,
+  archive, service, and container delivery, including contracts such as
+  `windows-x64-service` and `linux-arm64-container`
+- fast initialization is now a delivery contract instead of tribal knowledge:
+  release env validation/write, `sdkwork-claw-installer ensure`,
+  `sdkwork-claw-installer refresh-catalog --force`, and `/healthz` plus
+  `/readyz` checks are declared for every package mode
+- package security defaults are explicit: no secrets in package artifacts,
+  `.env.release.local` excluded, `.env.release.example` reference-only, local
+  env generated on the install host, and trusted forwarded headers disabled by
+  default
 - route delivery classification is now executable: every actual portal route is
   declared in `docs/schema-registry/frontend-route-classification.yaml` as
   `sdk_backed_business_runtime`, `schema_provenanced_content`, or
@@ -3194,6 +3212,11 @@ The hardening covers:
 
 ## Current Risk Register
 
+- Install package planning now gates the matrix and initialization contract, and
+  the package builder consumes the same plan for archive, service, and
+  container deployment packages. The current builder writes `.zip` and
+  `.tar.gz` outputs with package and aggregate manifests, generated service
+  manifests, generated container entrypoints, Containerfile, and metadata.
 - Docker-backed Postgres verification is blocked in this machine because Docker
   is not available to the process (`docker version` failed with `spawn EPERM`).
   Run `pnpm.cmd test:postgres:docker` on a machine with Docker Desktop or a
@@ -3358,6 +3381,81 @@ Remaining delivery policy:
 - Use `pnpm.cmd verify` before final delivery, release, or commit handoff.
 - Keep `target/` and portal `node_modules` by default unless disk pressure is
   more important than preserving fast compile/reinstall behavior.
+
+## 2026-05-15 Install Package Planning Standard
+
+Issue found:
+
+- the production build and start flows were standardized, but the install
+  package layer did not yet have an executable cross-platform contract for
+  Windows, Linux, macOS, x64, arm64, archive, service, container, fast
+  initialization, health checks, and secret exclusion
+- without a shared matrix, future package builders could drift by platform,
+  accidentally include `.env.release.local`, skip catalog refresh, trust
+  forwarded headers by default, or run expensive live `pnpm dev` smoke during
+  package initialization
+
+Solution applied:
+
+- added `scripts/plan-claw-router-install-packages.mjs`
+- added `pnpm.cmd install:packages:plan` and
+  `pnpm.cmd install:packages:check`
+- added `scripts/build-claw-router-install-package.mjs`
+- added `pnpm.cmd install:package:check` and
+  `pnpm.cmd install:package:build`
+- the planner generates an 18-entry matrix across platforms, architectures, and
+  deployment modes
+- every package contract declares the edge binary, installer binary,
+  `portal/dist`, `portal/dist/sdk-archives`, `.env.release.example`,
+  `install-manifest.json`, mode-specific service/container metadata, fast init
+  commands, and `/healthz` plus `/readyz`
+- the planner rejects drift through `validateInstallPackagePlan(plan)` and CLI
+  `--check`; JSON output is available for CI and future package builders
+- the install package builder consumes the plan, writes real `.zip` outputs for
+  Windows packages, writes real gzip-compressed tar archives for Linux and
+  macOS packages, emits per-package manifests and
+  `install-packages-manifest.json`, generates Windows service, systemd, launchd,
+  Containerfile, platform-specific entrypoint, and container metadata artifacts,
+  preserves executable mode on Linux/macOS binaries and container entrypoints,
+  supports ustar prefix paths for long production asset names, supports pure
+  `--json` output, and excludes `.env.release.local`
+- the builder also supports `--all --check --dry-run` so the root
+  `pnpm.cmd install:package:check` command validates archive, service, and
+  container package plans across all 18 platform/architecture/mode combinations
+  without requiring staged production artifacts
+- README and CHECK_RESULT now document the install package standard, fast init
+  commands, and security defaults
+
+Verification evidence:
+
+```powershell
+node scripts\run-claw-router-product.test.mjs
+python -B -m unittest tests.test_workspace_delivery_standard
+pnpm.cmd install:packages:check
+pnpm.cmd install:package:check
+node scripts\plan-claw-router-install-packages.mjs --json --check
+node --check scripts\build-claw-router-install-package.mjs
+git diff --check
+python -B -m tools.repository_delivery_guardian
+pnpm.cmd verify:fast
+```
+
+Expected install package builder contract:
+
+- consume `scripts/plan-claw-router-install-packages.mjs` as the source of
+  truth instead of hard-coding platform package lists
+- build install packages under a deterministic output directory such as
+  `dist/install-packages` by calling `pnpm.cmd install:package:build --`
+  with `--package-id`, `--staging-root`, and `--output-dir`
+- emit package manifests and `install-packages-manifest.json` with file size
+  and SHA-256 checksums
+- generate service manifests and container metadata from the shared plan instead
+  of maintaining separate platform-specific package lists
+- never include `.env.release.local` or secret values
+- run fast install initialization through `sdkwork-claw-installer ensure` and
+  `sdkwork-claw-installer refresh-catalog --force`
+- treat real `pnpm dev` smoke as an opt-in integration check, not a package
+  initialization default
 
 ## 2026-05-04 Release Preflight Hardening
 

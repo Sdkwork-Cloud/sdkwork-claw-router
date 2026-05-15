@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
+import { gunzipSync } from 'node:zlib';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
 const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
@@ -85,6 +86,14 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['release:env:write'],
     'node scripts/write-release-env.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['install:packages:plan'],
+    'node scripts/plan-claw-router-install-packages.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['install:packages:check'],
+    'node scripts/plan-claw-router-install-packages.mjs --check',
   );
   assert.equal(
     rootPackage.scripts['app-store:seed:update'],
@@ -1125,6 +1134,447 @@ test('production build creates portal assets and Rust edge release artifact', as
   );
   assert.match(buildProductionSource, /attempt \${attempt}\/\${attempts}/);
   assert.match(buildProductionSource, /retrying once to recover from transient toolchain process exits/);
+});
+
+test('install package planner covers platforms, architectures, modes, fast init, and security defaults', async () => {
+  const rootPackage = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
+  );
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'plan-claw-router-install-packages.mjs')).href
+  );
+
+  assert.equal(
+    rootPackage.scripts['install:packages:plan'],
+    'node scripts/plan-claw-router-install-packages.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['install:packages:check'],
+    'node scripts/plan-claw-router-install-packages.mjs --check',
+  );
+  assert.deepEqual(module.SUPPORTED_PLATFORMS, ['windows', 'linux', 'macos']);
+  assert.deepEqual(module.SUPPORTED_ARCHITECTURES, ['x64', 'arm64']);
+  assert.deepEqual(module.SUPPORTED_DEPLOYMENT_MODES, ['archive', 'service', 'container']);
+
+  const plan = module.createInstallPackagePlan({
+    version: '0.1.0',
+    platforms: ['windows', 'linux', 'macos'],
+    architectures: ['x64', 'arm64'],
+    deploymentModes: ['archive', 'service', 'container'],
+  });
+
+  assert.equal(plan.schemaVersion, '2026-05-15.install-packages.v1');
+  assert.deepEqual(plan.platforms, ['windows', 'linux', 'macos']);
+  assert.deepEqual(plan.architectures, ['x64', 'arm64']);
+  assert.deepEqual(plan.deploymentModes, ['archive', 'service', 'container']);
+  assert.equal(plan.packages.length, 18);
+  assert.equal(plan.artifactPolicy.noSecretsInPackage, true);
+  assert.equal(plan.artifactPolicy.envLocalGeneratedOnHost, true);
+  assert.equal(plan.artifactPolicy.envExampleReferenceOnly, true);
+  assert.equal(plan.artifactPolicy.releaseEnvLocalExcluded, true);
+  assert.ok(plan.fastInitializationContract.includes('release-env-check'));
+  assert.ok(plan.fastInitializationContract.includes('database-ensure'));
+  assert.ok(plan.fastInitializationContract.includes('catalog-refresh'));
+  assert.ok(plan.fastInitializationContract.includes('edge-readiness'));
+
+  const windowsService = plan.packages.find((item) =>
+    item.platform === 'windows' && item.architecture === 'x64' && item.deploymentMode === 'service'
+  );
+  assert.ok(windowsService);
+  assert.equal(windowsService.id, 'windows-x64-service');
+  assert.equal(windowsService.archiveName, 'sdkwork-claw-router-windows-x64-service-0.1.0.zip');
+  assert.equal(windowsService.binaryName, 'sdkwork-claw-gateway.exe');
+  assert.equal(windowsService.installerBinaryName, 'sdkwork-claw-installer.exe');
+  assert.deepEqual(windowsService.serviceIntegration, {
+    kind: 'windows-service',
+    manifest: 'service/windows/sdkwork-claw-router.xml',
+  });
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'edge-binary' && artifact.path === 'bin/sdkwork-claw-gateway.exe'
+  ));
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'installer-binary' && artifact.path === 'bin/sdkwork-claw-installer.exe'
+  ));
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'portal-dist' && artifact.path === 'portal/dist'
+  ));
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'sdk-archives' && artifact.path === 'portal/dist/sdk-archives'
+  ));
+  assert.ok(windowsService.artifacts.some((artifact) =>
+    artifact.kind === 'env-template' && artifact.path === '.env.release.example'
+  ));
+  assert.ok(!windowsService.artifacts.some((artifact) => artifact.path === '.env.release.local'));
+  assert.ok(windowsService.initCommands.includes('pnpm.cmd release:env:write -- --check'));
+  assert.ok(windowsService.initCommands.includes('pnpm.cmd release:env:write -- --force'));
+  assert.ok(windowsService.initCommands.includes('sdkwork-claw-installer.exe ensure'));
+  assert.ok(windowsService.initCommands.includes('sdkwork-claw-installer.exe refresh-catalog --force'));
+  assert.equal(windowsService.startCommand, 'sdkwork-claw-gateway.exe');
+  assert.deepEqual(windowsService.healthChecks, ['/healthz', '/readyz']);
+  assert.equal(windowsService.security.noSecretsInPackage, true);
+  assert.equal(windowsService.security.trustForwardedHeadersDefault, false);
+
+  const linuxContainer = plan.packages.find((item) =>
+    item.platform === 'linux' && item.architecture === 'arm64' && item.deploymentMode === 'container'
+  );
+  assert.ok(linuxContainer);
+  assert.equal(linuxContainer.containerIntegration.kind, 'container-image');
+  assert.equal(linuxContainer.containerIntegration.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
+  for (const packageItem of plan.packages.filter((item) => item.deploymentMode === 'container')) {
+    assert.equal(
+      packageItem.startCommand,
+      packageItem.containerIntegration.entrypoint,
+      `${packageItem.id} must use one canonical container entrypoint`,
+    );
+  }
+  assert.ok(linuxContainer.initCommands.includes('pnpm release:env:write -- --check'));
+  assert.ok(!linuxContainer.initCommands.some((command) => command.includes('pnpm dev')));
+  assert.ok(!plan.packages.some((item) =>
+    item.initCommands.some((command) => command.includes('smoke:dev') || command.includes('pnpm dev'))
+  ));
+
+  const windowsContainer = plan.packages.find((item) =>
+    item.platform === 'windows' && item.architecture === 'x64' && item.deploymentMode === 'container'
+  );
+  assert.ok(windowsContainer);
+  assert.equal(windowsContainer.containerIntegration.entrypoint, 'C:/sdkwork-claw-router/bin/sdkwork-claw-gateway.exe');
+  assert.equal(windowsContainer.containerIntegration.workingDirectory, 'C:/sdkwork-claw-router');
+  assert.equal(windowsContainer.startCommand, windowsContainer.containerIntegration.entrypoint);
+  assert.ok(windowsContainer.artifacts.some((artifact) =>
+    artifact.kind === 'container-entrypoint' && artifact.path === 'container/entrypoint.ps1'
+  ));
+
+  assert.deepEqual(module.validateInstallPackagePlan(plan), []);
+  const rendered = module.renderInstallPackagePlan(plan).join('\n');
+  assert.ok(rendered.includes('[install-packages] supported platforms: windows, linux, macos'));
+  assert.ok(rendered.includes('[install-packages] packages: 18'));
+  assert.ok(rendered.includes('windows-x64-service'));
+  assert.ok(!rendered.includes('secret'));
+  assert.ok(!rendered.includes('.env.release.local'));
+});
+
+test('install package archive builder creates manifest-backed archives without local release secrets', async () => {
+  const rootPackage = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'package.json'), 'utf8'),
+  );
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+
+  assert.equal(
+    rootPackage.scripts['install:package:build'],
+    'node scripts/build-claw-router-install-package.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['install:package:check'],
+    'node scripts/build-claw-router-install-package.mjs --check --dry-run --all',
+  );
+  assert.deepEqual(module.parseInstallPackageBuildArgs(['--package-id', 'windows-x64-archive', '--check']), {
+    all: false,
+    check: true,
+    dryRun: false,
+    help: false,
+    json: false,
+    outputDir: null,
+    packageId: 'windows-x64-archive',
+    stagingRoot: null,
+    version: '0.1.0',
+  });
+  assert.deepEqual(module.parseInstallPackageBuildArgs(['--all', '--check', '--dry-run']), {
+    all: true,
+    check: true,
+    dryRun: true,
+    help: false,
+    json: false,
+    outputDir: null,
+    packageId: 'windows-x64-archive',
+    stagingRoot: null,
+    version: '0.1.0',
+  });
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-builder-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+  writeFileSync(path.join(stagingRoot, '.env.release.local'), 'SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL=postgres://secret\n');
+
+  try {
+    const buildPlan = module.createInstallPackageBuildPlan({
+      packageId: 'windows-x64-archive',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(buildPlan.package.id, 'windows-x64-archive');
+    assert.equal(buildPlan.archivePath, path.join(outputDir, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'bin/sdkwork-claw-gateway.exe'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'portal/dist/index.html'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === '.env.release.example'));
+    assert.ok(buildPlan.entries.some((entry) => entry.archivePath === 'install-manifest.json'));
+    assert.ok(!buildPlan.entries.some((entry) => entry.archivePath === '.env.release.local'));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(buildPlan), []);
+
+    const result = await module.buildInstallPackageArchive(buildPlan);
+    assert.equal(result.archive.file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
+    assert.equal(result.manifest.package.id, 'windows-x64-archive');
+    assert.equal(result.manifest.security.noSecretsInPackage, true);
+    assert.equal(result.manifest.artifacts.some((artifact) => artifact.path === '.env.release.local'), false);
+    assert.ok(result.archive.size > 0);
+    assert.match(result.archive.sha256, /^[a-f0-9]{64}$/u);
+    assert.ok(existsSync(result.archivePath));
+    assert.ok(existsSync(result.manifestPath));
+    assert.ok(existsSync(path.join(outputDir, 'install-packages-manifest.json')));
+
+    const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
+    assert.equal(aggregateManifest.archives.length, 1);
+    assert.equal(aggregateManifest.archives[0].file, 'sdkwork-claw-router-windows-x64-archive-0.1.0.zip');
+    assert.equal(aggregateManifest.archives[0].packageId, 'windows-x64-archive');
+    assert.match(aggregateManifest.archives[0].sha256, /^[a-f0-9]{64}$/u);
+
+    const rendered = module.renderInstallPackageBuildPlan(buildPlan).join('\n');
+    assert.ok(rendered.includes('[install-package-build] package: windows-x64-archive'));
+    assert.ok(!rendered.includes('.env.release.local'));
+    assert.ok(!rendered.includes('secret'));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install package builder emits service and container deployment packages from the shared plan', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-deployment-modes-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const servicePlan = module.createInstallPackageBuildPlan({
+      packageId: 'linux-x64-service',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(servicePlan.package.deploymentMode, 'service');
+    assert.ok(servicePlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'service/linux/sdkwork-claw-router.service'
+    ));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(servicePlan), []);
+
+    const serviceResult = await module.buildInstallPackageArchive(servicePlan);
+    const serviceTar = readTarEntries(gunzipSync(readFileSync(serviceResult.archivePath)));
+    assert.ok(serviceTar.has('service/linux/sdkwork-claw-router.service'));
+    assert.equal(
+      serviceResult.manifest.generatedArtifacts.some((artifact) =>
+        artifact.path === 'service/linux/sdkwork-claw-router.service'
+      ),
+      true,
+    );
+
+    const containerPlan = module.createInstallPackageBuildPlan({
+      packageId: 'linux-arm64-container',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.equal(containerPlan.package.deploymentMode, 'container');
+    assert.ok(containerPlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'container/entrypoint'
+    ));
+    assert.ok(containerPlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'container/Containerfile'
+    ));
+    assert.ok(containerPlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'container/metadata.json'
+    ));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(containerPlan), []);
+
+    const containerResult = await module.buildInstallPackageArchive(containerPlan);
+    const containerTarBytes = gunzipSync(readFileSync(containerResult.archivePath));
+    const containerTar = readTarEntries(containerTarBytes);
+    assert.equal(containerTar.get('container/entrypoint')?.mode, 0o755);
+    assert.equal(containerTar.get('container/Containerfile')?.mode, 0o644);
+    const metadata = JSON.parse(readTarEntryText(containerTarBytes, 'container/metadata.json'));
+    assert.equal(metadata.packageId, 'linux-arm64-container');
+    assert.equal(metadata.entrypoint, '/opt/sdkwork-claw-router/bin/sdkwork-claw-gateway');
+    assert.equal(metadata.runtimeUser, 'sdkwork');
+    assert.equal(
+      containerResult.manifest.generatedArtifacts.some((artifact) =>
+        artifact.path === 'container/Containerfile'
+      ),
+      true,
+    );
+
+    const windowsStagingRoot = path.join(fixtureRoot, 'windows-staging');
+    mkdirSync(path.join(windowsStagingRoot, 'bin'), { recursive: true });
+    mkdirSync(path.join(windowsStagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+    writeFileSync(path.join(windowsStagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
+    writeFileSync(path.join(windowsStagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+    writeFileSync(path.join(windowsStagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+    writeFileSync(path.join(windowsStagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+    writeFileSync(path.join(windowsStagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+    const windowsContainerPlan = module.createInstallPackageBuildPlan({
+      packageId: 'windows-x64-container',
+      stagingRoot: windowsStagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    assert.ok(windowsContainerPlan.entries.some((entry) =>
+      entry.generated && entry.archivePath === 'container/entrypoint.ps1'
+    ));
+    assert.deepEqual(module.validateInstallPackageBuildPlan(windowsContainerPlan), []);
+    const windowsContainerResult = await module.buildInstallPackageArchive(windowsContainerPlan);
+    assert.equal(windowsContainerResult.archive.file, 'sdkwork-claw-router-windows-x64-container-0.1.0.zip');
+    assert.equal(
+      windowsContainerResult.manifest.generatedArtifacts.some((artifact) =>
+        artifact.path === 'container/entrypoint.ps1'
+      ),
+      true,
+    );
+    const aggregateManifest = JSON.parse(readFileSync(path.join(outputDir, 'install-packages-manifest.json'), 'utf8'));
+    assert.deepEqual(
+      aggregateManifest.archives.map((archive) => archive.packageId),
+      ['linux-arm64-container', 'linux-x64-service', 'windows-x64-container'],
+    );
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install package archive builder emits tar.gz bytes for non-Windows packages', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-targz-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const buildPlan = module.createInstallPackageBuildPlan({
+      packageId: 'linux-arm64-archive',
+      stagingRoot,
+      outputDir,
+      version: '0.1.0',
+    });
+    const result = await module.buildInstallPackageArchive(buildPlan);
+    const archiveBytes = readFileSync(result.archivePath);
+    assert.equal(result.archive.file, 'sdkwork-claw-router-linux-arm64-archive-0.1.0.tar.gz');
+    assert.equal(archiveBytes[0], 0x1f);
+    assert.equal(archiveBytes[1], 0x8b);
+    const tarBytes = gunzipSync(archiveBytes);
+    const tarEntries = readTarEntries(tarBytes);
+    assert.equal(tarEntries.get('bin/sdkwork-claw-gateway')?.mode, 0o755);
+    assert.equal(tarEntries.get('bin/sdkwork-claw-installer')?.mode, 0o755);
+    assert.equal(tarEntries.get('portal/dist/index.html')?.mode, 0o644);
+    assert.match(result.archive.sha256, /^[a-f0-9]{64}$/u);
+    assert.equal(result.manifest.package.id, 'linux-arm64-archive');
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install package tar writer supports long production asset paths', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
+  );
+  const longPath = 'portal/dist/assets/admin/operations/runtime/chunks/sdkwork-claw-router-admin-operations-runtime-production-entrypoint-bundle-abcdef1234567890.js';
+  assert.ok(longPath.length > 100);
+  const tarBytes = module.createTar([
+    {
+      relativePath: longPath,
+      data: Buffer.from('asset'),
+      mode: 0o644,
+    },
+  ]);
+  const tarEntries = readTarEntries(tarBytes);
+  assert.equal(tarEntries.get(longPath)?.size, 5);
+  assert.equal(tarEntries.get(longPath)?.mode, 0o644);
+});
+
+test('install package archive builder CLI emits pure JSON when requested', async () => {
+  const fixtureRoot = path.join(workspaceRoot, '.tmp', 'install-package-json-cli-test');
+  const stagingRoot = path.join(fixtureRoot, 'staging');
+  const outputDir = path.join(fixtureRoot, 'out');
+  rmSync(fixtureRoot, { recursive: true, force: true });
+  mkdirSync(path.join(stagingRoot, 'bin'), { recursive: true });
+  mkdirSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives'), { recursive: true });
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-gateway.exe'), 'gateway-binary');
+  writeFileSync(path.join(stagingRoot, 'bin', 'sdkwork-claw-installer.exe'), 'installer-binary');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'index.html'), '<!doctype html>');
+  writeFileSync(path.join(stagingRoot, 'portal', 'dist', 'sdk-archives', 'sdk.zip'), 'sdk-archive');
+  writeFileSync(path.join(stagingRoot, '.env.release.example'), 'PORTAL_PUBLIC_API_BASE_URL=/v1\n');
+
+  try {
+    const { stdout, stderr } = await execFileAsync(process.execPath, [
+      path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs'),
+      '--package-id',
+      'windows-x64-archive',
+      '--staging-root',
+      stagingRoot,
+      '--output-dir',
+      outputDir,
+      '--json',
+    ], {
+      cwd: workspaceRoot,
+      maxBuffer: 1024 * 1024 * 4,
+    });
+    const payload = JSON.parse(stdout);
+    assert.equal(stderr, '');
+    assert.equal(payload.ok, true);
+    assert.equal(payload.archive.packageId, 'windows-x64-archive');
+    assert.match(payload.archive.sha256, /^[a-f0-9]{64}$/u);
+    assert.ok(!stdout.includes('[install-package-build] package:'));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+});
+
+test('install package builder CLI checks the full package matrix in dry-run mode', async () => {
+  const { stdout, stderr } = await execFileAsync(process.execPath, [
+    path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs'),
+    '--all',
+    '--check',
+    '--dry-run',
+    '--json',
+  ], {
+    cwd: workspaceRoot,
+    maxBuffer: 1024 * 1024 * 4,
+  });
+  const payload = JSON.parse(stdout);
+  assert.equal(stderr, '');
+  assert.equal(payload.ok, true);
+  assert.equal(payload.plans.length, 18);
+  assert.deepEqual(payload.issues, []);
+  assert.ok(payload.plans.some((plan) => plan.package.id === 'windows-x64-service'));
+  assert.ok(payload.plans.some((plan) => plan.package.id === 'linux-arm64-container'));
+  assert.ok(payload.plans.every((plan) =>
+    plan.entries.some((entry) => entry.archivePath === 'install-manifest.json')
+  ));
 });
 
 test('production SDK archiver creates deterministic ZIP artifacts for generated SDKs', async () => {
@@ -4716,6 +5166,51 @@ test('verification plan includes portal models SSR smoke before broad suites', a
     'node apps/sdkwork-claw-router-portal/models-ssr-smoke.test.cjs',
   ));
 });
+
+function readTarEntries(buffer) {
+  const entries = new Map();
+  for (let offset = 0; offset + 512 <= buffer.length;) {
+    const header = buffer.subarray(offset, offset + 512);
+    if (header.every((byte) => byte === 0)) {
+      break;
+    }
+    const namePart = readTarString(header, 0, 100);
+    const prefixPart = readTarString(header, 345, 155);
+    const name = prefixPart ? `${prefixPart}/${namePart}` : namePart;
+    const mode = Number.parseInt(readTarString(header, 100, 8) || '0', 8);
+    const size = Number.parseInt(readTarString(header, 124, 12) || '0', 8);
+    entries.set(name, { mode, size });
+    offset += 512 + Math.ceil(size / 512) * 512;
+  }
+  return entries;
+}
+
+function readTarEntryText(buffer, expectedName) {
+  for (let offset = 0; offset + 512 <= buffer.length;) {
+    const header = buffer.subarray(offset, offset + 512);
+    if (header.every((byte) => byte === 0)) {
+      break;
+    }
+    const namePart = readTarString(header, 0, 100);
+    const prefixPart = readTarString(header, 345, 155);
+    const name = prefixPart ? `${prefixPart}/${namePart}` : namePart;
+    const size = Number.parseInt(readTarString(header, 124, 12) || '0', 8);
+    const dataOffset = offset + 512;
+    if (name === expectedName) {
+      return buffer.subarray(dataOffset, dataOffset + size).toString('utf8');
+    }
+    offset += 512 + Math.ceil(size / 512) * 512;
+  }
+  throw new Error(`Missing tar entry: ${expectedName}`);
+}
+
+function readTarString(buffer, offset, length) {
+  return buffer
+    .subarray(offset, offset + length)
+    .toString('utf8')
+    .replace(/\0.*$/u, '')
+    .trim();
+}
 
 let failed = 0;
 for (const { name, fn } of tests) {

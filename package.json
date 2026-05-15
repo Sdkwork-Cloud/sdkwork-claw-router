@@ -30,6 +30,10 @@
     "app-store:seed:check": "node scripts/update-app-store-seed.mjs --check",
     "clean:fast": "node scripts/clean-claw-router-workspace.mjs",
     "release:preflight": "node scripts/release-preflight.mjs",
-    "release:env:write": "node scripts/write-release-env.mjs"
+    "release:env:write": "node scripts/write-release-env.mjs",
+    "install:packages:plan": "node scripts/plan-claw-router-install-packages.mjs",
+    "install:packages:check": "node scripts/plan-claw-router-install-packages.mjs --check",
+    "install:package:build": "node scripts/build-claw-router-install-package.mjs",
+    "install:package:check": "node scripts/build-claw-router-install-package.mjs --check --dry-run --all"
   }
 }

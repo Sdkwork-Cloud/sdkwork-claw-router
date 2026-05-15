@@ -79,6 +79,9 @@ pnpm.cmd service:dev
 pnpm.cmd server:dev
 pnpm.cmd smoke:dev
 pnpm.cmd product:check
+pnpm.cmd install:packages:plan
+pnpm.cmd install:packages:check
+pnpm.cmd install:package:check
 ```
 
 Validate the standalone model catalog before installer or release work:
@@ -192,6 +195,12 @@ Command intent:
   random local ports, verifies the edge and direct OpenAPI/runtime URLs, and
   stops the spawned process tree.
 - `pnpm.cmd product:check` runs portal typecheck and production build.
+- `pnpm.cmd install:packages:plan` prints the deterministic cross-platform
+  install package matrix without building packages or starting services.
+- `pnpm.cmd install:packages:check` validates the same matrix for release and
+  CI package-builder integration.
+- `pnpm.cmd install:package:check` validates the install package builder in
+  dry-run mode without requiring staged production artifacts.
 
 Use `pnpm.cmd`, not `pnpm.ps1`, on Windows shells that block PowerShell scripts.
 
@@ -492,6 +501,84 @@ command plan, add `--dry-run`. Dry-run output marks local probe checks as
 warnings with `dry-run:` details; it documents what would be checked, but it
 does not prove the branch, worktree, required commands, child process runtime,
 Codex session footprint, or Git object footprint are release-ready.
+
+## Install Package Planning
+
+The install package standard is executable through
+`scripts/plan-claw-router-install-packages.mjs`. It is intentionally plan-only:
+it does not run `pnpm dev`, does not launch the live edge dev smoke, does not
+start production services, and does not build platform packages. Real archive,
+service, and container builders must consume this plan so Windows, Linux,
+macOS, x64, arm64, archive, service, and container delivery cannot drift.
+
+Run the planner before wiring package builders:
+
+```powershell
+pnpm.cmd install:packages:plan
+pnpm.cmd install:packages:check
+pnpm.cmd install:package:check
+node scripts/plan-claw-router-install-packages.mjs --json --check
+```
+
+The default matrix contains 18 package contracts: `windows`, `linux`, and
+`macos` multiplied by `x64` and `arm64`, then by `archive`, `service`, and
+`container`. Examples include `windows-x64-service` and
+`linux-arm64-container`. Each package contract declares:
+
+- the Rust edge binary, `sdkwork-claw-gateway` or
+  `sdkwork-claw-gateway.exe`
+- the installer binary, `sdkwork-claw-installer` or
+  `sdkwork-claw-installer.exe`
+- `portal/dist` production assets
+- `portal/dist/sdk-archives` generated SDK ZIP artifacts
+- `.env.release.example` as a reference template only
+- an `install-manifest.json`
+- service manifests for service mode and container entrypoint metadata for
+  container mode
+
+Fast initialization is standardized around host-local environment generation
+and installer commands:
+
+```powershell
+pnpm.cmd release:env:write -- --check
+pnpm.cmd release:env:write -- --force
+sdkwork-claw-installer ensure
+sdkwork-claw-installer refresh-catalog --force
+```
+
+On Linux and macOS, the same package contract uses `pnpm` instead of
+`pnpm.cmd` and extensionless binaries. Health and readiness checks are always
+`/healthz` and `/readyz`.
+
+Security defaults are part of the matrix: packages must not include secrets,
+must not include `.env.release.local`, must generate local env files on the
+install or release host, must treat `.env.release.example` as reference-only,
+and must keep trusted forwarded headers disabled by default. Enable forwarded
+header trust only when a controlled reverse proxy is the sole inbound client.
+
+`scripts/build-claw-router-install-package.mjs` consumes the same matrix to
+create one install package from a staged production directory. The default
+`pnpm.cmd install:package:check` command is dry-run only, so it validates the
+full 18-package builder matrix without requiring `pnpm.cmd build` output. To
+build a real package, stage the package contents under a directory shaped like
+the package plan and pass it explicitly:
+
+```powershell
+pnpm.cmd install:package:build -- --package-id windows-x64-archive --staging-root dist\install-package-staging --output-dir dist\install-packages
+```
+
+The builder writes the package archive, a per-package manifest, and
+`install-packages-manifest.json` with file size and SHA-256 checksums. Windows
+packages use real ZIP bytes for `.zip`; Linux and macOS packages use real
+gzip-compressed tar bytes for `.tar.gz` and preserve executable mode on
+extensionless binaries under `bin/`. The tar writer supports standard ustar
+prefix paths for nested production asset names. Service packages generate
+Windows service, systemd, or launchd manifests from the shared package plan.
+Container packages generate a `container/Containerfile`, platform-specific
+entrypoint (`container/entrypoint` on Linux/macOS,
+`container/entrypoint.ps1` on Windows), and `container/metadata.json` without
+starting services. The builder excludes `.env.release.local` even if it exists
+in the staging directory. Add `--json` for pure machine-readable output.
 
 ## Production Browser Smoke
 

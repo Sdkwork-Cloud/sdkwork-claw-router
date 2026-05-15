@@ -27,6 +27,22 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "node scripts/verify-claw-router-product.mjs",
             scripts["verify"],
         )
+        self.assertEqual(
+            "node scripts/plan-claw-router-install-packages.mjs",
+            scripts["install:packages:plan"],
+        )
+        self.assertEqual(
+            "node scripts/plan-claw-router-install-packages.mjs --check",
+            scripts["install:packages:check"],
+        )
+        self.assertEqual(
+            "node scripts/build-claw-router-install-package.mjs",
+            scripts["install:package:build"],
+        )
+        self.assertEqual(
+            "node scripts/build-claw-router-install-package.mjs --check --dry-run --all",
+            scripts["install:package:check"],
+        )
 
     def test_portal_production_build_declares_node_heap_budget_in_build_entrypoint(self) -> None:
         portal_package_json = json.loads(
@@ -193,6 +209,17 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             ".env.release.local",
             "--env-file",
             "pnpm.cmd release:env:write",
+            "pnpm.cmd install:packages:plan",
+            "pnpm.cmd install:packages:check",
+            "pnpm.cmd install:package:build",
+            "pnpm.cmd install:package:check",
+            "scripts/plan-claw-router-install-packages.mjs",
+            "scripts/build-claw-router-install-package.mjs",
+            "install-packages-manifest.json",
+            "windows-x64-service",
+            "linux-arm64-container",
+            "sdkwork-claw-installer ensure",
+            "sdkwork-claw-installer refresh-catalog --force",
             "--check",
             "Docker Desktop",
             "--skip-contract-guardians",
